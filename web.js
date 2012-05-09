@@ -32,11 +32,11 @@ app.get('/:id', function(req, res) {
   res.send(post)
 })
 
-app.get('new', function(req, res) {
+app.get('/new', function(req, res) {
   res.render('create')
 })
 
-app.post('new', function(req, res) {
+app.post('/new', function(req, res) {
   var index = redis.incr('posts')
 
   redis.set('post-' + index, req.body.content)
