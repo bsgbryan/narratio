@@ -19,12 +19,10 @@ app.configure(function () {
 });
 
 app.get('/', function(req, res) {
-  var last = redis.get('posts')
-
   res.render('index')
 })
 
-app.get('/:id', function(req, res) {
+app.get('/post/:id', function(req, res) {
   var id   = req.params('id'),
       post = redis.get('post-' + id)
 
