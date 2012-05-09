@@ -2,7 +2,8 @@
   "name": "bryanmaynard.me",
   "version": "0.0.1",
   "dependencies": {
-    "express": "*",
-    "jade": "*"
+    "express"   : "*",
+    "jade"      : "*",
+    "redis-url" : "*"
   }
 }
