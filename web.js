@@ -1,6 +1,12 @@
 var express = require('express'),
-    redis   = require('redis-url').connect(process.env.REDISTOGO_URL),
     app     = express.createServer(express.logger())
+
+// Production
+if (process.env.REDISTOGO_URL) 
+  var redis = require('redis-url').connect(process.env.REDISTOGO_URL)
+// Development
+else 
+  var redis = require('redis').createClient('localhost', 6379)
 
 app.configure(function () {
   app.use(express.methodOverride());
@@ -21,7 +27,7 @@ app.get('/', function(req, res) {
 app.get('/:id', function(req, res) {
   var id   = req.params('id'),
       post = redis.get('post-' + id)
-      
+
   res.contentType('text/plain')
   res.send(post)
 })

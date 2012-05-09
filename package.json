@@ -5,5 +5,8 @@
     "express"   : "*",
     "jade"      : "*",
     "redis-url" : "*"
+  },
+  "devDependencies": {
+    "redis" : "*"
   }
 }
