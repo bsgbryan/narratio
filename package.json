@@ -4,7 +4,9 @@
   "dependencies": {
     "express"   : "*",
     "jade"      : "*",
-    "redis-url" : "*"
+    "redis-url" : "*",
+    "stylus"    : "*",
+    "nib"       : "*"
   },
   "devDependencies": {
     "redis" : "*"

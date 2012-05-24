@@ -20,7 +20,7 @@ app.configure(function () {
 });
 
 app.get('/', function(req, res) {
-  res.render('index')
+  res.render('read', { action : 'read' })
 })
 
 app.get('/delete/:collection', function(req, res) {
@@ -35,24 +35,27 @@ app.get('/delete/:collection', function(req, res) {
 })
 
 app.get('/blog.post/read/:index', function(req, res) {
-  var id = req.param('index') * -1 - 1
+  var id = req.param('index')
 
   redis.lrange('blog.posts', id, id, function(err, data) {
-    var post = data[0]
-
-    res.write(post)
+    res.json(data[0])
     res.end()
   })
 
 })
 
 app.get('/blog.post/write', function(req, res) {
-  res.render('create')
+  res.render('write', { action : 'write' })
 })
 
 app.post('/blog.post/publish', function(req, res) {
-  redis.lpush('blog.posts',  req.body.content)
-  redis.lpush('blog.titles', req.body.title)
+  var post = { 
+    title     : req.body.title, 
+    content   : req.body.content,
+    published : new Date()
+  }
+
+  redis.lpush('blog.posts', JSON.stringify(post))
 
   res.send()
 })

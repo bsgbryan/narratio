@@ -1,0 +1,507 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+  color: #222;
+}
+body {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.4;
+}
+::-moz-selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none;
+}
+::selection {
+  background: #fe57a1;
+  color: #fff;
+  text-shadow: none;
+}
+a {
+  color: #00e;
+}
+a:visited {
+  color: #551a8b;
+}
+a:hover {
+  color: #06e;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+blockquote {
+  margin: 1em 40px;
+}
+dfn {
+  font-style: italic;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+ins {
+  background: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+q {
+  quotes: none;
+}
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+small {
+  font-size: 85%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+ul,
+ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+dd {
+  margin: 0 0 0 40px;
+}
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 0;
+}
+form {
+  margin: 0;
+}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+label {
+  cursor: pointer;
+}
+legend {
+  border: 0;
+  *margin-left: -7px;
+  padding: 0;
+  white-space: normal;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+  *overflow: visible;
+}
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  *width: 13px;
+  *height: 13px;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+input:valid,
+textarea:valid,
+input:invalid,
+textarea:invalid {
+  background-color: #fff;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td {
+  vertical-align: top;
+}
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(213,213,213,0.75)), color-stop(1, rgba(213,213,213,0.75))), url("http://www.filterforge.com/filters/7702.jpg");
+  background: -webkit-linear-gradient(top, rgba(213,213,213,0.75) 0%, rgba(213,213,213,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
+  background: -moz-linear-gradient(top, rgba(213,213,213,0.75) 0%, rgba(213,213,213,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
+  background: -o-linear-gradient(top, rgba(213,213,213,0.75) 0%, rgba(213,213,213,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
+  background: -ms-linear-gradient(top, rgba(213,213,213,0.75) 0%, rgba(213,213,213,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
+  background: linear-gradient(top, rgba(213,213,213,0.75) 0%, rgba(213,213,213,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
+}
+#post,
+#preview {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(144,144,144,0.75)), color-stop(1, rgba(144,144,144,0.75))), url("http://www.filterforge.com/filters/7702.jpg");
+  background: -webkit-linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
+  background: -moz-linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
+  background: -o-linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
+  background: -ms-linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
+  background: linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
+  overflow-y: scroll;
+}
+#post.write {
+  width: 100%;
+  height: 90%;
+  margin-top: 2.5%;
+  margin-bottom: 5%;
+}
+#post.read,
+#preview {
+  width: 100%;
+  height: 100%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin-top: -5%;
+  margin-bottom: -5%;
+}
+#back {
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+  width: 17.5%;
+}
+div#post,
+#preview {
+  -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.20), inset 0 0 5px rgba(0,0,0,0.20), inset 0 0 3px rgba(0,0,0,0.40), inset 0 0 5px rgba(0,0,0,0.40), inset 0 0 10px rgba(0,0,0,0.35), inset 0 0 10px rgba(0,0,0,0.30), inset 0 0 20px rgba(0,0,0,0.35);
+  -moz-box-shadow: inset 0 0 1px rgba(0,0,0,0.20), inset 0 0 5px rgba(0,0,0,0.20), inset 0 0 3px rgba(0,0,0,0.40), inset 0 0 5px rgba(0,0,0,0.40), inset 0 0 10px rgba(0,0,0,0.35), inset 0 0 10px rgba(0,0,0,0.30), inset 0 0 20px rgba(0,0,0,0.35);
+  box-shadow: inset 0 0 1px rgba(0,0,0,0.20), inset 0 0 5px rgba(0,0,0,0.20), inset 0 0 3px rgba(0,0,0,0.40), inset 0 0 5px rgba(0,0,0,0.40), inset 0 0 10px rgba(0,0,0,0.35), inset 0 0 10px rgba(0,0,0,0.30), inset 0 0 20px rgba(0,0,0,0.35);
+}
+form#post {
+  -webkit-box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
+}
+h1,
+h2,
+h3 {
+  font-family: 'Ubuntu', sans-serif;
+  color: #fff;
+}
+h1 {
+  text-align: center;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
+}
+h2 {
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #b9b9b9, 0 4px 1px rgba(0,0,0,0.20), 0 0 3px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 5px 10px rgba(0,0,0,0.35);
+  margin-top: 2em;
+}
+h3 {
+  letter-spacing: 1px;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 3px rgba(0,0,0,0.20), 0 0 2px rgba(0,0,0,0.20), 0 1px 5px rgba(0,0,0,0.40);
+  margin-top: 1.5em;
+  margin-left: 1em;
+  margin-bottom: 0;
+}
+h3 + p {
+  margin-top: 0.5em;
+}
+h4 {
+  font-family: monospace;
+  color: #fff;
+  margin-top: 2.5em;
+  margin-left: 1.25em;
+  text-shadow: 0 -1px 0 #606060;
+  margin-bottom: 0em;
+}
+pre {
+  padding: 0.5em 1em;
+  margin-top: 0.25em;
+  margin-bottom: 3.5em;
+  font-family: monospace;
+  background-color: #efefef;
+  text-shadow: 0 1px 0 #fff;
+  -webkit-box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 1px rgba(0,0,0,0.20), 0 0 3px rgba(0,0,0,0.20), 0 1px 5px rgba(0,0,0,0.40);
+  -moz-box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 1px rgba(0,0,0,0.20), 0 0 3px rgba(0,0,0,0.20), 0 1px 5px rgba(0,0,0,0.40);
+  box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 1px rgba(0,0,0,0.20), 0 0 3px rgba(0,0,0,0.20), 0 1px 5px rgba(0,0,0,0.40);
+}
+p,
+ol,
+ul {
+  font-family: 'Antic Slab', serif;
+}
+ol,
+ul {
+  color: #666;
+  margin: 1.75em 0;
+}
+p {
+  padding: 1em 1em 0.5em 1em;
+  text-shadow: 0 1px 0 #fff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(239,239,239,0.90)), color-stop(1, rgba(239,239,239,0.90))), url("http://www.3dmd.net/gallery/albums/textures/concrete/seamless_dark_smooth_concrete_texture.jpg");
+  background: -webkit-linear-gradient(top, rgba(239,239,239,0.90) 0%, rgba(239,239,239,0.90) 100%), url("http://www.3dmd.net/gallery/albums/textures/concrete/seamless_dark_smooth_concrete_texture.jpg");
+  background: -moz-linear-gradient(top, rgba(239,239,239,0.90) 0%, rgba(239,239,239,0.90) 100%), url("http://www.3dmd.net/gallery/albums/textures/concrete/seamless_dark_smooth_concrete_texture.jpg");
+  background: -o-linear-gradient(top, rgba(239,239,239,0.90) 0%, rgba(239,239,239,0.90) 100%), url("http://www.3dmd.net/gallery/albums/textures/concrete/seamless_dark_smooth_concrete_texture.jpg");
+  background: -ms-linear-gradient(top, rgba(239,239,239,0.90) 0%, rgba(239,239,239,0.90) 100%), url("http://www.3dmd.net/gallery/albums/textures/concrete/seamless_dark_smooth_concrete_texture.jpg");
+  background: linear-gradient(top, rgba(239,239,239,0.90) 0%, rgba(239,239,239,0.90) 100%), url("http://www.3dmd.net/gallery/albums/textures/concrete/seamless_dark_smooth_concrete_texture.jpg");
+}
+p:first-letter {
+  font-size: 2em;
+  font-family: 'Ribeye Marrow', serif;
+  letter-spacing: 1px;
+}
+p:first-line {
+  line-height: 1.3em;
+}
+p:last-child {
+  margin-bottom: 2em;
+}
+form,
+p,
+ol,
+ul,
+pre {
+  -webkit-border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  border-radius: 0.25em;
+}
+form,
+p {
+  -webkit-box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
+}
+ol,
+ul {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(239,239,239,0.95)), color-stop(1, rgba(239,239,239,0.95))), url("http://www.shaderfarm.com/images/concrete-plate-0006-bump-l.jpg");
+  background: -webkit-linear-gradient(top, rgba(239,239,239,0.95) 0%, rgba(239,239,239,0.95) 100%), url("http://www.shaderfarm.com/images/concrete-plate-0006-bump-l.jpg");
+  background: -moz-linear-gradient(top, rgba(239,239,239,0.95) 0%, rgba(239,239,239,0.95) 100%), url("http://www.shaderfarm.com/images/concrete-plate-0006-bump-l.jpg");
+  background: -o-linear-gradient(top, rgba(239,239,239,0.95) 0%, rgba(239,239,239,0.95) 100%), url("http://www.shaderfarm.com/images/concrete-plate-0006-bump-l.jpg");
+  background: -ms-linear-gradient(top, rgba(239,239,239,0.95) 0%, rgba(239,239,239,0.95) 100%), url("http://www.shaderfarm.com/images/concrete-plate-0006-bump-l.jpg");
+  background: linear-gradient(top, rgba(239,239,239,0.95) 0%, rgba(239,239,239,0.95) 100%), url("http://www.shaderfarm.com/images/concrete-plate-0006-bump-l.jpg");
+  text-shadow: 0 1px 0 #fff;
+  padding: 0.5em 2.25em;
+  -webkit-box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #b9b9b9, 0 4px 1px rgba(0,0,0,0.20), 0 0 3px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 5px 10px rgba(0,0,0,0.35);
+  -moz-box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #b9b9b9, 0 4px 1px rgba(0,0,0,0.20), 0 0 3px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 5px 10px rgba(0,0,0,0.35);
+  box-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #b9b9b9, 0 4px 1px rgba(0,0,0,0.20), 0 0 3px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 5px 10px rgba(0,0,0,0.35);
+}
+.hidden {
+  display: none;
+}
+form input:focus,
+form textarea:focus {
+  outline: none;
+}
+form input {
+  text-align: center;
+  padding: 0.5em 0;
+  border: none;
+  border-top: 1px solid #fff;
+}
+form .preview,
+form .done {
+  width: 20%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f7f7f7), color-stop(1, #b3b3b3));
+  background: -webkit-linear-gradient(top, #f7f7f7 0%, #b3b3b3 100%);
+  background: -moz-linear-gradient(top, #f7f7f7 0%, #b3b3b3 100%);
+  background: -o-linear-gradient(top, #f7f7f7 0%, #b3b3b3 100%);
+  background: -ms-linear-gradient(top, #f7f7f7 0%, #b3b3b3 100%);
+  background: linear-gradient(top, #f7f7f7 0%, #b3b3b3 100%);
+  border-bottom: 1px solid #a2a2a2;
+  color: #777;
+  text-shadow: 0 1px 0 #f7f7f7;
+}
+form .title,
+form .content {
+  text-shadow: 0 1px 0 #fff;
+}
+form .preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-border-radius: 0.25em 0 0 0;
+  -moz-border-radius: 0.25em 0 0 0;
+  border-radius: 0.25em 0 0 0;
+}
+form .title {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fefefe), color-stop(1, #dcdcdc));
+  background: -webkit-linear-gradient(top, #fefefe 0%, #dcdcdc 100%);
+  background: -moz-linear-gradient(top, #fefefe 0%, #dcdcdc 100%);
+  background: -o-linear-gradient(top, #fefefe 0%, #dcdcdc 100%);
+  background: -ms-linear-gradient(top, #fefefe 0%, #dcdcdc 100%);
+  background: linear-gradient(top, #fefefe 0%, #dcdcdc 100%);
+  border-bottom: 1px solid #bababa;
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+}
+form .done {
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-border-radius: 0 0.25em 0 0;
+  -moz-border-radius: 0 0.25em 0 0;
+  border-radius: 0 0.25em 0 0;
+}
+form .content {
+  position: absolute;
+  top: 2.25em;
+  left: 0;
+  border: none;
+  border-top: 1px solid #fff;
+  background-color: #efefef;
+  padding: 0.5em 1em;
+  right: 0;
+  bottom: 0;
+  -webkit-border-radius: 0 0 0.25em 0.25em;
+  -moz-border-radius: 0 0 0.25em 0.25em;
+  border-radius: 0 0 0.25em 0.25em;
+}
+@media screen and (min-width: 800px) {
+  #post.write,
+  #post.read,
+  #preview {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #post.write,
+  #post.read,
+  #preview {
+    width: 50%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
+}

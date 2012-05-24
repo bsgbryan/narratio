@@ -1,0 +1,7 @@
+form#post.write(method='post', action='/blog.post/publish')
+  input.preview(type='submit', value='preview')
+  input(type='text', name='title', class='title', placeholder='title')
+  input.done(type='submit', name='create', value='done')
+  textarea.content(name='content', placeholder='content')
+#preview.hidden
+button#back.hidden back
