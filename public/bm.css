@@ -260,7 +260,6 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: hidden;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(213,213,213,0.75)), color-stop(1, rgba(213,213,213,0.75))), url("http://www.filterforge.com/filters/7702.jpg");
   background: -webkit-linear-gradient(top, rgba(213,213,213,0.75) 0%, rgba(213,213,213,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
   background: -moz-linear-gradient(top, rgba(213,213,213,0.75) 0%, rgba(213,213,213,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
@@ -279,7 +278,6 @@ body {
   background: -o-linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
   background: -ms-linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
   background: linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
-  overflow-y: scroll;
 }
 #post,
 #preview {
