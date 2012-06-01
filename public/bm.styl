@@ -77,17 +77,17 @@ td { vertical-align: top; }
 
 // Taken from CSSReX http://www.cssrex.com/tips-tricks/how-to-create-3d-text-using-css3
 text-tall-slab()
-  text-shadow 0 1px 0 #ccc, 0 2px 0 #c9c9c9,0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.2), 0 0 5px rgba(0,0,0,.2), 0 1px 3px rgba(0,0,0,.4), 0 3px 5px rgba(0,0,0,.3), 0 5px 10px rgba(0,0,0,.35), 0 10px 10px rgba(0,0,0,.3), 0 20px 20px rgba(0,0,0,.25)
+  text-shadow 0 1px 0 rgba(#ccc, .5), 0 2px 0 rgba(#c9c9c9, .4), 0 3px 0 rgba(#bbb, .3), 0 4px 0 rgba(#b9b9b9, .2), 0 5px 0 rgba(#aaa, .1), 0 6px 1px rgba(black,.2), 0 0 5px rgba(black,.2), 0 1px 3px rgba(black,.4), 0 3px 5px rgba(black,.3), 0 5px 10px rgba(black,.35), 0 10px 10px rgba(black,.3), 0 20px 20px rgba(black,.25)
 text-medium-slab()
-  text-shadow 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #b9b9b9, 0 4px 1px rgba(0,0,0,.2), 0 0 3px rgba(0,0,0,.2), 0 1px 3px rgba(0,0,0,.4), 0 5px 10px rgba(0,0,0,.35)
+  text-shadow 0 1px 0 rgba(#ccc, .4), 0 2px 0 rgba(#c9c9c9, .3), 0 3px 0 rgba(#b9b9b9, .2), 0 4px 1px rgba(black, .1), 0 4px 3px rgba(black, .1), 0 5px 3px rgba(black, .2), 0 10px 10px rgba(black, .35)
 text-short-slab()
-  text-shadow 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 3px rgba(0,0,0,.2),0 0 2px rgba(0,0,0,.2), 0 1px 5px rgba(0,0,0,.4)
+  text-shadow 0 1px 0 rgba(#ccc, .6), 0 2px 0 rgba(#c9c9c9, .4), 0 3px 3px rgba(black, .2), 0 4px 2px rgba(black, .25), 0 5px 5px rgba(black, .3)
 box-tall-slab()
-  box-shadow 0 1px 0 #ccc, 0 2px 0 #c9c9c9,0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.2), 0 0 5px rgba(0,0,0,.2), 0 1px 3px rgba(0,0,0,.4), 0 3px 5px rgba(0,0,0,.3), 0 5px 10px rgba(0,0,0,.35), 0 10px 10px rgba(0,0,0,.3), 0 20px 20px rgba(0,0,0,.25)
+  box-shadow 0 1px 0 rgba(#ccc, .8), 0 2px 0 rgba(#c9c9c9, .5), 0 3px 0 rgba(#bbb, .5), 0 4px 0 rgba(#b9b9b9, .3), 0 5px 0 rgba(#aaa, .3), 0 6px 1px rgba(black, .20), 0 0 5px rgba(black, .20), 0 1px 3px rgba(black, .40), 0 3px 5px rgba(black, .30), 0 5px 10px rgba(black, .35), 0 10px 10px rgba(black, .30), 0 20px 20px rgba(black, .25)
 box-medium-slab()
-  box-shadow 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #b9b9b9, 0 4px 1px rgba(0,0,0,.2), 0 0 3px rgba(0,0,0,.2), 0 1px 3px rgba(0,0,0,.4), 0 5px 10px rgba(0,0,0,.35)
+  box-shadow 0 1px 0 rgba(#ccc, .4), 0 2px 0 rgba(#c9c9c9, .4), 0 3px 0 rgba(#b9b9b9, .4), 0 4px 1px rgba(black, .2), 0 0 3px rgba(black, .2), 0 5px 3px rgba(black, .4), 0 10px 10px rgba(black, .35)
 box-short-slab()
-  box-shadow 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 1px rgba(0,0,0,.2), 0 0 3px rgba(0,0,0,.2), 0 1px 5px rgba(0,0,0,.4)
+  box-shadow 0 1px 0 rgba(#ccc, .6), 0 2px 0 rgba(#c9c9c9, .6), 0 3px 1px rgba(black,.2), 0 4px 3px rgba(black, .2), 0 5px 5px rgba(black, .4)
 
 body
   absolute top, left
@@ -98,25 +98,25 @@ body
 
 #post
 #preview
-  position: relative
-  margin-left:  auto
-  margin-right: auto
+  position relative
+  margin-left  auto
+  margin-right auto
   background linear-gradient(top, rgba(#909090, .75), rgba(#909090, .75)), url('http://www.filterforge.com/filters/7702.jpg')
   overflow-y scroll
 
 #post.write
-  width:  100%
-  height: 90%
-  margin-top:    2.5%
-  margin-bottom: 5%
+  width  100%
+  height 90%
+  margin-top    2.5%
+  margin-bottom 5%
 #post.read
 #preview
-  width:  100%
-  height: 100%
-  padding-top:    5%
-  padding-bottom: 5%
-  margin-top:    -5%
-  margin-bottom: -5%
+  width  100%
+  height 100%
+  padding-top    5%
+  padding-bottom 5%
+  margin-top    -5%
+  margin-bottom -5%
 
 #back
   absolute top 2.5% left 2.5%
@@ -163,9 +163,10 @@ pre
   margin-top    .25em
   margin-bottom 3.5em
   font-family monospace
-  background-color #efefef
+  background linear-gradient(top, rgba(white, .925) 0%, rgba(#efefef, .925) 100%), url('http://www.unsigneddesign.com/Experimental%20Dirty/3.jpg')
   text-shadow 0 1px 0 white
   box-short-slab()
+  color black
 
 p, ol, ul
   font-family 'Antic Slab', serif
@@ -177,7 +178,7 @@ ol, ul
 p
   padding 1em 1em .5em 1em
   text-shadow 0 1px 0 white
-  background linear-gradient(top, rgba(#efefef, .9), rgba(#efefef, .9)), url('http://www.3dmd.net/gallery/albums/textures/concrete/seamless_dark_smooth_concrete_texture.jpg')
+  background linear-gradient(top, rgba(white, .85) 0%, rgba(#efefef, .85) 100%), url('http://rowenconcrete.com/images/Backgrounds/seamless_dark_smooth_concrete_texture.jpg')
   &:first-letter
     font-size 2em
     font-family 'Ribeye Marrow', serif
@@ -194,10 +195,13 @@ form, p
   box-tall-slab()
 
 ol, ul
-  background linear-gradient(top, rgba(#efefef, .95), rgba(#efefef, .95)), url('http://www.shaderfarm.com/images/concrete-plate-0006-bump-l.jpg')
+  background linear-gradient(top, rgba(white, .975), rgba(#efefef, .975)), url('http://www.shaderfarm.com/images/concrete-plate-0006-bump-l.jpg')
   text-shadow 0 1px 0 white
   padding .5em 2.25em
   box-medium-slab()
+
+ol
+  list-style-type lower-roman
 
 .hidden
   display: none !important
