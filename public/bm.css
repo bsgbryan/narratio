@@ -281,15 +281,17 @@ body {
   background: linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
   overflow-y: scroll;
 }
-#post.write {
+#post,
+#preview {
   width: 95%;
-  height: 95%;
+  height: 98%;
+}
+#post.write {
+  height: 97%;
   margin: 2.5%;
 }
 #post.read,
 #preview {
-  width: 95%;
-  height: 95%;
   padding: 2.5%;
 }
 #back {
@@ -385,9 +387,6 @@ p:first-letter {
 }
 p:first-line {
   line-height: 1.3em;
-}
-p:last-child {
-  margin-bottom: 2em;
 }
 form,
 p,
@@ -495,6 +494,7 @@ form .content {
   border-radius: 0 0 0.25em 0.25em;
 }
 @media screen and (max-width: 640px) {
+  h1,
   h2,
   h3 {
     text-shadow: 0 1px 3px rgba(0,0,0,0.20);
@@ -506,6 +506,18 @@ form .content {
     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.20);
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.20);
     box-shadow: 0 1px 3px rgba(0,0,0,0.20);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #efefef));
+    background: -webkit-linear-gradient(top, #fff 0%, #efefef 100%);
+    background: -moz-linear-gradient(top, #fff 0%, #efefef 100%);
+    background: -o-linear-gradient(top, #fff 0%, #efefef 100%);
+    background: -ms-linear-gradient(top, #fff 0%, #efefef 100%);
+    background: linear-gradient(top, #fff 0%, #efefef 100%);
+  }
+  div#post,
+  #preview {
+    -webkit-box-shadow: inset 0 2px 3px rgba(0,0,0,0.20);
+    -moz-box-shadow: inset 0 2px 3px rgba(0,0,0,0.20);
+    box-shadow: inset 0 2px 3px rgba(0,0,0,0.20);
   }
 }
 @media screen and (min-width: 800px) {

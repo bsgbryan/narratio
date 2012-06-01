@@ -104,14 +104,15 @@ body
   background linear-gradient(top, rgba(#909090, .75), rgba(#909090, .75)), url('http://www.filterforge.com/filters/7702.jpg')
   overflow-y scroll
 
-#post.write
+#post
+#preview
   width  95%
-  height 95%
+  height 98%
+#post.write
+  height 97%
   margin 2.5%
 #post.read
 #preview
-  width  95%
-  height 95%
   padding 2.5%
 
 #back
@@ -181,8 +182,6 @@ p
     letter-spacing 1px
   &:first-line
     line-height: 1.3em
-  &:last-child
-    margin-bottom 2em
 
 form, p, ol, ul, pre
   border-radius .25em
@@ -243,10 +242,14 @@ form
     border-radius 0 0 .25em .25em
 
 @media screen and (max-width: 640px)
-  h2, h3
+  h1, h2, h3
     text-shadow 0 1px 3px rgba(black, .2)
   p, ul, ol, pre
     box-shadow 0 1px 3px rgba(black, .2)
+    background linear-gradient(top, white, #efefef)
+  div#post
+  #preview
+    box-shadow inset 0 2px 3px rgba(black, .2)
 
 @media screen and (min-width: 800px)
   #post.write
