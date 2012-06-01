@@ -281,11 +281,12 @@ body {
   background: linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
   overflow-y: scroll;
 }
-#post {
+#post.write {
   width: 95%;
   height: 95%;
   margin: 2.5%;
 }
+#post.read,
 #preview {
   width: 95%;
   height: 95%;
