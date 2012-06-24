@@ -5,3 +5,7 @@ form#post.write(method='post', action='/blog.post/publish')
   textarea.content(name='content', placeholder='content')
 #preview.hidden
 button#back.hidden back
+- if (typeof post !== 'undefined')
+  #title= post.title
+  #content = post.content
+
