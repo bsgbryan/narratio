@@ -38,8 +38,10 @@ app.get('/delete/:collection', function(req, res) {
 
 app.get('/post/read/:link', function(req, res) {
   var id = (parseInt(req.param('link')) * -1) - 1
+  console.log('id', id)
 
   redis.lrange('blog.posts', id, id, function(err, data) {
+    console.log('data', data)
     res.render('read', { action : 'read' , post : JSON.parse(data[0]) })
   })
 
