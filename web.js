@@ -36,9 +36,9 @@ app.get('/delete/:collection', function(req, res) {
   })
 })
 
-app.get('/:post', function(req, res) {
-  console.log(req.param.post)
-  redis.hgetall(':post:' + req.param.post, function(err, data) {
+app.get('/read/:post', function(req, res) {
+  console.log(req.param('post')
+  redis.hgetall(':post:' + req.param('post'), function(err, data) {
     res.render('read', { action : 'read' , post : data })
   })
 })
