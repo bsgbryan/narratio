@@ -392,6 +392,7 @@ p img {
   -webkit-border-radius: 0.125em;
   -moz-border-radius: 0.125em;
   border-radius: 0.125em;
+  margin-top: -0.25em;
 }
 form,
 p,
