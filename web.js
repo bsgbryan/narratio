@@ -36,18 +36,21 @@ app.get('/delete/:collection', function(req, res) {
   })
 })
 
-app.get('/post/read/:link', function(req, res) {
-  var id = (parseInt(req.param('link')) * -1) - 1
-  console.log('id', id)
-
-  redis.lrange('blog.posts', id, id, function(err, data) {
-    console.log('data', data)
+app.get('/:post', function(req, res) {
+  redis.hgetall(':post:' + req.param.post, function(err, data) {
     res.render('read', { action : 'read' , post : JSON.parse(data[0]) })
   })
-
 })
 
-app.get('/post/write', function(req, res) {
+app.get('/posts/convert', function(req, res) {
+  redis.lrange('blog.posts', 0, -1, function(err, data) {
+    JSON.parse(data).forEach(function(post) {
+      redis.hmset(':post:' + post.title.toLowerCase().replace(/\s/g, '-'), post)
+    })
+  })
+})
+
+app.get('/write', function(req, res) {
   res.render('write', { action : 'write' })
 })
 
@@ -58,7 +61,9 @@ app.post('/post/publish', function(req, res) {
     published : new Date()
   }
 
-  redis.lpush('blog.posts', JSON.stringify(post))
+  redis.hmset(
+    ':post:' + post.title.toLowerCase().replace(/\s/g, '-'), 
+    JSON.stringify(post))
 
   res.send()
 })
