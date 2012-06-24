@@ -1,22 +1,27 @@
 !!! 5
-html(lang="en")
+html(lang='en')
   head
     title if grey.matter(s)
     // iPhone app support
-    meta(name="viewport", content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0")
-    meta(name="apple-mobile-web-app-capable", content="yes")
-    meta(name="apple-mobile-web-app-status-bar-style", content="black")
+    meta(name='viewport', content='user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
     link(rel="apple-touch-icon", href="public/images/apple-touch-icon.png")
+    // Facebook sharing support
+    meta(property='og:title', content='#{ post.title }')
+    meta(property='og:description', content='#{ post.content.split("\n")[0] }')
+    meta(property='og:type', content='blog')
+    meta(property='og:image', content='http://www.gravatar.com/avatar/9b85a734132395f7229cf3850d1adf42.png')
+    meta(property='og:url', content='http://blog.bryanmaynard.me/post.read/#{ post.id }')
+    // Google web fonts
     link(href='http://fonts.googleapis.com/css?family=Ubuntu:700', rel='stylesheet')
     link(href='http://fonts.googleapis.com/css?family=Antic+Slab|Ribeye+Marrow', rel='stylesheet')
-    link(rel='stylesheet', href='/bm.css')
+    // App stylesheet
+    link(rel='stylesheet', href='http://bsgbryan.github.com/blog/public/bm.css')
 
   body!= body
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
-    script(src='https://raw.github.com/carhartl/jquery-cookie/master/jquery.cookie.js')
-    script(src='https://raw.github.com/github/github-flavored-markdown/gh-pages/scripts/showdown.js')
-    script(src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js')
-    script(src='https://raw.github.com/bsgbryan/loqui/master/app/javascript/loqui.js')
-    script
-      $.loqui()
-    script(src='/#{ action }.js')
+    script(src='http://bsgbryan.github.com/loqui/app/javascript/jquery.cookie.js')
+    script(src='http://bsgbryan.github.com/blog/public/showdown.js')
+    script(src='http://bsgbryan.github.com/loqui/app/javascript/modernizr.js')
+    script(src='http://bsgbryan.github.com/blog/public/#{ action }.js')

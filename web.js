@@ -20,7 +20,9 @@ app.configure(function () {
 });
 
 app.get('/', function(req, res) {
-  res.render('read', { action : 'read' })
+  redis.lrange('blog.posts', 0, 0, function(err, data) {
+    res.render('read', { action : 'read' , post: data[0] })
+  })
 })
 
 app.get('/delete/:collection', function(req, res) {
@@ -34,12 +36,21 @@ app.get('/delete/:collection', function(req, res) {
   })
 })
 
-app.get('/blog.post/read/:index', function(req, res) {
-  var id = req.param('index')
+app.get('/blog.post/read/:link.json', function(req, res) {
+  var id = req.param('link')
 
   redis.lrange('blog.posts', id, id, function(err, data) {
     res.json(data[0])
     res.end()
+  })
+
+})
+
+app.get('/blog.post/read/:link', function(req, res) {
+  var id = req.param('link')
+
+  redis.lrange('blog.posts', id, id, function(err, data) {
+    res.render('read', { action : 'read' , post : data[0] })
   })
 
 })

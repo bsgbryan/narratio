@@ -1,9 +1,5 @@
 $(document).ready(function() {
-  $.getJSON('/blog.post/read/0', function(p) {
-    var post = JSON.parse(p)
-
-    $('#post').
-      html(new Showdown.converter().makeHtml(post.content)).
-      prepend('<h1>' + post.title + '</h1>')
-  })
+  $('#post').
+    html(new Showdown.converter().makeHtml($('#content').text())).
+    prepend('<h1>' + $('#title').text() + '</h1>')
 })
