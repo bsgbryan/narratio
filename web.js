@@ -21,7 +21,7 @@ app.configure(function () {
 
 app.get('/', function(req, res) {
   redis.lrange('blog.posts', 0, 0, function(err, data) {
-    res.render('read', { action : 'read' , post: JSON.parse(data[0]) })
+    res.render('read', { action : 'read' , post: data })
   })
 })
 
@@ -38,7 +38,7 @@ app.get('/delete/:collection', function(req, res) {
 
 app.get('/:post', function(req, res) {
   redis.hgetall(':post:' + req.param.post, function(err, data) {
-    res.render('read', { action : 'read' , post : JSON.parse(data[0]) })
+    res.render('read', { action : 'read' , post : data })
   })
 })
 
