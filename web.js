@@ -36,7 +36,7 @@ app.get('/delete/:collection', function(req, res) {
   })
 })
 
-app.get('/blog.post/read/:link', function(req, res) {
+app.get('/post/read/:link', function(req, res) {
   var id = req.param('link')
 
   redis.lrange('blog.posts', id, id, function(err, data) {
@@ -45,11 +45,11 @@ app.get('/blog.post/read/:link', function(req, res) {
 
 })
 
-app.get('/blog.post/write', function(req, res) {
+app.get('/post/write', function(req, res) {
   res.render('write', { action : 'write' })
 })
 
-app.post('/blog.post/publish', function(req, res) {
+app.post('/post/publish', function(req, res) {
   var post = { 
     title     : req.body.title, 
     content   : req.body.content,
