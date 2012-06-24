@@ -40,7 +40,7 @@ app.get('/blog.post/read/:link', function(req, res) {
   var id = req.param('link')
 
   redis.lrange('blog.posts', id, id, function(err, data) {
-    res.render('read', { action : 'read' , post : data[0] })
+    res.render('read', { action : 'read' , post : JSON.parse(data[0]) })
   })
 
 })
