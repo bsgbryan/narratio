@@ -44,10 +44,15 @@ app.get('/:post', function(req, res) {
 
 app.get('/posts/convert', function(req, res) {
   redis.lrange('blog.posts', 0, -1, function(err, data) {
-    console.log(data)
-    // JSON.parse(data).forEach(function(post) {
-    //   redis.hmset(':post:' + post.title.toLowerCase().replace(/\s/g, '-'), post)
-    // })
+    data.forEach(function(post) {
+      try {
+        var p = JSON.parse(post)
+
+        redis.hmset(':post:' + p.title.toLowerCase().replace(/\s/g, '-'), p)
+      } catch(e) {
+        // Oopsie
+      }
+    })
   })
 })
 
