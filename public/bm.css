@@ -262,6 +262,10 @@ body {
   background: -ms-linear-gradient(top, rgba(213,213,213,0.75) 0%, rgba(213,213,213,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
   background: linear-gradient(top, rgba(213,213,213,0.75) 0%, rgba(213,213,213,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
 }
+#title,
+#content {
+  display: none;
+}
 #post,
 #preview {
   position: relative;
