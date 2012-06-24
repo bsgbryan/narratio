@@ -59,9 +59,7 @@ app.post('/post/publish', function(req, res) {
     published : new Date()
   }
 
-  redis.hmset(
-    ':post:' + post.title.toLowerCase().replace(/\s/g, '-'), 
-    JSON.stringify(post))
+  redis.hmset(':post:' + post.title.toLowerCase().replace(/\s/g, '-'), post)
 
   res.send()
 })
