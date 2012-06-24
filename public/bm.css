@@ -319,9 +319,6 @@ h3 {
 }
 h1 {
   text-align: center;
-  margin-top: 0.125em;
-  margin-bottom: 0.75em;
-  font-size: 4em;
   text-shadow: 0 1px 0 rgba(204,204,204,0.50), 0 2px 0 rgba(201,201,201,0.40), 0 3px 0 rgba(187,187,187,0.30), 0 4px 0 rgba(185,185,185,0.20), 0 5px 0 rgba(170,170,170,0.10), 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
 }
 h2 {
@@ -400,13 +397,6 @@ p img {
   -moz-border-radius: 0.125em;
   border-radius: 0.125em;
   margin-top: -0.25em;
-}
-a {
-  color: #33b;
-  text-decoration: none;
-}
-a:visited {
-  color: #63b;
 }
 form,
 p,
