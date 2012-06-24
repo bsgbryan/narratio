@@ -42,22 +42,14 @@ app.get('/read/:post', function(req, res) {
   })
 })
 
-app.get('/posts/convert', function(req, res) {
-  redis.lrange('blog.posts', 0, -1, function(err, data) {
-    data.forEach(function(post) {
-      try {
-        var p = JSON.parse(post)
-
-        redis.hmset(':post:' + p.title.toLowerCase().replace(/\s/g, '-'), p)
-      } catch(e) {
-        // Oopsie
-      }
-    })
-  })
-})
-
 app.get('/write', function(req, res) {
   res.render('write', { action : 'write' })
+})
+
+app.get('/edit/:post', function(req, res) {
+  redis.hgetall(':post:' + req.param('post'), function(err, data) {
+    res.render('write', { action : 'write' , post : data })
+  })
 })
 
 app.post('/post/publish', function(req, res) {

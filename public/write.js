@@ -24,4 +24,7 @@ $(document).ready(function() {
     $('#back').addClass('hidden')
     $('#post').removeClass('hidden')
   })
+
+  $('.title').val($('#title').text())
+  $('.content').val($('#content').text())
 })
