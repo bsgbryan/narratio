@@ -59,9 +59,9 @@ app.post('/post/publish', function(req, res) {
     published : new Date()
   }
 
-  redis.hmset(':post:' + post.title.toLowerCase().replace(/\s/g, '-'), post)
+  var status = redis.hmset(':post:' + post.title.toLowerCase().replace(/\s/g, '-'), post)
 
-  res.send()
+  res.send(status)
 })
 
 var port = process.env.PORT || 3000
