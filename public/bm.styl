@@ -90,7 +90,8 @@ box-short-slab()
   box-shadow 0 1px 0 rgba(#ccc, .6), 0 2px 0 rgba(#c9c9c9, .6), 0 3px 1px rgba(black,.2), 0 4px 3px rgba(black, .2), 0 5px 5px rgba(black, .4)
 
 body
-  background linear-gradient(top, rgba(#d5d5d5, .75), rgba(#d5d5d5, .75)), url('http://www.filterforge.com/filters/7702.jpg')
+  background-color #825952
+  box-model border-box
 
 #title
 #content
@@ -102,7 +103,9 @@ body
   position relative
   margin-left  auto
   margin-right auto
-  background linear-gradient(top, rgba(#909090, .75), rgba(#909090, .75)), url('http://www.filterforge.com/filters/7702.jpg')
+  background-color #47423B
+  border-left  5px solid #E8D1C0
+  border-right 5px solid #E8D1C0
 
 #post
 #preview
@@ -129,22 +132,23 @@ form#post
 
 h1, h2, h3
   font-family 'Ubuntu', sans-serif
-  color white
+  color #E3DFD6
+
+h2, h3
+  text-shadow 0 1px 2px black
 
 h1
   text-align center
   margin-top    .125em
   margin-bottom .75em
   font-size 4em
-  text-tall-slab()
+  text-shadow 0 1px 5px black
 
 h2
-  text-medium-slab()
   margin-top 2em
 
 h3
   letter-spacing 1px
-  text-short-slab()
   margin-top    1.5em
   margin-left   1em
   margin-bottom 0
@@ -170,7 +174,7 @@ pre
   color black
 
 p, ol, ul
-  font-family 'Antic Slab', serif
+  font-family 'Esteban', serif
 
 ol, ul
   color #666
@@ -178,31 +182,24 @@ ol, ul
 
 p
   padding 1em 1em .5em 1em
-  text-shadow 0 1px 0 white
-  background linear-gradient(top, rgba(white, .85) 0%, rgba(#efefef, .85) 100%), url('http://rowenconcrete.com/images/Backgrounds/seamless_dark_smooth_concrete_texture.jpg')
+  text-shadow 0 1px 3px black
+  background-color #4F6E96
   &:first-letter
     font-size 2em
-    font-family 'Ribeye Marrow', serif
     letter-spacing 1px
   &:first-line
     line-height: 1.3em
   img
     width 100%
-    box-shadow 0 -1px 2px black, 0 1px 2px white
-    border-radius .125em
-    margin-top -.25em
+    box-shadow 0 1px 3px black
+    margin-top -.5em
+    border 2px solid #E3DFD6
 
 a
-  color #33B
+  color #E8D1C1
   text-decoration none
   &:visited
-    color #63b
-
-form, p, ol, ul, pre
-  border-radius .25em
-
-form, p
-  box-tall-slab()
+    color #E8D1C1
 
 ol, ul
   background linear-gradient(top, rgba(white, .975), rgba(#efefef, .975)), url('http://www.shaderfarm.com/images/concrete-plate-0006-bump-l.jpg')
