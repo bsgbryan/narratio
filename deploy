@@ -1,8 +1,8 @@
 git add .
 git ci -m "$1"
-git push
+git push origin master
 git co gh-pages
 git merge master
-git push
+git push origin gh-pages
 git co master
 git push heroku master
