@@ -76,22 +76,21 @@ td { vertical-align: top; }
 // ---
 
 // Taken from CSSReX http://www.cssrex.com/tips-tricks/how-to-create-3d-text-using-css3
-text-tall-slab()
-  text-shadow 0 1px 0 rgba(#ccc, .5), 0 2px 0 rgba(#c9c9c9, .4), 0 3px 0 rgba(#bbb, .3), 0 4px 0 rgba(#b9b9b9, .2), 0 5px 0 rgba(#aaa, .1), 0 6px 1px rgba(black,.2), 0 0 5px rgba(black,.2), 0 1px 3px rgba(black,.4), 0 3px 5px rgba(black,.3), 0 5px 10px rgba(black,.35), 0 10px 10px rgba(black,.3), 0 20px 20px rgba(black,.25)
-text-medium-slab()
-  text-shadow 0 1px 0 rgba(#ccc, .4), 0 2px 0 rgba(#c9c9c9, .3), 0 3px 0 rgba(#b9b9b9, .2), 0 4px 1px rgba(black, .1), 0 4px 3px rgba(black, .1), 0 5px 3px rgba(black, .2), 0 10px 10px rgba(black, .35)
-text-short-slab()
-  text-shadow 0 1px 0 rgba(#ccc, .6), 0 2px 0 rgba(#c9c9c9, .4), 0 3px 3px rgba(black, .2), 0 4px 2px rgba(black, .25), 0 5px 5px rgba(black, .3)
-box-tall-slab()
-  box-shadow 0 1px 0 rgba(#ccc, .8), 0 2px 0 rgba(#c9c9c9, .5), 0 3px 0 rgba(#bbb, .5), 0 4px 0 rgba(#b9b9b9, .3), 0 5px 0 rgba(#aaa, .3), 0 6px 1px rgba(black, .20), 0 0 5px rgba(black, .20), 0 1px 3px rgba(black, .40), 0 3px 5px rgba(black, .30), 0 5px 10px rgba(black, .35), 0 10px 10px rgba(black, .30), 0 20px 20px rgba(black, .25)
-box-medium-slab()
-  box-shadow 0 1px 0 rgba(#ccc, .4), 0 2px 0 rgba(#c9c9c9, .4), 0 3px 0 rgba(#b9b9b9, .4), 0 4px 1px rgba(black, .2), 0 0 3px rgba(black, .2), 0 5px 3px rgba(black, .4), 0 10px 10px rgba(black, .35)
-box-short-slab()
-  box-shadow 0 1px 0 rgba(#ccc, .6), 0 2px 0 rgba(#c9c9c9, .6), 0 3px 1px rgba(black,.2), 0 4px 3px rgba(black, .2), 0 5px 5px rgba(black, .4)
+// text-tall-slab()
+//   text-shadow 0 1px 0 rgba(#ccc, .5), 0 2px 0 rgba(#c9c9c9, .4), 0 3px 0 rgba(#bbb, .3), 0 4px 0 rgba(#b9b9b9, .2), 0 5px 0 rgba(#aaa, .1), 0 6px 1px rgba(black,.2), 0 0 5px rgba(black,.2), 0 1px 3px rgba(black,.4), 0 3px 5px rgba(black,.3), 0 5px 10px rgba(black,.35), 0 10px 10px rgba(black,.3), 0 20px 20px rgba(black,.25)
+// text-medium-slab()
+//   text-shadow 0 1px 0 rgba(#ccc, .4), 0 2px 0 rgba(#c9c9c9, .3), 0 3px 0 rgba(#b9b9b9, .2), 0 4px 1px rgba(black, .1), 0 4px 3px rgba(black, .1), 0 5px 3px rgba(black, .2), 0 10px 10px rgba(black, .35)
+// text-short-slab()
+//   text-shadow 0 1px 0 rgba(#ccc, .6), 0 2px 0 rgba(#c9c9c9, .4), 0 3px 3px rgba(black, .2), 0 4px 2px rgba(black, .25), 0 5px 5px rgba(black, .3)
+// box-tall-slab()
+//   box-shadow 0 1px 0 rgba(#ccc, .8), 0 2px 0 rgba(#c9c9c9, .5), 0 3px 0 rgba(#bbb, .5), 0 4px 0 rgba(#b9b9b9, .3), 0 5px 0 rgba(#aaa, .3), 0 6px 1px rgba(black, .20), 0 0 5px rgba(black, .20), 0 1px 3px rgba(black, .40), 0 3px 5px rgba(black, .30), 0 5px 10px rgba(black, .35), 0 10px 10px rgba(black, .30), 0 20px 20px rgba(black, .25)
+// box-medium-slab()
+//   box-shadow 0 1px 0 rgba(#ccc, .4), 0 2px 0 rgba(#c9c9c9, .4), 0 3px 0 rgba(#b9b9b9, .4), 0 4px 1px rgba(black, .2), 0 0 3px rgba(black, .2), 0 5px 3px rgba(black, .4), 0 10px 10px rgba(black, .35)
+// box-short-slab()
+//   box-shadow 0 1px 0 rgba(#ccc, .6), 0 2px 0 rgba(#c9c9c9, .6), 0 3px 1px rgba(black,.2), 0 4px 3px rgba(black, .2), 0 5px 5px rgba(black, .4)
 
 body
   background-color #825952
-  box-model border-box
 
 #title
 #content
@@ -100,16 +99,15 @@ body
 
 #post
 #preview
+  box-sizing border-box
   position relative
-  margin-left  auto
-  margin-right auto
   background-color #47423B
   border-left  5px solid #E8D1C0
   border-right 5px solid #E8D1C0
 
 #post
 #preview
-  width  95%
+  width  100%
   height 98%
 #post.write
   absolute top, left
@@ -117,18 +115,15 @@ body
   margin 2.5%
 #post.read
 #preview
-  padding 2.5%
+  padding 1%
 
 #back
   absolute top 2.5% left 2.5%
-  width 17.5%
+  width 7.5%
 
 div#post
 #preview
-  box-shadow inset 0 0 1px rgba(black, .2), inset 0 0 5px rgba(black, .2), inset 0 0 3px rgba(black, .4), inset 0 0 5px rgba(black, .4), inset 0 0 10px rgba(black, .35), inset 0 0 10px rgba(black, .3), inset 0 0 20px rgba(black, .35)
-
-form#post
-  box-tall-slab()
+  box-shadow inset 0 0 3px black, 0 0 5px black
 
 h1, h2, h3
   font-family 'Ubuntu', sans-serif
@@ -139,10 +134,9 @@ h2, h3
 
 h1
   text-align center
-  margin-top    .125em
-  margin-bottom .75em
   font-size 4em
   text-shadow 0 1px 5px black
+  line-height 1.1
 
 h2
   margin-top 2em
@@ -181,25 +175,29 @@ ol, ul
   margin 1.75em 0
 
 p
-  padding 1em 1em .5em 1em
-  text-shadow 0 1px 3px black
+  padding .85em .75em .45em .75em
+  text-shadow 0 1px 0   rgba(white, .25)
+  box-shadow  0 1px 3px black
+  letter-spacing 1px
   background-color #4F6E96
+  color black
   &:first-letter
     font-size 2em
     letter-spacing 1px
   &:first-line
     line-height: 1.3em
   img
+    box-sizing border-box
     width 100%
     box-shadow 0 1px 3px black
     margin-top -.5em
     border 2px solid #E3DFD6
 
 a
-  color #E8D1C1
+  color #0B2A52
   text-decoration none
   &:visited
-    color #E8D1C1
+    color #0B2A52
 
 ol, ul
   background linear-gradient(top, rgba(white, .975), rgba(#efefef, .975)), url('http://www.shaderfarm.com/images/concrete-plate-0006-bump-l.jpg')
@@ -213,7 +211,11 @@ ol
 .hidden
   display: none !important
 
-form
+#post.write
+  margin 0
+  box-shadow inset 0 0 5px black
+  overflow hidden
+  .content
   input:focus
   textarea:focus
     outline none
@@ -221,47 +223,46 @@ form
     text-align center
     padding .5em 0
     border none
-    border-top 1px solid white
   .preview
   .done
     width: 20%
-    background linear-gradient(top, #f7f7f7, #b3b3b3)
-    border-bottom 1px solid #a2a2a2
-    color #777
-    text-shadow 0 1px 0 #f7f7f7
-  .title
-  .content
-    text-shadow 0 1px 0 white
+    background-color #E8D1C0
+    color black
+    text-shadow 0 1px 0 rgba(white, .75)
+    box-shadow  0 1px 3px black
   .preview
     absolute top 0 left 0
-    border-radius .25em 0 0 0 
-  .title
-    background linear-gradient(top, #fefefe, #dcdcdc)
-    border-bottom 1px solid #bababa
-    absolute top 0 left 20%
-    right 20%
   .done
     absolute top 0 right 0
-    border-radius 0 .25em 0 0
+  .title
+    background-color transparent
+    absolute top -.325em left 20%
+    right 20%
+    font-family 'Ubuntu', sans-serif
+    text-shadow 0 1px 3px black
+    color #E3DFD6
+    font-size   1.85em
+    line-height 1em
   .content
-    absolute top 2.25em left 0
-    border none
-    border-top 1px solid white
-    background-color #efefef
+    text-shadow 0 1px 0 rgba(white, .25)
+    box-shadow 0 1px 3px black
+    background-color #4F6E96
+    margin 2%
     padding .5em 1em
+    absolute top 2.15em left 0
     right  0
     bottom 0
-    border-radius 0 0 .25em .25em
+    border none
 
 @media screen and (max-width: 640px)
-  h1, h2, h3
-    text-shadow 0 1px 3px rgba(black, .2)
-  p, ul, ol, pre
-    box-shadow 0 1px 3px rgba(black, .2)
-    background linear-gradient(top, white, #efefef)
-  div#post
+  #post.read
+  #post.write
   #preview
-    box-shadow inset 0 2px 3px rgba(black, .2)
+    padding 2%
+    height 100%
+  h1
+    margin-top    0
+    margin-bottom 0
 
 @media screen and (min-width: 800px)
   #post.write
@@ -274,4 +275,8 @@ form
   #post.read
   #preview
     width 50%
-    margin-left 25%
+    margin-left 12.5%
+  h1
+  margin-top    .125em
+  margin-bottom .75em
+  line-height 1.4

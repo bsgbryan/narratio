@@ -255,12 +255,7 @@ td {
   padding: 0.2em 0;
 }
 body {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(213,213,213,0.75)), color-stop(1, rgba(213,213,213,0.75))), url("http://www.filterforge.com/filters/7702.jpg");
-  background: -webkit-linear-gradient(top, rgba(213,213,213,0.75) 0%, rgba(213,213,213,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
-  background: -moz-linear-gradient(top, rgba(213,213,213,0.75) 0%, rgba(213,213,213,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
-  background: -o-linear-gradient(top, rgba(213,213,213,0.75) 0%, rgba(213,213,213,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
-  background: -ms-linear-gradient(top, rgba(213,213,213,0.75) 0%, rgba(213,213,213,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
-  background: linear-gradient(top, rgba(213,213,213,0.75) 0%, rgba(213,213,213,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
+  background-color: #825952;
 }
 #title,
 #content {
@@ -268,19 +263,17 @@ body {
 }
 #post,
 #preview {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(144,144,144,0.75)), color-stop(1, rgba(144,144,144,0.75))), url("http://www.filterforge.com/filters/7702.jpg");
-  background: -webkit-linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
-  background: -moz-linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
-  background: -o-linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
-  background: -ms-linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
-  background: linear-gradient(top, rgba(144,144,144,0.75) 0%, rgba(144,144,144,0.75) 100%), url("http://www.filterforge.com/filters/7702.jpg");
+  background-color: #47423b;
+  border-left: 5px solid #e8d1c0;
+  border-right: 5px solid #e8d1c0;
 }
 #post,
 #preview {
-  width: 95%;
+  width: 100%;
   height: 98%;
 }
 #post.write {
@@ -292,45 +285,41 @@ body {
 }
 #post.read,
 #preview {
-  padding: 2.5%;
+  padding: 1%;
 }
 #back {
   position: absolute;
   top: 2.5%;
   left: 2.5%;
-  width: 17.5%;
+  width: 7.5%;
 }
 div#post,
 #preview {
-  -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.20), inset 0 0 5px rgba(0,0,0,0.20), inset 0 0 3px rgba(0,0,0,0.40), inset 0 0 5px rgba(0,0,0,0.40), inset 0 0 10px rgba(0,0,0,0.35), inset 0 0 10px rgba(0,0,0,0.30), inset 0 0 20px rgba(0,0,0,0.35);
-  -moz-box-shadow: inset 0 0 1px rgba(0,0,0,0.20), inset 0 0 5px rgba(0,0,0,0.20), inset 0 0 3px rgba(0,0,0,0.40), inset 0 0 5px rgba(0,0,0,0.40), inset 0 0 10px rgba(0,0,0,0.35), inset 0 0 10px rgba(0,0,0,0.30), inset 0 0 20px rgba(0,0,0,0.35);
-  box-shadow: inset 0 0 1px rgba(0,0,0,0.20), inset 0 0 5px rgba(0,0,0,0.20), inset 0 0 3px rgba(0,0,0,0.40), inset 0 0 5px rgba(0,0,0,0.40), inset 0 0 10px rgba(0,0,0,0.35), inset 0 0 10px rgba(0,0,0,0.30), inset 0 0 20px rgba(0,0,0,0.35);
-}
-form#post {
-  -webkit-box-shadow: 0 1px 0 rgba(204,204,204,0.80), 0 2px 0 rgba(201,201,201,0.50), 0 3px 0 rgba(187,187,187,0.50), 0 4px 0 rgba(185,185,185,0.30), 0 5px 0 rgba(170,170,170,0.30), 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
-  -moz-box-shadow: 0 1px 0 rgba(204,204,204,0.80), 0 2px 0 rgba(201,201,201,0.50), 0 3px 0 rgba(187,187,187,0.50), 0 4px 0 rgba(185,185,185,0.30), 0 5px 0 rgba(170,170,170,0.30), 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
-  box-shadow: 0 1px 0 rgba(204,204,204,0.80), 0 2px 0 rgba(201,201,201,0.50), 0 3px 0 rgba(187,187,187,0.50), 0 4px 0 rgba(185,185,185,0.30), 0 5px 0 rgba(170,170,170,0.30), 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
+  -webkit-box-shadow: inset 0 0 3px #000, 0 0 5px #000;
+  -moz-box-shadow: inset 0 0 3px #000, 0 0 5px #000;
+  box-shadow: inset 0 0 3px #000, 0 0 5px #000;
 }
 h1,
 h2,
 h3 {
   font-family: 'Ubuntu', sans-serif;
-  color: #fff;
+  color: #e3dfd6;
+}
+h2,
+h3 {
+  text-shadow: 0 1px 2px #000;
 }
 h1 {
   text-align: center;
-  margin-top: 0.125em;
-  margin-bottom: 0.75em;
   font-size: 4em;
-  text-shadow: 0 1px 0 rgba(204,204,204,0.50), 0 2px 0 rgba(201,201,201,0.40), 0 3px 0 rgba(187,187,187,0.30), 0 4px 0 rgba(185,185,185,0.20), 0 5px 0 rgba(170,170,170,0.10), 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
+  text-shadow: 0 1px 5px #000;
+  line-height: 1.1;
 }
 h2 {
-  text-shadow: 0 1px 0 rgba(204,204,204,0.40), 0 2px 0 rgba(201,201,201,0.30), 0 3px 0 rgba(185,185,185,0.20), 0 4px 1px rgba(0,0,0,0.10), 0 4px 3px rgba(0,0,0,0.10), 0 5px 3px rgba(0,0,0,0.20), 0 10px 10px rgba(0,0,0,0.35);
   margin-top: 2em;
 }
 h3 {
   letter-spacing: 1px;
-  text-shadow: 0 1px 0 rgba(204,204,204,0.60), 0 2px 0 rgba(201,201,201,0.40), 0 3px 3px rgba(0,0,0,0.20), 0 4px 2px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.30);
   margin-top: 1.5em;
   margin-left: 1em;
   margin-bottom: 0;
@@ -358,15 +347,12 @@ pre {
   background: -ms-linear-gradient(top, rgba(255,255,255,0.93) 0%, rgba(239,239,239,0.93) 100%), url("http://www.unsigneddesign.com/Experimental%20Dirty/3.jpg");
   background: linear-gradient(top, rgba(255,255,255,0.93) 0%, rgba(239,239,239,0.93) 100%), url("http://www.unsigneddesign.com/Experimental%20Dirty/3.jpg");
   text-shadow: 0 1px 0 #fff;
-  -webkit-box-shadow: 0 1px 0 rgba(204,204,204,0.60), 0 2px 0 rgba(201,201,201,0.60), 0 3px 1px rgba(0,0,0,0.20), 0 4px 3px rgba(0,0,0,0.20), 0 5px 5px rgba(0,0,0,0.40);
-  -moz-box-shadow: 0 1px 0 rgba(204,204,204,0.60), 0 2px 0 rgba(201,201,201,0.60), 0 3px 1px rgba(0,0,0,0.20), 0 4px 3px rgba(0,0,0,0.20), 0 5px 5px rgba(0,0,0,0.40);
-  box-shadow: 0 1px 0 rgba(204,204,204,0.60), 0 2px 0 rgba(201,201,201,0.60), 0 3px 1px rgba(0,0,0,0.20), 0 4px 3px rgba(0,0,0,0.20), 0 5px 5px rgba(0,0,0,0.40);
   color: #000;
 }
 p,
 ol,
 ul {
-  font-family: 'Antic Slab', serif;
+  font-family: 'Esteban', serif;
 }
 ol,
 ul {
@@ -374,54 +360,39 @@ ul {
   margin: 1.75em 0;
 }
 p {
-  padding: 1em 1em 0.5em 1em;
-  text-shadow: 0 1px 0 #fff;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255,255,255,0.85)), color-stop(1, rgba(239,239,239,0.85))), url("http://rowenconcrete.com/images/Backgrounds/seamless_dark_smooth_concrete_texture.jpg");
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0.85) 0%, rgba(239,239,239,0.85) 100%), url("http://rowenconcrete.com/images/Backgrounds/seamless_dark_smooth_concrete_texture.jpg");
-  background: -moz-linear-gradient(top, rgba(255,255,255,0.85) 0%, rgba(239,239,239,0.85) 100%), url("http://rowenconcrete.com/images/Backgrounds/seamless_dark_smooth_concrete_texture.jpg");
-  background: -o-linear-gradient(top, rgba(255,255,255,0.85) 0%, rgba(239,239,239,0.85) 100%), url("http://rowenconcrete.com/images/Backgrounds/seamless_dark_smooth_concrete_texture.jpg");
-  background: -ms-linear-gradient(top, rgba(255,255,255,0.85) 0%, rgba(239,239,239,0.85) 100%), url("http://rowenconcrete.com/images/Backgrounds/seamless_dark_smooth_concrete_texture.jpg");
-  background: linear-gradient(top, rgba(255,255,255,0.85) 0%, rgba(239,239,239,0.85) 100%), url("http://rowenconcrete.com/images/Backgrounds/seamless_dark_smooth_concrete_texture.jpg");
+  padding: 0.85em 0.75em 0.45em 0.75em;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.25);
+  -webkit-box-shadow: 0 1px 3px #000;
+  -moz-box-shadow: 0 1px 3px #000;
+  box-shadow: 0 1px 3px #000;
+  letter-spacing: 1px;
+  background-color: #4f6e96;
+  color: #000;
 }
 p:first-letter {
   font-size: 2em;
-  font-family: 'Ribeye Marrow', serif;
   letter-spacing: 1px;
 }
 p:first-line {
   line-height: 1.3em;
 }
 p img {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
-  -webkit-box-shadow: 0 -1px 2px #000, 0 1px 2px #fff;
-  -moz-box-shadow: 0 -1px 2px #000, 0 1px 2px #fff;
-  box-shadow: 0 -1px 2px #000, 0 1px 2px #fff;
-  -webkit-border-radius: 0.125em;
-  -moz-border-radius: 0.125em;
-  border-radius: 0.125em;
-  margin-top: -0.25em;
+  -webkit-box-shadow: 0 1px 3px #000;
+  -moz-box-shadow: 0 1px 3px #000;
+  box-shadow: 0 1px 3px #000;
+  margin-top: -0.5em;
+  border: 2px solid #e3dfd6;
 }
 a {
-  color: #33b;
+  color: #0b2a52;
   text-decoration: none;
 }
 a:visited {
-  color: #63b;
-}
-form,
-p,
-ol,
-ul,
-pre {
-  -webkit-border-radius: 0.25em;
-  -moz-border-radius: 0.25em;
-  border-radius: 0.25em;
-}
-form,
-p {
-  -webkit-box-shadow: 0 1px 0 rgba(204,204,204,0.80), 0 2px 0 rgba(201,201,201,0.50), 0 3px 0 rgba(187,187,187,0.50), 0 4px 0 rgba(185,185,185,0.30), 0 5px 0 rgba(170,170,170,0.30), 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
-  -moz-box-shadow: 0 1px 0 rgba(204,204,204,0.80), 0 2px 0 rgba(201,201,201,0.50), 0 3px 0 rgba(187,187,187,0.50), 0 4px 0 rgba(185,185,185,0.30), 0 5px 0 rgba(170,170,170,0.30), 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
-  box-shadow: 0 1px 0 rgba(204,204,204,0.80), 0 2px 0 rgba(201,201,201,0.50), 0 3px 0 rgba(187,187,187,0.50), 0 4px 0 rgba(185,185,185,0.30), 0 5px 0 rgba(170,170,170,0.30), 0 6px 1px rgba(0,0,0,0.20), 0 0 5px rgba(0,0,0,0.20), 0 1px 3px rgba(0,0,0,0.40), 0 3px 5px rgba(0,0,0,0.30), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.30), 0 20px 20px rgba(0,0,0,0.25);
+  color: #0b2a52;
 }
 ol,
 ul {
@@ -433,9 +404,6 @@ ul {
   background: linear-gradient(top, rgba(255,255,255,0.97) 0%, rgba(239,239,239,0.97) 100%), url("http://www.shaderfarm.com/images/concrete-plate-0006-bump-l.jpg");
   text-shadow: 0 1px 0 #fff;
   padding: 0.5em 2.25em;
-  -webkit-box-shadow: 0 1px 0 rgba(204,204,204,0.40), 0 2px 0 rgba(201,201,201,0.40), 0 3px 0 rgba(185,185,185,0.40), 0 4px 1px rgba(0,0,0,0.20), 0 0 3px rgba(0,0,0,0.20), 0 5px 3px rgba(0,0,0,0.40), 0 10px 10px rgba(0,0,0,0.35);
-  -moz-box-shadow: 0 1px 0 rgba(204,204,204,0.40), 0 2px 0 rgba(201,201,201,0.40), 0 3px 0 rgba(185,185,185,0.40), 0 4px 1px rgba(0,0,0,0.20), 0 0 3px rgba(0,0,0,0.20), 0 5px 3px rgba(0,0,0,0.40), 0 10px 10px rgba(0,0,0,0.35);
-  box-shadow: 0 1px 0 rgba(204,204,204,0.40), 0 2px 0 rgba(201,201,201,0.40), 0 3px 0 rgba(185,185,185,0.40), 0 4px 1px rgba(0,0,0,0.20), 0 0 3px rgba(0,0,0,0.20), 0 5px 3px rgba(0,0,0,0.40), 0 10px 10px rgba(0,0,0,0.35);
 }
 ol {
   list-style-type: lower-roman;
@@ -443,101 +411,80 @@ ol {
 .hidden {
   display: none;
 }
-form input:focus,
-form textarea:focus {
+#post.write {
+  margin: 0;
+  -webkit-box-shadow: inset 0 0 5px #000;
+  -moz-box-shadow: inset 0 0 5px #000;
+  box-shadow: inset 0 0 5px #000;
+  overflow: hidden;
+}
+#post.write .content,
+#post.write input:focus,
+#post.write textarea:focus {
   outline: none;
 }
-form input {
+#post.write input {
   text-align: center;
   padding: 0.5em 0;
   border: none;
-  border-top: 1px solid #fff;
 }
-form .preview,
-form .done {
+#post.write .preview,
+#post.write .done {
   width: 20%;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f7f7f7), color-stop(1, #b3b3b3));
-  background: -webkit-linear-gradient(top, #f7f7f7 0%, #b3b3b3 100%);
-  background: -moz-linear-gradient(top, #f7f7f7 0%, #b3b3b3 100%);
-  background: -o-linear-gradient(top, #f7f7f7 0%, #b3b3b3 100%);
-  background: -ms-linear-gradient(top, #f7f7f7 0%, #b3b3b3 100%);
-  background: linear-gradient(top, #f7f7f7 0%, #b3b3b3 100%);
-  border-bottom: 1px solid #a2a2a2;
-  color: #777;
-  text-shadow: 0 1px 0 #f7f7f7;
+  background-color: #e8d1c0;
+  color: #000;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.75);
+  -webkit-box-shadow: 0 1px 3px #000;
+  -moz-box-shadow: 0 1px 3px #000;
+  box-shadow: 0 1px 3px #000;
 }
-form .title,
-form .content {
-  text-shadow: 0 1px 0 #fff;
-}
-form .preview {
+#post.write .preview {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-border-radius: 0.25em 0 0 0;
-  -moz-border-radius: 0.25em 0 0 0;
-  border-radius: 0.25em 0 0 0;
 }
-form .title {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fefefe), color-stop(1, #dcdcdc));
-  background: -webkit-linear-gradient(top, #fefefe 0%, #dcdcdc 100%);
-  background: -moz-linear-gradient(top, #fefefe 0%, #dcdcdc 100%);
-  background: -o-linear-gradient(top, #fefefe 0%, #dcdcdc 100%);
-  background: -ms-linear-gradient(top, #fefefe 0%, #dcdcdc 100%);
-  background: linear-gradient(top, #fefefe 0%, #dcdcdc 100%);
-  border-bottom: 1px solid #bababa;
+#post.write .done {
   position: absolute;
   top: 0;
+  right: 0;
+}
+#post.write .title {
+  background-color: transparent;
+  position: absolute;
+  top: -0.325em;
   left: 20%;
   right: 20%;
+  font-family: 'Ubuntu', sans-serif;
+  text-shadow: 0 1px 3px #000;
+  color: #e3dfd6;
+  font-size: 1.85em;
+  line-height: 1em;
 }
-form .done {
-  position: absolute;
-  top: 0;
-  right: 0;
-  -webkit-border-radius: 0 0.25em 0 0;
-  -moz-border-radius: 0 0.25em 0 0;
-  border-radius: 0 0.25em 0 0;
-}
-form .content {
-  position: absolute;
-  top: 2.25em;
-  left: 0;
-  border: none;
-  border-top: 1px solid #fff;
-  background-color: #efefef;
+#post.write .content {
+  text-shadow: 0 1px 0 rgba(255,255,255,0.25);
+  -webkit-box-shadow: 0 1px 3px #000;
+  -moz-box-shadow: 0 1px 3px #000;
+  box-shadow: 0 1px 3px #000;
+  background-color: #4f6e96;
+  margin: 2%;
   padding: 0.5em 1em;
+  position: absolute;
+  top: 2.15em;
+  left: 0;
   right: 0;
   bottom: 0;
-  -webkit-border-radius: 0 0 0.25em 0.25em;
-  -moz-border-radius: 0 0 0.25em 0.25em;
-  border-radius: 0 0 0.25em 0.25em;
+  border: none;
 }
 @media screen and (max-width: 640px) {
-  h1,
-  h2,
-  h3 {
-    text-shadow: 0 1px 3px rgba(0,0,0,0.20);
-  }
-  p,
-  ul,
-  ol,
-  pre {
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.20);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.20);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.20);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #efefef));
-    background: -webkit-linear-gradient(top, #fff 0%, #efefef 100%);
-    background: -moz-linear-gradient(top, #fff 0%, #efefef 100%);
-    background: -o-linear-gradient(top, #fff 0%, #efefef 100%);
-    background: -ms-linear-gradient(top, #fff 0%, #efefef 100%);
-    background: linear-gradient(top, #fff 0%, #efefef 100%);
-  }
-  div#post,
+  #post.read,
+  #post.write,
   #preview {
-    -webkit-box-shadow: inset 0 2px 3px rgba(0,0,0,0.20);
-    -moz-box-shadow: inset 0 2px 3px rgba(0,0,0,0.20);
-    box-shadow: inset 0 2px 3px rgba(0,0,0,0.20);
+    padding: 2%;
+    height: 100%;
+  }
+  h1 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 @media screen and (min-width: 800px) {
@@ -548,10 +495,16 @@ form .content {
   }
 }
 @media screen and (min-width: 1024px) {
+ {
+h1
+    margin-top: 0.125em;
+    margin-bottom: 0.75em;
+    line-height: 1.4;
+  }
   #post.write,
   #post.read,
   #preview {
     width: 50%;
-    margin-left: 25%;
+    margin-left: 12.5%;
   }
 }

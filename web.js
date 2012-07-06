@@ -9,6 +9,8 @@ if (process.env.REDISTOGO_URL)
 else 
   var redis = require('redis').createClient()
 
+var gh = 'http://bsgbryan.github.com/blog/public/'
+
 app.configure(function () {
   app.use(express.methodOverride());
   app.use(express.bodyParser());
@@ -37,18 +39,24 @@ app.get('/delete/:collection', function(req, res) {
 })
 
 app.get('/read/:post', function(req, res) {
+  var href = req.headers.host.indexOf('localhost') === 0 ? '/' : gh
+
   redis.hgetall(':post:' + req.param('post'), function(err, data) {
-    res.render('read', { action : 'read' , post : data })
+    res.render('read', { action : 'read' , post : data , base : href })
   })
 })
 
 app.get('/write', function(req, res) {
-  res.render('write', { action : 'write' })
+  var href = req.headers.host.indexOf('localhost') === 0 ? '/' : gh
+
+  res.render('write', { action : 'write' , base : href })
 })
 
 app.get('/edit/:post', function(req, res) {
+  var href = req.headers.host.indexOf('localhost') === 0 ? '/' : gh
+
   redis.hgetall(':post:' + req.param('post'), function(err, data) {
-    res.render('write', { action : 'write' , post : data })
+    res.render('write', { action : 'write' , post : data , base :href })
   })
 })
 
