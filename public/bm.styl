@@ -91,6 +91,7 @@ td { vertical-align: top; }
 
 body
   background-color #825952
+  text-rendering optimizeLegibility
 
 #title
 #content
@@ -107,19 +108,59 @@ body
 
 #post
 #preview
+  z-index 100
   width  100%
-  height 98%
-#post.write
-  absolute top, left
-  height 95%
-  margin 2.5%
+  height 100%
 #post.read
 #preview
   padding 1%
 
 #back
-  absolute top 2.5% left 2.5%
+  absolute top .75% left 13.5%
   width 7.5%
+  z-index 110
+  box-shadow 0 1px 1px black
+  background-color #47423B
+  border none
+  text-shadow 0 -1px 0 black
+  color #7A756E
+
+#share
+  width 12.5%
+  margin  0
+  padding 0
+  fixed bottom, left
+  background-color #E3DFD6
+  box-shadow 0 0 5px black
+  a
+    display block
+    width 80%
+    padding .25em 10%
+    background-color transparent
+    color #807980
+    letter-spacing 1px
+    border-top    1px solid white
+    border-bottom 1px solid rgba(black, .125)
+    font-family 'Alegreya SC', serif
+    font-weight bold
+
+#posts
+  fixed top, left
+  bottom 5.625em
+  width 12.5%
+  background-color rgba(black, .25)
+  a
+    display block
+    padding .25em 5%
+    width 90%
+    text-shadow 0 1px 0 rgba(white, .25)
+    color #502620
+    background-color #825952
+    border-top    1px solid rgba(white, .125)
+    border-bottom 1px solid rgba(black, .125)
+    font-family 'Ubuntu', sans-serif
+    &:last-child
+      box-shadow 0 1px 3px black
 
 div#post
 #preview
@@ -127,16 +168,19 @@ div#post
 
 h1, h2, h3
   font-family 'Ubuntu', sans-serif
+  -webkit-text-fill-color #E3DFD6
   color #E3DFD6
 
 h2, h3
-  text-shadow 0 1px 2px black
+  text-shadow 0 2px 2px black
+  -webkit-text-stroke 1px white
 
 h1
   text-align center
   font-size 4em
-  text-shadow 0 1px 5px black
   line-height 1.1
+  text-shadow 0 3px 3px black
+  -webkit-text-stroke 3px white
 
 h2
   margin-top 2em
@@ -176,11 +220,15 @@ ol, ul
 
 p
   padding .85em .75em .45em .75em
-  text-shadow 0 1px 0   rgba(white, .25)
-  box-shadow  0 1px 3px black
+  text-shadow 0 1px 0   rgba(white, .125)
+  box-shadow  0 2px 3px rgba(black, .5)
   letter-spacing 1px
-  background-color #4F6E96
+  background linear-gradient(top, #4F6E96, #3e5d85)
   color black
+  border-left   2px solid black
+  border-right  2px solid black
+  border-top    1px solid black
+  border-bottom 1px solid black
   &:first-letter
     font-size 2em
     letter-spacing 1px
@@ -200,7 +248,6 @@ a
     color #0B2A52
 
 ol, ul
-  background linear-gradient(top, rgba(white, .975), rgba(#efefef, .975)), url('http://www.shaderfarm.com/images/concrete-plate-0006-bump-l.jpg')
   text-shadow 0 1px 0 white
   padding .5em 2.25em
   box-medium-slab()
@@ -212,8 +259,9 @@ ol
   display: none !important
 
 #post.write
+  absolute top, left
   margin 0
-  box-shadow inset 0 0 5px black
+  box-shadow inset 0 0 5px black, 0 0 5px black
   overflow hidden
   .content
   input:focus
@@ -277,6 +325,5 @@ ol
     width 50%
     margin-left 12.5%
   h1
-  margin-top    .125em
-  margin-bottom .75em
-  line-height 1.4
+    margin-top .4em
+    line-height 1.4

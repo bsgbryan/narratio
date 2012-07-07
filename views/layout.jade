@@ -15,11 +15,22 @@ html(lang='en')
       meta(property='og:image', content='http://www.gravatar.com/avatar/9b85a734132395f7229cf3850d1adf42.png')
       meta(property='og:url', content='http://blog.bryanmaynard.com/read/#{ post.id }')
     // Google web fonts
-    link(href='http://fonts.googleapis.com/css?family=Esteban|Ribeye+Marrow|Ubuntu:700', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Esteban|Alegreya+SC:400,700|Ubuntu:700', rel='stylesheet')
     // App stylesheet
     link(rel='stylesheet', href="#{ base }bm.css")
 
   body!= body
+    //- nav#posts
+    //-   a(href='/read/an-example-post') An Example post
+    //-   a(href='/read/an-example-post') An Example post
+    //-   a(href='/read/an-example-post') An Example post
+    //-   a(href='/read/an-example-post') An Example post
+    //-   a(href='/read/an-example-post') An Example post
+    //-   a(href='/read/an-example-post') An Example post
+    //- ul#share
+    //-   a(href='/share-via/facebook') facebook
+    //-   a(href='/share-via/twitter') twitter
+    //-   a(href='/share-via/google+') google+
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
     script(src='#{ base }showdown.js')
     script(src='#{ base }#{ action }.js')

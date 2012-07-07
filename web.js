@@ -42,7 +42,8 @@ app.get('/read/:post', function(req, res) {
   var href = req.headers.host.indexOf('localhost') === 0 ? '/' : gh
 
   redis.hgetall(':post:' + req.param('post'), function(err, data) {
-    res.render('read', { action : 'read' , post : data , base : href })
+    console.log('href', href)
+    res.render('read', { action: 'read', post: data, base: href })
   })
 })
 
