@@ -350,38 +350,48 @@ div#post,
   -moz-box-shadow: inset 0 0 3px #000, 0 0 5px #000;
   box-shadow: inset 0 0 3px #000, 0 0 5px #000;
 }
-h1,
-h2,
-h3 {
+div#post h1,
+#preview h1,
+div#post h2,
+#preview h2,
+div#post h3,
+#preview h3 {
   font-family: 'Ubuntu', sans-serif;
   -webkit-text-fill-color: #e3dfd6;
   color: #e3dfd6;
 }
-h2,
-h3 {
+div#post h2,
+#preview h2,
+div#post h3,
+#preview h3 {
   text-shadow: 0 2px 2px #000;
   -webkit-text-stroke: 1px #fff;
 }
-h1 {
+div#post h1,
+#preview h1 {
   text-align: center;
   font-size: 4em;
   line-height: 1.1;
   text-shadow: 0 3px 3px #000;
   -webkit-text-stroke: 3px #fff;
 }
-h2 {
+div#post h2,
+#preview h2 {
   margin-top: 2em;
 }
-h3 {
+div#post h3,
+#preview h3 {
   letter-spacing: 1px;
   margin-top: 1.5em;
   margin-left: 1em;
   margin-bottom: 0;
 }
-h3 + p {
+div#post h3 + p,
+#preview h3 + p {
   margin-top: 0.5em;
 }
-h4 {
+div#post h4,
+#preview h4 {
   font-family: monospace;
   color: #fff;
   margin-top: 2.5em;
@@ -389,7 +399,8 @@ h4 {
   text-shadow: 0 -1px 0 #606060;
   margin-bottom: 0em;
 }
-pre {
+div#post pre,
+#preview pre {
   padding: 0.5em 1em;
   margin-top: 0.25em;
   margin-bottom: 3.5em;
@@ -403,17 +414,23 @@ pre {
   text-shadow: 0 1px 0 #fff;
   color: #000;
 }
-p,
-ol,
-ul {
+div#post p,
+#preview p,
+div#post ol,
+#preview ol,
+div#post ul,
+#preview ul {
   font-family: 'Esteban', serif;
 }
-ol,
-ul {
+div#post ol,
+#preview ol,
+div#post ul,
+#preview ul {
   color: #666;
   margin: 1.75em 0;
 }
-p {
+div#post p,
+#preview p {
   padding: 0.85em 0.75em 0.45em 0.75em;
   text-shadow: 0 1px 0 rgba(255,255,255,0.13);
   -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.50);
@@ -432,14 +449,17 @@ p {
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
 }
-p:first-letter {
+div#post p:first-letter,
+#preview p:first-letter {
   font-size: 2em;
   letter-spacing: 1px;
 }
-p:first-line {
+div#post p:first-line,
+#preview p:first-line {
   line-height: 1.3em;
 }
-p img {
+div#post p img,
+#preview p img {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -450,19 +470,24 @@ p img {
   margin-top: -0.5em;
   border: 2px solid #e3dfd6;
 }
-a {
+div#post a,
+#preview a {
   color: #0b2a52;
   text-decoration: none;
 }
-a:visited {
+div#post a:visited,
+#preview a:visited {
   color: #0b2a52;
 }
-ol,
-ul {
+div#post ol,
+#preview ol,
+div#post ul,
+#preview ul {
   text-shadow: 0 1px 0 #fff;
   padding: 0.5em 2.25em;
 }
-ol {
+div#post ol,
+#preview ol {
   list-style-type: lower-roman;
 }
 .hidden {
