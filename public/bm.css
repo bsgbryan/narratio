@@ -345,18 +345,51 @@ body {
   box-shadow: 0 1px 3px #000;
 }
 #aioim {
-  background-color: #714841;
-  -webkit-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.50);
-  -moz-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.50);
-  box-shadow: inset 1px 2px 3px rgba(0,0,0,0.50);
+  background-color: #806268;
+  -webkit-box-shadow: inset 0 1px 5px rgba(0,0,0,0.50);
+  -moz-box-shadow: inset 0 1px 5px rgba(0,0,0,0.50);
+  box-shadow: inset 0 1px 5px rgba(0,0,0,0.50);
   position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 36.5%;
+  bottom: 0.5em;
+  right: 0.5em;
+  width: 23em;
   height: 70%;
 }
-#aioim p {
+#aioim > p {
   text-align: center;
+}
+#aioim > form {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  -webkit-box-shadow: 0 -1px 2px rgba(0,0,0,0.35);
+  -moz-box-shadow: 0 -1px 2px rgba(0,0,0,0.35);
+  box-shadow: 0 -1px 2px rgba(0,0,0,0.35);
+  border-top: 1px solid #5f6e7c;
+}
+#aioim > form textarea {
+  border: none;
+  width: 85%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0.25em 0.5em;
+  background-color: #4e5d6b;
+  border-right: 1px solid #3d4c5a;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.13);
+  color: #000;
+}
+#aioim > form button {
+  border: none;
+  width: 15%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 2.75em;
+  background-color: #4e5d6b;
+  color: #000;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.13);
 }
 div#post,
 #preview {
@@ -427,6 +460,20 @@ div#post pre,
   background: linear-gradient(top, rgba(255,255,255,0.93) 0%, rgba(239,239,239,0.93) 100%), url("http://www.unsigneddesign.com/Experimental%20Dirty/3.jpg");
   text-shadow: 0 1px 0 #fff;
   color: #000;
+}
+div#post p,
+#preview p,
+div#post ol,
+#preview ol,
+div#post ul,
+#preview ul,
+div#post pre,
+#preview pre {
+  width: 28.4em;
+}
+div#post img,
+#preview img {
+  width: 28.375em;
 }
 div#post p,
 #preview p,
@@ -597,8 +644,11 @@ div#post ol,
   #post.write,
   #post.read,
   #preview {
-    width: 50%;
-    margin-left: 12.5%;
+    position: absolute;
+    left: 8em;
+    right: 24em;
+    width: auto;
+    overflow-y: auto;
   }
   h1 {
     margin-top: 0.4em;
