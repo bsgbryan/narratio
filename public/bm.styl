@@ -202,13 +202,42 @@ body
       display inline-block
       width 100%
       box-shadow 0 1px 1px rgba(black, .5)
-      padding .25em .5em
+      padding 0 .5em
       box-sizing border-box
+      a
+        display inline-block
       .user
         color #B0CCD4
         text-decoration none
         text-shadow 0 -1px 0 rgba(0, 0, 0, .25)
         font-size 75%
+      &:hover
+        .favorite
+        .retweet
+          visibility visible
+      .favorite
+      .retweet
+        visibility hidden
+        color transparent
+        width 1em
+        background-image url("http://bsgbryan.github.com/AiOIM/app/images/everything-spritev2.png")
+        text-decoration none
+        background-position-y -1px
+      .favorited
+      .retweeted
+        visibility visible
+      .favorite
+        background-position-x 95px
+        &:hover
+          background-position-x 79px
+      .retweet
+        background-position-x 48px
+        &:hover
+          background-position-x 32px
+      .favorited
+        background-position-x 63px
+      .retweeted
+        background-position-x 16px
     .message
       background-color #4E5D6B
       margin 0

@@ -400,16 +400,54 @@ body {
   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.50);
   -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.50);
   box-shadow: 0 1px 1px rgba(0,0,0,0.50);
-  padding: 0.25em 0.5em;
+  padding: 0 0.5em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+#aioim .messages dt a {
+  display: inline-block;
 }
 #aioim .messages dt .user {
   color: #b0ccd4;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
   font-size: 75%;
+}
+#aioim .messages dt:hover .favorite,
+#aioim .messages dt:hover .retweet {
+  visibility: visible;
+}
+#aioim .messages dt .favorite,
+#aioim .messages dt .retweet {
+  visibility: hidden;
+  color: transparent;
+  width: 1em;
+  background-image: url("http://bsgbryan.github.com/AiOIM/app/images/everything-spritev2.png");
+  text-decoration: none;
+  background-position-y: -1px;
+}
+#aioim .messages dt .favorited,
+#aioim .messages dt .retweeted {
+  visibility: visible;
+}
+#aioim .messages dt .favorite {
+  background-position-x: 95px;
+}
+#aioim .messages dt .favorite:hover {
+  background-position-x: 79px;
+}
+#aioim .messages dt .retweet {
+  background-position-x: 48px;
+}
+#aioim .messages dt .retweet:hover {
+  background-position-x: 32px;
+}
+#aioim .messages dt .favorited {
+  background-position-x: 63px;
+}
+#aioim .messages dt .retweeted {
+  background-position-x: 16px;
 }
 #aioim .messages .message {
   background-color: #4e5d6b;
