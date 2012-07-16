@@ -42,7 +42,6 @@ app.get('/read/:post', function(req, res) {
   var href = req.headers.host.indexOf('localhost') === 0 ? '/' : gh
 
   redis.hgetall(':post:' + req.param('post'), function(err, data) {
-    console.log('href', href)
     res.render('read', { action: 'read', post: data, base: href })
   })
 })
@@ -63,6 +62,7 @@ app.get('/edit/:post', function(req, res) {
 
 app.post('/post/publish', function(req, res) {
   var post = { 
+    id        : post.title.toLowerCase().replace(/\s/g, '-')
     title     : req.body.title, 
     content   : req.body.content,
     published : new Date()
