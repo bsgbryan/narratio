@@ -176,14 +176,16 @@ body
   & > .new.message
     absolute bottom, right
     width 100%
+    height 2.85em
+    background-color #3D4C5A
     textarea
+      absolute bottom, left
       border none
       width 85%
       box-sizing border-box
       padding .25em .5em
       background linear-gradient(top, #4E5D6B, #3D4C5A)
       border-top 1px solid #5f6e7c
-      border-right 1px solid #3D4C5A
       text-shadow 0 1px 0 rgba(white, .125)
       color black
       &::-webkit-input-placeholder
@@ -191,6 +193,7 @@ body
       &:-moz-placeholder
         color rgba(black, .5)
     button
+      absolute bottom, right
       border none
       width 15%
       box-sizing border-box
