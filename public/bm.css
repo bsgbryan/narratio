@@ -379,10 +379,10 @@ body {
   color: #000;
 }
 #aioim > .new.message textarea::-webkit-input-placeholder {
-  color: rgba(0,0,0,0.25);
+  color: rgba(0,0,0,0.50);
 }
 #aioim > .new.message textarea:-moz-placeholder {
-  color: rgba(0,0,0,0.25);
+  color: rgba(0,0,0,0.50);
 }
 #aioim > .new.message button {
   border: none;
