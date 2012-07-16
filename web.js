@@ -62,7 +62,7 @@ app.get('/edit/:post', function(req, res) {
 
 app.post('/post/publish', function(req, res) {
   var post = { 
-    id        : post.title.toLowerCase().replace(/\s/g, '-')
+    id        : post.title.toLowerCase().replace(/\s/g, '-'),
     title     : req.body.title, 
     content   : req.body.content,
     published : new Date()
