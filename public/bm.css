@@ -365,7 +365,7 @@ body {
   right: 0;
   width: 100%;
 }
-#aioim > .new.message .status {
+#aioim > .new.message textarea {
   border: none;
   width: 85%;
   -webkit-box-sizing: border-box;
@@ -378,10 +378,10 @@ body {
   text-shadow: 0 1px 0 rgba(255,255,255,0.13);
   color: #000;
 }
-#aioim > .new.message .status::-webkit-input-placeholder {
+#aioim > .new.message textarea::-webkit-input-placeholder {
   color: rgba(0,0,0,0.25);
 }
-#aioim > .new.message .status:-moz-placeholder {
+#aioim > .new.message textarea:-moz-placeholder {
   color: rgba(0,0,0,0.25);
 }
 #aioim > .new.message button {
