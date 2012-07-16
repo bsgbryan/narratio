@@ -1,3 +1,4 @@
+@import 'http://bsgbryan.github.com/AiOIM/app/stylesheets/font-face.css';
 article,
 aside,
 details,
@@ -413,6 +414,7 @@ body {
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
   font-size: 75%;
+  width: 24em;
 }
 #aioim .messages dt:hover .favorite,
 #aioim .messages dt:hover .retweet {
@@ -421,11 +423,15 @@ body {
 #aioim .messages dt .favorite,
 #aioim .messages dt .retweet {
   visibility: hidden;
-  color: transparent;
+  color: rgba(0,0,0,0.50);
   width: 1em;
-  background-image: url("http://bsgbryan.github.com/AiOIM/app/images/everything-spritev2.png");
   text-decoration: none;
   background-position-y: -1px;
+  font-family: 'EntypoRegular';
+}
+#aioim .messages dt .favorite:hover,
+#aioim .messages dt .retweet:hover {
+  color: #000;
 }
 #aioim .messages dt .favorited,
 #aioim .messages dt .retweeted {

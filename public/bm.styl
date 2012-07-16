@@ -1,4 +1,5 @@
 @import 'nib'
+@import 'http://bsgbryan.github.com/AiOIM/app/stylesheets/font-face.css'
 
 // ---
 // HTML5 Boilerplate CSS: h5bp.com/css
@@ -211,18 +212,21 @@ body
         text-decoration none
         text-shadow 0 -1px 0 rgba(0, 0, 0, .25)
         font-size 75%
+        width 24em
       &:hover
         .favorite
         .retweet
           visibility visible
       .favorite
       .retweet
+        &:hover
+          color black
         visibility hidden
-        color transparent
+        color rgba(black, .5)
         width 1em
-        background-image url("http://bsgbryan.github.com/AiOIM/app/images/everything-spritev2.png")
         text-decoration none
         background-position-y -1px
+        font-family 'EntypoRegular'
       .favorited
       .retweeted
         visibility visible
