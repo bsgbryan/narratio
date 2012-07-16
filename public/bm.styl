@@ -163,8 +163,8 @@ body
       box-shadow 0 1px 3px black
 
 #aioim
-  background-color #806268
-  box-shadow inset 0 1px 5px rgba(black, .5)
+  background-color #47423B
+  box-shadow inset 0 1px 2px rgba(black, .5)
   position fixed
   bottom .5em
   right  .5em
@@ -175,14 +175,14 @@ body
   & > form
     absolute bottom, right
     width 100%
-    border-top 1px solid #5F6e7c
     textarea
       border none
       width 85%
       box-sizing border-box
       padding .25em .5em
       background-color #4E5D6B
-      border-right 1px solid #3d4c5a
+      border-top 1px solid #5f6e7c
+      border-right 1px solid #3D4C5A
       text-shadow 0 1px 0 rgba(white, .125)
       color black
     button
@@ -190,9 +190,39 @@ body
       width 15%
       box-sizing border-box
       height 2.75em
-      background-color #4E5D6B
+      background-color #544F77
+      border-top 1px solid #655F88
       color black
       text-shadow 0 1px 0 rgba(white, .125)
+  .messages
+    margin-left  1em
+    margin-right 1em
+    dt 
+      background-color #4E5D6B
+      display inline-block
+      width 100%
+      box-shadow 0 1px 1px rgba(black, .5)
+      padding .25em .5em
+      box-sizing border-box
+      .user
+        color #B0CCD4
+        text-decoration none
+        text-shadow 0 -1px 0 rgba(0, 0, 0, .25)
+        font-size 75%
+    .message
+      background-color #4E5D6B
+      margin 0
+      display inline-block
+      width 100%
+      box-shadow 0 1px 1px rgba(black, .5)
+      margin-bottom 1em
+      padding .25em .5em
+      box-sizing border-box
+      .content
+        margin 0
+        color #B8AC9E
+        text-shadow 0 -1px 0 rgba(black, .125)
+        font-size 75%
 
 div#post
 #preview
