@@ -466,7 +466,12 @@ body {
   background-position-x: 16px;
 }
 #aioim .messages .message {
-  background-color: #4e5d6b;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #4e5d6b), color-stop(1, #3d4c5a));
+  background: -webkit-linear-gradient(top, #4e5d6b 0%, #3d4c5a 100%);
+  background: -moz-linear-gradient(top, #4e5d6b 0%, #3d4c5a 100%);
+  background: -o-linear-gradient(top, #4e5d6b 0%, #3d4c5a 100%);
+  background: -ms-linear-gradient(top, #4e5d6b 0%, #3d4c5a 100%);
+  background: linear-gradient(top, #4e5d6b 0%, #3d4c5a 100%);
   margin: 0;
   display: inline-block;
   width: 100%;
