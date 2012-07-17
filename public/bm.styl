@@ -183,30 +183,35 @@ body
       border none
       width 85%
       box-sizing border-box
-      padding .25em .5em
-      background linear-gradient(top, #4E5D6B, #3D4C5A)
+      padding .1em .5em
+      background linear-gradient(top, #5D7067, #4C6056)
       border-top 1px solid #5f6e7c
-      text-shadow 0 1px 0 rgba(white, .125)
-      color black
+      text-shadow 0 1px 0 rgba(black, .25)
+      color rgba(white, .6)
+      font-family 'Esteban'
+      letter-spacing 1px
       &::-webkit-input-placeholder
-        color rgba(black, .5)
+        color rgba(white, .25)
+        text-shadow 0 -1px 0 rgba(black, .25)
       &:-moz-placeholder
-        color rgba(black, .5)
+        color rgba(white, .25)
+        text-shadow 0 -1px 0 rgba(black, .25)
     button
       absolute bottom, right
       border none
       width 15%
       box-sizing border-box
       height 2.85em
-      background linear-gradient(top, #544F77, #433E66)
-      border-top 1px solid #655F88
+      background linear-gradient(top, #749AA1, #638990)
+      border-top 1px solid #85ABB2
       color black
       text-shadow 0 1px 0 rgba(white, .125)
+      font-family 'Alegreya SC'
   .messages
     margin-left  1em
     margin-right 1em
     dt 
-      background-color #4E5D6B
+      background-color #5D7067
       display inline-block
       width 100%
       box-shadow 0 1px 1px rgba(black, .5)
@@ -222,6 +227,8 @@ body
         font-size 75%
         width 23.75em
         line-height 240%
+        font-family 'Ubuntu'
+        letter-spacing 1px
       &:hover
         .favorite
         .retweet
@@ -258,7 +265,7 @@ body
       .retweeted
         background-position-x 16px
     .message
-      background linear-gradient(top, #4E5D6B, #3D4C5A)
+      background linear-gradient(top, #5D7067, #4C6056)
       margin 0
       display inline-block
       width 100%
@@ -266,12 +273,14 @@ body
       margin-bottom 1em
       padding .25em .5em
       box-sizing border-box
-      border-top 1px sold rgba(white, .2)
+      border-top 1px solid rgba(white, .15)
       .content
         margin 0
-        color black
-        text-shadow 0 1px 0 rgba(white, .125)
+        color rgba(white, .6)
+        text-shadow 0 1px 0 rgba(black, .25)
         font-size 75%
+        letter-spacing 1px
+        font-family 'Esteban'
 
 div#post
 #preview
@@ -283,7 +292,7 @@ div#post
     color #E3DFD6
 
   h2, h3
-    text-shadow 0 2px 2px black
+    text-shadow 0 1px 2px black
     -webkit-text-stroke 1px white
 
   h1
@@ -337,11 +346,11 @@ div#post
 
   p
     padding .85em .75em .45em .75em
-    text-shadow 0 1px 0   rgba(white, .125)
+    text-shadow 0 1px 0   rgba(black, .25)
     box-shadow  0 2px 3px rgba(black, .5)
     letter-spacing 1px
     background linear-gradient(top, #4F6E96, #3e5d85)
-    color black
+    color rgba(white, .7)
     border-left   2px solid black
     border-right  2px solid black
     border-top    1px solid black
