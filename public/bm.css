@@ -361,6 +361,13 @@ body {
 }
 #aioim > p {
   text-align: center;
+  font-family: 'Esteban', serif;
+  color: rgba(255,255,255,0.80);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+}
+#aioim > p a {
+  color: #fff;
+  text-decoration: none;
 }
 #aioim > .new.message {
   position: absolute;
@@ -540,6 +547,22 @@ div#post,
   -moz-box-shadow: inset 0 0 3px #000, 0 0 5px #000;
   box-shadow: inset 0 0 3px #000, 0 0 5px #000;
 }
+div#post h1:hover,
+#preview h1:hover,
+div#post h2:hover,
+#preview h2:hover,
+div#post h3:hover,
+#preview h3:hover,
+div#post p:hover,
+#preview p:hover,
+div#post ol:hover,
+#preview ol:hover,
+div#post ul:hover,
+#preview ul:hover,
+div#post code:hover,
+#preview code:hover {
+  cursor: default;
+}
 div#post h1,
 #preview h1,
 div#post h2,
@@ -592,23 +615,28 @@ div#post pre,
   margin-top: 0.25em;
   margin-bottom: 3.5em;
   font-family: monospace;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255,255,255,0.93)), color-stop(1, rgba(239,239,239,0.93))), url("http://www.unsigneddesign.com/Experimental%20Dirty/3.jpg");
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0.93) 0%, rgba(239,239,239,0.93) 100%), url("http://www.unsigneddesign.com/Experimental%20Dirty/3.jpg");
-  background: -moz-linear-gradient(top, rgba(255,255,255,0.93) 0%, rgba(239,239,239,0.93) 100%), url("http://www.unsigneddesign.com/Experimental%20Dirty/3.jpg");
-  background: -o-linear-gradient(top, rgba(255,255,255,0.93) 0%, rgba(239,239,239,0.93) 100%), url("http://www.unsigneddesign.com/Experimental%20Dirty/3.jpg");
-  background: -ms-linear-gradient(top, rgba(255,255,255,0.93) 0%, rgba(239,239,239,0.93) 100%), url("http://www.unsigneddesign.com/Experimental%20Dirty/3.jpg");
-  background: linear-gradient(top, rgba(255,255,255,0.93) 0%, rgba(239,239,239,0.93) 100%), url("http://www.unsigneddesign.com/Experimental%20Dirty/3.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #4f6e96), color-stop(1, #3e5d85));
+  background: -webkit-linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
+  background: -moz-linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
+  background: -o-linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
+  background: -ms-linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
+  background: linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
+  -webkit-box-shadow: 0 -1px 1px rgba(0,0,0,0.30), 0 1px 1px rgba(255,255,255,0.25);
+  -moz-box-shadow: 0 -1px 1px rgba(0,0,0,0.30), 0 1px 1px rgba(255,255,255,0.25);
+  box-shadow: 0 -1px 1px rgba(0,0,0,0.30), 0 1px 1px rgba(255,255,255,0.25);
   text-shadow: 0 1px 0 #fff;
   color: #000;
+  width: 35em;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 div#post p,
 #preview p,
 div#post ol,
 #preview ol,
 div#post ul,
-#preview ul,
-div#post pre,
-#preview pre {
+#preview ul {
   width: 28.4em;
 }
 div#post img,
@@ -627,8 +655,19 @@ div#post ol,
 #preview ol,
 div#post ul,
 #preview ul {
-  color: #666;
-  margin: 1.75em 0;
+  padding: 0.5em 2.25em;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #3e5d85;
+  color: rgba(255,255,255,0.60);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
+  -webkit-box-shadow: 0 -1px 1px rgba(0,0,0,0.13), 0 1px 1px rgba(255,255,255,0.13);
+  -moz-box-shadow: 0 -1px 1px rgba(0,0,0,0.13), 0 1px 1px rgba(255,255,255,0.13);
+  box-shadow: 0 -1px 1px rgba(0,0,0,0.13), 0 1px 1px rgba(255,255,255,0.13);
+  width: 25.7em;
+  padding-left: 1.95em;
+  letter-spacing: 1px;
 }
 div#post p,
 #preview p {
@@ -670,21 +709,62 @@ div#post p img,
   margin-top: -0.5em;
   border: 2px solid #e3dfd6;
 }
+div#post p br,
+#preview p br,
+div#post p code,
+#preview p code {
+  display: inline-block;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  -webkit-box-shadow: 0 -1px 1px rgba(255,255,255,0.13), 0 1px 1px rgba(0,0,0,0.13);
+  -moz-box-shadow: 0 -1px 1px rgba(255,255,255,0.13), 0 1px 1px rgba(0,0,0,0.13);
+  box-shadow: 0 -1px 1px rgba(255,255,255,0.13), 0 1px 1px rgba(0,0,0,0.13);
+  padding-bottom: 0.2em;
+  line-height: 1.3em;
+  background-color: rgba(95,127,167,0.25);
+  padding-left: 0.45em;
+  padding-right: 0.45em;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  margin-top: 0.45em;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.10);
+  color: #333;
+  font-size: 85%;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+div#post p code.block,
+#preview p code.block {
+  white-space: pre;
+  display: block;
+  -webkit-box-shadow: 0 1px 1px rgba(255,255,255,0.25), 0 -1px 1px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0 1px 1px rgba(255,255,255,0.25), 0 -1px 1px rgba(0,0,0,0.25);
+  box-shadow: 0 1px 1px rgba(255,255,255,0.25), 0 -1px 1px rgba(0,0,0,0.25);
+  margin-bottom: 0.45em;
+  margin-left: -0.45em;
+  margin-right: -0.45em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  background-color: #5f7fa7;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+}
+div#post p code.block br:first-child,
+#preview p code.block br:first-child {
+  display: none;
+}
 div#post a,
 #preview a {
-  color: #0b2a52;
+  color: #fff;
   text-decoration: none;
 }
 div#post a:visited,
 #preview a:visited {
-  color: #0b2a52;
+  color: #fff;
 }
-div#post ol,
-#preview ol,
-div#post ul,
-#preview ul {
-  text-shadow: 0 1px 0 #fff;
-  padding: 0.5em 2.25em;
+div#post a:hover,
+#preview a:hover {
+  color: #fff;
 }
 div#post ol,
 #preview ol {
@@ -746,7 +826,7 @@ div#post ol,
   line-height: 1em;
 }
 #post.write .content {
-  text-shadow: 0 1px 0 rgba(255,255,255,0.25);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
   -webkit-box-shadow: 0 1px 3px #000;
   -moz-box-shadow: 0 1px 3px #000;
   box-shadow: 0 1px 3px #000;
@@ -759,6 +839,10 @@ div#post ol,
   right: 0;
   bottom: 0;
   border: none;
+  color: rgba(255,255,255,0.80);
+  font-family: 'Esteban', serif;
+  line-height: 1.3em;
+  letter-spacing: 1px;
 }
 @media screen and (max-width: 640px) {
   #post.read,

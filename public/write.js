@@ -12,6 +12,9 @@ $(document).ready(function() {
     $('#preview').
       html(preview).
       prepend('<h1>' + title + '</h1>').
+      find('p > br').
+      remove().
+    end().
       removeClass('hidden')
 
     $('#back').removeClass('hidden')

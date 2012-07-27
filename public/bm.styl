@@ -174,6 +174,12 @@ body
   border-radius 4px
   & > p
     text-align center
+    font-family 'Esteban', serif
+    color rgba(white, .8)
+    text-shadow 0 -1px 0 rgba(black, .25)
+    a
+      color white
+      text-decoration none
   & > .new.message
     absolute bottom, right
     width 100%
@@ -297,6 +303,10 @@ div#post
 #preview
   box-shadow inset 0 0 3px black, 0 0 5px black
 
+  h1, h2, h3, p, ol, ul, code
+    &:hover
+      cursor default
+
   h1, h2, h3
     font-family 'Special Elite', sans-serif
     color rgba(white, .7)
@@ -334,12 +344,14 @@ div#post
     margin-top    .25em
     margin-bottom 3.5em
     font-family monospace
-    background linear-gradient(top, rgba(white, .925) 0%, rgba(#efefef, .925) 100%), url('http://www.unsigneddesign.com/Experimental%20Dirty/3.jpg')
+    background linear-gradient(top, #4F6E96, #3e5d85)
+    box-shadow  0 -1px 1px rgba(black, .3), 0 1px 1px rgba(white, .25)
     text-shadow 0 1px 0 white
-    box-short-slab()
     color black
+    width 35em
+    border-radius 2px
 
-  p, ol, ul, pre
+  p, ol, ul
     width 28.4em
 
   img
@@ -349,8 +361,15 @@ div#post
     font-family 'Esteban', serif
 
   ol, ul
-    color #666
-    margin 1.75em 0
+    padding .5em 2.25em
+    border-radius 2px
+    background-color #3E5D85
+    color rgba(white, .6)
+    text-shadow 0 1px 0 rgba(black, .25)
+    box-shadow 0 -1px 1px rgba(black, .125), 0 1px 1px rgba(white, .125)
+    width 25.7em
+    padding-left 1.95em
+    letter-spacing 1px
 
   p
     padding .85em .75em .45em .75em
@@ -371,17 +390,44 @@ div#post
       box-shadow 0 1px 3px black
       margin-top -.5em
       border 2px solid #E3DFD6
+    br, code
+      display inline-block
+      margin-left  .1em
+      margin-right .1em
+      box-shadow: 0 -1px 1px rgba(white, .125), 0 1px 1px rgba(black, .125)
+      padding-bottom .2em
+      line-height 1.3em
+      background-color rgba(#5F7FA7, .25)
+      padding-left .45em
+      padding-right .45em
+      margin-left .1em
+      margin-right .1em
+      margin-top .45em
+      text-shadow 0 1px 0 rgba(white, .1)
+      color #333
+      font-size 85%
+      border-radius 2px
+    code.block
+      white-space pre
+      display block
+      box-shadow 0 1px 1px rgba(white, .25), 0 -1px 1px rgba(black, .25)
+      margin-bottom .45em
+      margin-left -.45em
+      margin-right -.45em
+      padding-top    .25em
+      padding-bottom .25em
+      background-color #5F7FA7
+      text-shadow 0 1px 0 rgba(white, .15)
+      br:first-child
+        display none
 
   a
-    color #0B2A52
+    color white
     text-decoration none
     &:visited
-      color #0B2A52
-
-  ol, ul
-    text-shadow 0 1px 0 white
-    padding .5em 2.25em
-    box-medium-slab()
+      color white
+    &:hover
+      color white
 
   ol
     list-style-type lower-roman
@@ -423,7 +469,7 @@ div#post
     font-size   1.85em
     line-height 1em
   .content
-    text-shadow 0 1px 0 rgba(white, .25)
+    text-shadow 0 1px 0 rgba(black, .25)
     box-shadow 0 1px 3px black
     background-color #4F6E96
     margin 2%
@@ -432,6 +478,10 @@ div#post
     right  0
     bottom 0
     border none
+    color rgba(white, .8)
+    font-family 'Esteban', serif
+    line-height 1.3em
+    letter-spacing 1px
 
 @media screen and (max-width: 640px)
   #post.read
