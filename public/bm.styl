@@ -91,7 +91,7 @@ td { vertical-align: top; }
 //   box-shadow 0 1px 0 rgba(#ccc, .6), 0 2px 0 rgba(#c9c9c9, .6), 0 3px 1px rgba(black,.2), 0 4px 3px rgba(black, .2), 0 5px 5px rgba(black, .4)
 
 body
-  background-color #D7DBE0
+  background linear-gradient(left, rgba(#D7DBE0, .85), rgba(#D7DBE0, .85)), url('http://www.backgroundlabs.com/backgrounds/10.jpg')
   text-rendering optimizeLegibility
 
 #title
@@ -102,10 +102,63 @@ body
 #post
 #preview
   box-sizing border-box
-  position relative
-  background-color #47423B
+  position fixed
+  background linear-gradient(top, #36312A, #252019, #141008)
+  background-repeat repeat 
+  background-size 3px
   border-left  5px solid #E8E8DC
   border-right 5px solid #E8E8DC
+  &:before
+    display block
+    content ' '
+    background-color #47423B
+    position fixed
+    top -1em
+    left 8.25em
+    margin-left  auto
+    margin-right auto
+    right 24.25em
+    width 31.5em
+    z-index -1
+    height 150%
+    box-shadow inset 0 0 5px rgba(white, .25)
+  ul.supplemental
+    position fixed
+    top 0
+    left 8em
+    right 24em
+    list-style none
+    overflow hidden
+    background transparent
+    box-shadow none
+    margin 0
+    width auto
+    padding 0
+    z-index -2
+    li
+      padding 1em
+      img
+        width 175px
+        box-shadow 0 1px 5px black
+        -webkit-filter grayscale(.5) sepia(.7)
+        margin-left .25em
+        border-radius 2px
+        opacity .3
+        &:hover
+          opacity 1
+    &:after
+      display block
+      content ' '
+      position fixed
+      top   0
+      left  8em
+      right 24em
+      height 100%
+      background linear-gradient(left, rgba(black, .5), transparent 15%, transparent 85%, rgba(black, .5))
+      border-left 5px solid #E8E8DC
+      border-right 5px solid #E8E8DC
+      z-index -1
+
 
 #post
 #preview
@@ -301,7 +354,7 @@ body
 
 div#post
 #preview
-  box-shadow inset 0 0 3px black, 0 0 5px black
+  box-shadow 0 0 5px black
 
   h1, h2, h3, p, ol, ul, code
     &:hover
@@ -319,15 +372,24 @@ div#post
     font-size 4em
     line-height 1.1
     text-shadow 0 1px 2px rgba(black, .25)
+    width 7.47em
+    margin-left auto
+    margin-right auto
 
   h2
-    margin-top 2em
+    width 20em
+    margin-top   2em
+    margin-left  auto
+    margin-right auto
 
   h3
     letter-spacing 1px
+    width 24.6em
     margin-top    1.5em
-    margin-left   1em
     margin-bottom 0
+    margin-left   auto
+    margin-right  auto
+    padding-left 1em
     & + p
       margin-top .5em
 
@@ -351,14 +413,14 @@ div#post
     width 35em
     border-radius 2px
 
-  p, ol, ul
-    width 28.4em
-
   img
     width 28.375em
 
   p, ol, ul
+    width 28.4em
     font-family 'Esteban', serif
+    margin-left  auto
+    margin-right auto
 
   ol, ul
     padding .5em 2.25em
@@ -493,19 +555,20 @@ div#post
     margin-top    0
     margin-bottom 0
 
-@media screen and (min-width: 800px)
-  #post.write
-  #post.read
-  #preview
-    width 75%
-
 @media screen and (min-width: 1024px)
   #post.write
   #post.read
   #preview
-    absolute left 8em right 24em
+    position fixed
+    left 8em
+    right 24em
     width auto
     overflow-y auto
   h1
     margin-top .4em
     line-height 1.4
+@media screen and (min-width: 1029px)
+  #post
+  #preview
+    &:before
+      box-shadow inset 0 0 5px rgba(white, .25), 0 0 5px black
