@@ -255,14 +255,34 @@ td {
   color: #000;
   padding: 0.2em 0;
 }
+html,
 body {
-  background: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(215,219,224,0.85)), color-stop(1, rgba(215,219,224,0.85))), url("http://www.backgroundlabs.com/backgrounds/10.jpg");
-  background: -webkit-linear-gradient(left, rgba(215,219,224,0.85) 0%, rgba(215,219,224,0.85) 100%), url("http://www.backgroundlabs.com/backgrounds/10.jpg");
-  background: -moz-linear-gradient(left, rgba(215,219,224,0.85) 0%, rgba(215,219,224,0.85) 100%), url("http://www.backgroundlabs.com/backgrounds/10.jpg");
-  background: -o-linear-gradient(left, rgba(215,219,224,0.85) 0%, rgba(215,219,224,0.85) 100%), url("http://www.backgroundlabs.com/backgrounds/10.jpg");
-  background: -ms-linear-gradient(left, rgba(215,219,224,0.85) 0%, rgba(215,219,224,0.85) 100%), url("http://www.backgroundlabs.com/backgrounds/10.jpg");
-  background: linear-gradient(left, rgba(215,219,224,0.85) 0%, rgba(215,219,224,0.85) 100%), url("http://www.backgroundlabs.com/backgrounds/10.jpg");
+  width: 100%;
+  height: 100%;
+}
+body {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(0,0,0,0.50)), color-stop(0.25, transparent), color-stop(1, rgba(0,0,0,0.50)));
+  background: -webkit-linear-gradient(left, rgba(0,0,0,0.50) 0%, transparent 25%, rgba(0,0,0,0.50) 100%);
+  background: -moz-linear-gradient(left, rgba(0,0,0,0.50) 0%, transparent 25%, rgba(0,0,0,0.50) 100%);
+  background: -o-linear-gradient(left, rgba(0,0,0,0.50) 0%, transparent 25%, rgba(0,0,0,0.50) 100%);
+  background: -ms-linear-gradient(left, rgba(0,0,0,0.50) 0%, transparent 25%, rgba(0,0,0,0.50) 100%);
+  background: linear-gradient(left, rgba(0,0,0,0.50) 0%, transparent 25%, rgba(0,0,0,0.50) 100%);
   text-rendering: optimizeLegibility;
+}
+body:before {
+  display: block;
+  content: ' ';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, rgba(0,0,0,0.35)));
+  background: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,0.35) 100%);
+  background: -moz-linear-gradient(top, transparent 0%, rgba(0,0,0,0.35) 100%);
+  background: -o-linear-gradient(top, transparent 0%, rgba(0,0,0,0.35) 100%);
+  background: -ms-linear-gradient(top, transparent 0%, rgba(0,0,0,0.35) 100%);
+  background: linear-gradient(top, transparent 0%, rgba(0,0,0,0.35) 100%);
 }
 #title,
 #content {
@@ -281,10 +301,10 @@ body {
   background: -ms-linear-gradient(top, #36312a 0%, #252019 33.33333333333333%, #141008 100%);
   background: linear-gradient(top, #36312a 0%, #252019 33.33333333333333%, #141008 100%);
   background-repeat: repeat;
-  -webkit-background-size: 3px;
-  -moz-background-size: 3px;
-  -o-background-size: 3px;
-  background-size: 3px;
+  -webkit-background-size: 0.25em;
+  -moz-background-size: 0.25em;
+  -o-background-size: 0.25em;
+  background-size: 0.25em;
   border-left: 5px solid #e8e8dc;
   border-right: 5px solid #e8e8dc;
 }
@@ -361,9 +381,25 @@ body {
   background: -o-linear-gradient(left, rgba(0,0,0,0.50) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.50) 100%);
   background: -ms-linear-gradient(left, rgba(0,0,0,0.50) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.50) 100%);
   background: linear-gradient(left, rgba(0,0,0,0.50) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.50) 100%);
+  z-index: -1;
+}
+#post ul.supplemental:before,
+#preview ul.supplemental:before {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.25, transparent), color-stop(1, rgba(0,0,0,0.50)));
+  background: -webkit-linear-gradient(top, transparent 25%, rgba(0,0,0,0.50) 100%);
+  background: -moz-linear-gradient(top, transparent 25%, rgba(0,0,0,0.50) 100%);
+  background: -o-linear-gradient(top, transparent 25%, rgba(0,0,0,0.50) 100%);
+  background: -ms-linear-gradient(top, transparent 25%, rgba(0,0,0,0.50) 100%);
+  background: linear-gradient(top, transparent 25%, rgba(0,0,0,0.50) 100%);
+  display: block;
+  content: ' ';
+  position: fixed;
+  top: 0;
+  left: 8em;
+  right: 24em;
+  height: 100%;
   border-left: 5px solid #e8e8dc;
   border-right: 5px solid #e8e8dc;
-  z-index: -1;
 }
 #post,
 #preview {
@@ -439,9 +475,9 @@ body {
 }
 #aioim {
   background-color: #47423b;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.50), 0 1px 1px rgba(255,255,255,0.75);
-  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.50), 0 1px 1px rgba(255,255,255,0.75);
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.50), 0 1px 1px rgba(255,255,255,0.75);
+  -webkit-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.50), 1px 1px 1px rgba(255,255,255,0.25), -1px -1px 2px rgba(0,0,0,0.45);
+  -moz-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.50), 1px 1px 1px rgba(255,255,255,0.25), -1px -1px 2px rgba(0,0,0,0.45);
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.50), 1px 1px 1px rgba(255,255,255,0.25), -1px -1px 2px rgba(0,0,0,0.45);
   position: fixed;
   bottom: 0.5em;
   right: 0.5em;
@@ -927,7 +963,6 @@ div#post ol,
   -moz-box-shadow: 0 1px 3px #000;
   box-shadow: 0 1px 3px #000;
   background-color: #4f6e96;
-  margin: 2%;
   padding: 0.5em 1em;
   position: absolute;
   top: 2.15em;
@@ -939,6 +974,11 @@ div#post ol,
   font-family: 'Esteban', serif;
   line-height: 1.3em;
   letter-spacing: 1px;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  width: 28em;
 }
 @media screen and (max-width: 640px) {
   #post.read,

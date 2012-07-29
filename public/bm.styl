@@ -90,9 +90,22 @@ td { vertical-align: top; }
 // box-short-slab()
 //   box-shadow 0 1px 0 rgba(#ccc, .6), 0 2px 0 rgba(#c9c9c9, .6), 0 3px 1px rgba(black,.2), 0 4px 3px rgba(black, .2), 0 5px 5px rgba(black, .4)
 
+html, body
+  width  100%
+  height 100%
+
 body
-  background linear-gradient(left, rgba(#D7DBE0, .85), rgba(#D7DBE0, .85)), url('http://www.backgroundlabs.com/backgrounds/10.jpg')
+  background linear-gradient(left, rgba(black, .5), transparent 25%, rgba(black, .5))
   text-rendering optimizeLegibility
+  &:before
+    display block
+    content ' '
+    position fixed
+    top    0
+    left   0
+    right  0
+    bottom 0
+    background linear-gradient(top, transparent, rgba(black, .35))
 
 #title
 #content
@@ -105,7 +118,7 @@ body
   position fixed
   background linear-gradient(top, #36312A, #252019, #141008)
   background-repeat repeat 
-  background-size 3px
+  background-size .25em
   border-left  5px solid #E8E8DC
   border-right 5px solid #E8E8DC
   &:before
@@ -155,9 +168,18 @@ body
       right 24em
       height 100%
       background linear-gradient(left, rgba(black, .5), transparent 15%, transparent 85%, rgba(black, .5))
+      z-index -1
+    &:before
+      background linear-gradient(top, transparent 25%, rgba(black, .5))
+      display block
+      content ' '
+      position fixed
+      top   0
+      left  8em
+      right 24em
+      height 100%
       border-left 5px solid #E8E8DC
       border-right 5px solid #E8E8DC
-      z-index -1
 
 
 #post
@@ -218,7 +240,7 @@ body
 
 #aioim
   background-color #47423B
-  box-shadow inset 0 1px 2px rgba(black, .5), 0 1px 1px rgba(white, .75)
+  box-shadow inset 1px 1px 2px rgba(black, .5), 1px 1px 1px rgba(white, .25), -1px -1px 2px rgba(black, .45)
   position fixed
   bottom .5em
   right  .5em
@@ -534,7 +556,6 @@ div#post
     text-shadow 0 1px 0 rgba(black, .25)
     box-shadow 0 1px 3px black
     background-color #4F6E96
-    margin 2%
     padding .5em 1em
     absolute top 2.15em left 0
     right  0
@@ -544,6 +565,11 @@ div#post
     font-family 'Esteban', serif
     line-height 1.3em
     letter-spacing 1px
+    margin-top    1em
+    margin-left   auto
+    margin-right  auto
+    margin-bottom 1em
+    width: 28em
 
 @media screen and (max-width: 640px)
   #post.read

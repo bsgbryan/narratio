@@ -16,7 +16,7 @@ $(document).ready(function() {
         '<li>' +
           // '<img src="http://timeentertainment.files.wordpress.com/2012/04/brave.jpg">' +
         '</li>' +
-      '</ul>')
+      '</ul>').
       find('p > br').
       remove().
     end().
