@@ -18,8 +18,9 @@ $(document).ready(function() {
         '</li>' +
       '</ul>').
       find('p > br').
-      remove().
-    end().
+      remove()
+      
+    $('#preview').
       removeClass('hidden')
 
     $('#back').removeClass('hidden')
