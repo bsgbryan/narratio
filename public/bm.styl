@@ -113,7 +113,6 @@ body
 
 
 #post
-#preview
   box-sizing border-box
   position fixed
   background linear-gradient(top, #36312A, #252019, #141008)
@@ -121,6 +120,10 @@ body
   background-size .25em
   border-left  5px solid #E8E8DC
   border-right 5px solid #E8E8DC
+  z-index 100
+  width  100%
+  height 100%
+  padding 1%
   &:before
     display block
     content ' '
@@ -180,16 +183,6 @@ body
       height 100%
       border-left 5px solid #E8E8DC
       border-right 5px solid #E8E8DC
-
-
-#post
-#preview
-  z-index 100
-  width  100%
-  height 100%
-#post.read
-#preview
-  padding 1%
 
 #back
   absolute top .75% left 13.5%
@@ -374,8 +367,7 @@ body
         letter-spacing 1px
         font-family 'Esteban'
 
-div#post
-#preview
+#post
   box-shadow 0 0 5px black
 
   h1, h2, h3, p, ol, ul, code
@@ -438,7 +430,7 @@ div#post
   img
     width 28.375em
 
-  p, ol, ul
+  p, ol, ul, textarea
     width 28.4em
     font-family 'Esteban', serif
     margin-left  auto
@@ -455,10 +447,11 @@ div#post
     padding-left 1.95em
     letter-spacing 1px
 
-  p
+  p, textarea
     padding .85em .75em .45em .75em
     text-shadow 0 1px 0   rgba(black, .25)
     box-shadow  0 -1px 1px rgba(black, .3), 0 1px 1px rgba(white, .25)
+    border none
     letter-spacing 1px
     background linear-gradient(top, #4F6E96, #3e5d85)
     color rgba(white, .7)
@@ -504,7 +497,14 @@ div#post
       text-shadow 0 1px 0 rgba(white, .15)
       br:first-child
         display none
-
+  textarea
+    display block
+    &::-webkit-input-placeholder
+      color #569FD3
+    &:-moz-placeholder
+      color #569FD3
+    &:focus
+      outline none
   a
     color white
     text-decoration none
@@ -516,65 +516,8 @@ div#post
   ol
     list-style-type lower-roman
 
-.hidden
-  display: none !important
-
-#post.write
-  absolute top, left
-  margin 0
-  box-shadow inset 0 0 5px black, 0 0 5px black
-  overflow hidden
-  .content
-  input:focus
-  textarea:focus
-    outline none
-  input
-    text-align center
-    padding .5em 0
-    border none
-  .preview
-  .done
-    width: 20%
-    background-color #E8D1C0
-    color black
-    text-shadow 0 1px 0 rgba(white, .75)
-    box-shadow  0 1px 3px black
-  .preview
-    absolute top 0 left 0
-  .done
-    absolute top 0 right 0
-  .title
-    background-color transparent
-    absolute top -.325em left 20%
-    right 20%
-    font-family 'Special Elite', sans-serif
-    text-shadow 0 1px 3px black
-    color #E3DFD6
-    font-size   1.85em
-    line-height 1em
-  .content
-    text-shadow 0 1px 0 rgba(black, .25)
-    box-shadow 0 1px 3px black
-    background-color #4F6E96
-    padding .5em 1em
-    absolute top 2.15em left 0
-    right  0
-    bottom 0
-    border none
-    color rgba(white, .8)
-    font-family 'Esteban', serif
-    line-height 1.3em
-    letter-spacing 1px
-    margin-top    1em
-    margin-left   auto
-    margin-right  auto
-    margin-bottom 1em
-    width: 28em
-
 @media screen and (max-width: 640px)
-  #post.read
-  #post.write
-  #preview
+  #post
     padding 2%
     height 100%
   h1
@@ -582,9 +525,7 @@ div#post
     margin-bottom 0
 
 @media screen and (min-width: 1024px)
-  #post.write
-  #post.read
-  #preview
+  #post
     position fixed
     left 8em
     right 24em
@@ -595,6 +536,5 @@ div#post
     line-height 1.4
 @media screen and (min-width: 1029px)
   #post
-  #preview
     &:before
       box-shadow inset 0 0 5px rgba(white, .25), 0 0 5px black
