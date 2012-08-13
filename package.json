@@ -1,20 +1,16 @@
 {
   "name": "bryanmaynard.me",
-  "version": "0.0.1",
+  "version": "0.5",
   "author"  : "Bryan Maynard <bsgbryan@gmail.com>",
   "description": "My professional blog",
   "dependencies": {
     "express"   : "~2.5",
     "jade"      : "*",
-    "ntwitter"   : "*",
     "socket.io"  : "*",
-    "connect-redis" : "*",
-    "redis-url"     : "*"
   },
   "devDependencies" : {
     "stylus" : "*",
-    "nib"    : "*",
-    "redis"  : "*"
+    "nib"    : "*"
   },
   "engines" : {
     "node" : "~0.6",
