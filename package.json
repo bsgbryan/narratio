@@ -6,7 +6,7 @@
   "dependencies": {
     "express"   : "~2.5",
     "jade"      : "*",
-    "socket.io"  : "*",
+    "socket.io"  : "*"
   },
   "devDependencies" : {
     "stylus" : "*",
