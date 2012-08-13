@@ -11,7 +11,7 @@ app.configure(function () {
   app.set('view engine', 'jade');
 });
 
-app.get('/write', function(req, res) {
+app.get('/:user', function(req, res) {
   res.render('write', { action : 'write' })
 })
 

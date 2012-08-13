@@ -1,4 +1,6 @@
 (function ($) {
+  var months = [ 'jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec' ]
+  
   $.fn.noisy = function(opacity) {
     if (typeof(opacity) === 'undefined')
         opacity = 0.25
@@ -54,5 +56,10 @@
 
   $(document).ready(function () {
     $('html').noisy(1)
+    
+    var date   = new Date(),
+        bucket = date.getFullYear() + '-' + months[date.getMonth()] + '-' + date.getDate()
+    
+    $.scribo(bucket).content()
   })
 })($)
