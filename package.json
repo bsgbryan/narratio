@@ -1,18 +1,27 @@
 {
   "name": "bryanmaynard.me",
   "version": "0.0.1",
+  "author"  : "Bryan Maynard <bsgbryan@gmail.com>",
+  "description": "My professional blog",
   "dependencies": {
     "express"   : "~2.5",
     "jade"      : "*",
-    "redis-url" : "*",
-    "stylus"    : "*",
-    "nib"       : "*"
+    "ntwitter"   : "*",
+    "socket.io"  : "*",
+    "connect-redis" : "*",
+    "redis-url"     : "*"
   },
-  "devDependencies": {
-    "redis" : "*"
+  "devDependencies" : {
+    "stylus" : "*",
+    "nib"    : "*",
+    "redis"  : "*"
   },
-  "engines": {
-    "node": "0.6.x",
-    "npm":  "1.0.x"
+  "engines" : {
+    "node" : "~0.6",
+    "npm"  :  "~1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bsgbryan/blog.git"
   }
 }
