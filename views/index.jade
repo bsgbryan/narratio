@@ -1,0 +1,30 @@
+!!! 5
+html(lang='en')
+  head
+    title Bryan M
+    // iPhone app support
+    meta(name='viewport', content='user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+    link(rel="apple-touch-icon", href="public/images/apple-touch-icon.png")
+    // Facebook sharing support
+    - if (typeof post !== 'undefined')
+      meta(property='og:title', content='#{ post.title }')
+      meta(property='og:description', content='#{ post.content.split("\n")[2] }')
+      meta(property='og:type', content='blog')
+      meta(property='og:image', content='http://www.gravatar.com/avatar/9b85a734132395f7229cf3850d1adf42.png')
+      meta(property='og:url', content='http://blog.bryanmaynard.com/read/#{ post.id }')
+    // Google web fonts
+    link(href='http://fonts.googleapis.com/css?family=Esteban|Alegreya+SC:400,700|Special+Elite', rel='stylesheet')
+    // App stylesheet
+    link(rel='stylesheet', href='http://bsgbryan.jit.su/bm.css')
+
+  body
+    #post
+      form.write(method='post', action='/post/publish')
+        textarea.content(name='content', placeholder='new content', class='new content')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+    script(src='http://bsgbryan.jit.su/showdown.js')
+    script(src='https://static.firebase.com/v0/firebase.js')
+    script(src='http://scribo.jit.su/widget.js')
+    script(src='http://bsgbryan.jit.su/default.js')

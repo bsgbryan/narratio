@@ -11,8 +11,8 @@ app.configure(function () {
   app.set('view engine', 'jade');
 });
 
-app.get('/:user', function(req, res) {
-  res.render('write', { action : 'write' })
+app.get('/', function(req, res) {
+  res.render('index', { layout: false })
 })
 
 var port = process.env.PORT || 3000

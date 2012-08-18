@@ -60,6 +60,6 @@
     var date   = new Date(),
         bucket = date.getFullYear() + '-' + months[date.getMonth()] + '-' + date.getDate()
     
-    $.scribo(bucket).content()
+    $.scribo(bucket).content('#post')
   })
 })($)

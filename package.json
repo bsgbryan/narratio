@@ -1,23 +1,30 @@
 {
   "name": "bsgbryan",
-  "version": "0.5.0",
-  "author"  : "Bryan Maynard <bsgbryan@gmail.com>",
+  "version": "0.0.1-8",
+  "author": "Bryan Maynard <bsgbryan@gmail.com>",
   "description": "My blog",
   "dependencies": {
-    "express"   : "~2.5",
-    "jade"      : "*",
-    "socket.io"  : "*"
+    "express": "~2.5",
+    "jade": "~0.27",
+    "socket.io": "~0.9"
   },
-  "devDependencies" : {
-    "stylus" : "*",
-    "nib"    : "*"
+  "devDependencies": {
+    "stylus": "~0.28",
+    "nib": "0.7"
   },
-  "engines" : {
-    "node" : "~0.6",
-    "npm"  :  "~1"
+  "engines": {
+    "node": "~0.6",
+    "npm": "~1"
   },
+  "keywords": [
+    "content"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/bsgbryan/blog.git"
+  },
+  "subdomain": "bsgbryan",
+  "scripts": {
+    "start": "node web.js"
   }
 }
