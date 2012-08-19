@@ -13,22 +13,16 @@ app.configure(function () {
 });
 
 app.get('/', function(req, res) {
-  var host   = '',
-      scribo = ''
+  var host = ''
   
-  console.log('req', req)
-  
-  if (req.headers.host.indexOf('localhost') === 0) {
-    host   = 'localhost:' + port
-    scribo = 'scribo.jit.su'
-  } else {
-    host   = req.headers.host
-    scribo = 'project-livec9a3f7456521.rhcloud.com'
-  }
+  if (req.headers.host.indexOf('localhost') === 0)
+    host = 'localhost:' + port
+  else
+    host = req.headers.host
     
-  res.render('index', { layout: false, host: host, scribo: scribo })
+  res.render('index', { layout: false, host: host })
 })
 
 app.listen(port, function() {
-  console.log("Listening on " + port)
+  console.log('What up, world!? I be at: port ' + port + '... get at me!')
 })
