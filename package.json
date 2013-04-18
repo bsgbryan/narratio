@@ -4,24 +4,24 @@
   "author": "Bryan Maynard <bsgbryan@gmail.com>",
   "description": "My blog",
   "dependencies": {
-    "express": "~2.5",
-    "jade": "~0.27",
+    "express": "~3.2",
+    "jade": "~0.29",
     "socket.io": "~0.9"
   },
   "devDependencies": {
-    "stylus": "~0.28",
-    "nib": "0.7"
+    "stylus": "~0.32",
+    "nib": "~0.9"
   },
   "engines": {
-    "node": "~0.6",
-    "npm": "~1"
+    "node": "~0.10",
+    "npm": "~1.2"
   },
   "keywords": [
     "content"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bsgbryan/blog.git"
+    "url": "https://github.com/bsgbryan/narratio.git"
   },
   "subdomain": "bsgbryan",
   "scripts": {
