@@ -1,4 +1,17 @@
-@import 'http://bsgbryan.github.com/AiOIM/app/stylesheets/font-face.css';
+@font-face {
+  font-family: 'Entypo';
+  src: url("entypo/entypo.eot");
+  src: url("entypo/entypo.eot?#iefix") format('embedded-opentype'), url("entypo/entypo.woff") format('woff'), url("entypo/entypo.ttf") format('truetype'), url("entypo/entypo.svg#EntypoRegular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'EntypoSocial';
+  src: url("entypo/entypo-social.eot");
+  src: url("entypo/entypo-social.eot?#iefix") format('embedded-opentype'), url("entypo/entypo-social.woff") format('woff'), url("entypo/entypo-social.ttf") format('truetype'), url("entypo/entypo-social.svg#EntypoRegular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 article,
 aside,
 details,
@@ -288,6 +301,29 @@ body:before {
 #content {
   display: none;
 }
+#create {
+  font-size: 200%;
+  width: 3.45em;
+  display: inline-block;
+  position: fixed;
+  top: 0.25em;
+  left: 0.25em;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a47b74), color-stop(0.05, #825952), color-stop(0.95, #825952), color-stop(1, #603730));
+  background: -webkit-linear-gradient(top, #a47b74 0%, #825952 5%, #825952 95%, #603730 100%);
+  background: -moz-linear-gradient(top, #a47b74 0%, #825952 5%, #825952 95%, #603730 100%);
+  background: -o-linear-gradient(top, #a47b74 0%, #825952 5%, #825952 95%, #603730 100%);
+  background: -ms-linear-gradient(top, #a47b74 0%, #825952 5%, #825952 95%, #603730 100%);
+  background: linear-gradient(top, #a47b74 0%, #825952 5%, #825952 95%, #603730 100%);
+  -webkit-border-radius: 0.125em;
+  border-radius: 0.125em;
+  text-align: center;
+  text-decoration: none;
+  color: #a47b74;
+  text-shadow: 0 1px 0 #603730;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+  font-weight: bolder;
+}
 #post {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -309,41 +345,6 @@ body:before {
   width: 100%;
   height: 100%;
   padding: 1%;
-}
-#post .edit.content {
-  font-family: 'EntypoRegular';
-  width: 1em;
-  display: block;
-  margin: 0 auto;
-  font-size: 3em;
-  line-height: 0.05em;
-  text-align: center;
-  padding-right: 0;
-  padding-left: 8.75em;
-  margin-top: -0.3em;
-  margin-bottom: 0.25em;
-  visibility: hidden;
-  text-shadow: 0 1px 3px #000;
-}
-#post h1 .edit.content {
-  padding-left: 8.45em;
-  font-size: 0.8em;
-  line-height: 0.25em;
-  margin-top: -0.95em;
-  margin-bottom: 1.25em;
-}
-#post h2 .edit.content {
-  padding-left: 9em;
-  font-size: 2em;
-}
-#post h3 .edit.content {
-  padding-left: 8em;
-  font-size: 2.75em;
-  margin-bottom: 0.4em;
-}
-#post .content.editor {
-  margin-top: 1em;
-  margin-bottom: 1em;
 }
 #post:before {
   display: block;
@@ -388,8 +389,8 @@ body:before {
   -webkit-border-radius: 2px;
   border-radius: 2px;
   opacity: 0.3;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   filter: alpha(opacity=30);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
 }
 #post ul.supplemental li img:hover {
   opacity: 1;
@@ -443,7 +444,7 @@ body:before {
   color: #7a756e;
 }
 #share {
-  width: 12.5%;
+  width: 8em;
   margin: 0;
   padding: 0;
   position: fixed;
@@ -464,25 +465,30 @@ body:before {
   border-bottom: 1px solid rgba(0,0,0,0.125);
   font-family: 'Alegreya SC', serif;
   font-weight: bold;
+  text-decoration: none;
 }
 #posts {
   position: fixed;
-  top: 0;
+  top: 3.8em;
   left: 0;
   bottom: 5.625em;
-  width: 12.5%;
+  width: 8em;
   background-color: rgba(0,0,0,0.25);
 }
 #posts a {
   display: block;
+  margin: 0;
   padding: 0.25em 5%;
   width: 90%;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.25);
-  color: #502620;
-  background-color: #825952;
+  color: #e3dfd6;
+  background-color: #47423b;
   border-top: 1px solid rgba(255,255,255,0.125);
   border-bottom: 1px solid rgba(0,0,0,0.125);
   font-family: 'Special Elite', sans-serif;
+  text-decoration: none;
+}
+#posts a:hover {
+  cursor: pointer;
 }
 #posts a:last-child {
   -webkit-box-shadow: 0 1px 3px #000;
@@ -769,14 +775,6 @@ body:before {
   margin-left: auto;
   margin-right: auto;
 }
-#post p:hover .edit.content,
-#post ol:hover .edit.content,
-#post ul:hover .edit.content,
-#post h1:hover .edit.content,
-#post h2:hover .edit.content,
-#post h3:hover .edit.content {
-  visibility: visible;
-}
 #post ol,
 #post ul {
   padding: 0.5em 2.25em;
@@ -790,6 +788,34 @@ body:before {
   width: 25.7em;
   padding-left: 1.95em;
   letter-spacing: 1px;
+}
+#post #new {
+  width: 30em;
+  margin: 0 auto;
+}
+#post #new #title {
+  text-align: center;
+  font-size: 450%;
+  width: 6.5em;
+  padding: 0;
+  margin: 0 auto;
+  height: 100px;
+}
+#post #new .content {
+  margin-top: 1em;
+}
+#post #new input {
+  font-family: 'Entypo';
+  font-size: 400%;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: #e3dfd6;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.75);
+  width: 1em;
+}
+#post #new input[type=submit] {
+  margin-left: 5.4em;
 }
 #post p,
 #post textarea {
