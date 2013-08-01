@@ -15,8 +15,43 @@ marked.setOptions({
   }
 })
 
+var narrated = 'https://narratio.firebaseio.com/narrated'
+
+var url        = 'https://narratio.firebaseio.com',
+    author     = { context: null, name: null }
+    narratio   = new Firebase(url),
+    authinator = new FirebaseSimpleLogin(narratio, function(error, user) {
+      if (error) {
+        console.log(error);
+      } else if (user) {
+        $('#actions').show()
+        $('#login').hide()
+        
+        author.context = user.provider
+        author.name    = user.displayName
+        author.id      = user.id
+      } else {
+        $('#actions').hide()
+        $('#login').show()
+
+        $('#login a').on('click', function () {
+          var method = $(this).attr('id'),
+              params = { rememberMe: true }
+
+          if (method === 'facebook')
+            params.scope = 'email'
+          if (method === 'github')
+            params.scope = 'user'
+
+          authinator.login(method, params)
+
+          return false
+        })
+      }
+    })
+
 var nReadCtrl = function ($scope, angularFire) {
-  angularFire('https://narratio.firebaseio.com', $scope, 'posts')
+  angularFire(narrated, $scope, 'posts')
 
   $scope.assignPost = function (idx) {
 
@@ -30,6 +65,8 @@ var nReadCtrl = function ($scope, angularFire) {
         paras.push(marked(cont[c]))
 
     $scope.paragraphs = paras
+
+    $scope.editable = this.post.author.context === author.context && this.post.author.id === author.id
   }
 }
 
@@ -42,9 +79,7 @@ angular.module('narratio.controllers', [ ]).
       $('#post #new ng-include[src="templates.paragraph"]').after($('#post #new .content:first-child').clone().val(''))
     }
 
-    var url = 'https://narratio.firebaseio.com'
-
-    var promise = angularFire(url, $scope, 'posts')
+    var promise = angularFire(narrated, $scope, 'posts')
 
     if ($location.path() === '')
       $location.path('/')
@@ -60,7 +95,7 @@ angular.module('narratio.controllers', [ ]).
           paragraphs.push($(paragraph).val())
         })
 
-        $scope.posts.push({ title: title, content: paragraphs })
+        $scope.posts.push({ title: title, content: paragraphs, author: author })
       }
     })
   } ]).

@@ -135,21 +135,39 @@ body
 #content
   display none
 
+#actions
+#login
+  display none
+
 #create
-  font-size 200%
-  width 3.45em
+  left .3em
+#edit-profile
+  left 1.125em
+#create
+#edit-profile
+  font-family Entypo
+
+#login #facebook
+  left .125em
+#login #twitter
+  left .7em
+#login #github
+  left 1.3em
+#login a
+  font-family EntypoSocial
+
+#create
+#edit-profile
+#login a
+  font-size 400%
+  line-height .55em
   display inline-block
   position fixed
   top .25em
-  left .25em
-  background linear-gradient(#a47b74, #825952 5%, #825952 95%, #603730)
-  border-radius .125em
   text-align center
   text-decoration none
-  color #a47b74
-  text-shadow 0 1px 0 #603730
-  box-shadow 0 1px 1px rgba(black, .5)
-  font-weight bolder
+  color #eee
+  text-shadow 0 1px 1px #6c5d62
 
 #post
   box-sizing border-box
@@ -511,7 +529,7 @@ body
       padding 0
       background-color transparent
       border none
-      color #e3dfd6
+      color #95b342
       text-shadow 0 1px 2px rgba(black, .75)
       width 1em
       &[type=submit]

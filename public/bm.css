@@ -301,28 +301,44 @@ body:before {
 #content {
   display: none;
 }
+#actions,
+#login {
+  display: none;
+}
 #create {
-  font-size: 200%;
-  width: 3.45em;
+  left: 0.3em;
+}
+#edit-profile {
+  left: 1.125em;
+}
+#create,
+#edit-profile {
+  font-family: Entypo;
+}
+#login #facebook {
+  left: 0.125em;
+}
+#login #twitter {
+  left: 0.7em;
+}
+#login #github {
+  left: 1.3em;
+}
+#login a {
+  font-family: EntypoSocial;
+}
+#create,
+#edit-profile,
+#login a {
+  font-size: 400%;
+  line-height: 0.55em;
   display: inline-block;
   position: fixed;
   top: 0.25em;
-  left: 0.25em;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a47b74), color-stop(0.05, #825952), color-stop(0.95, #825952), color-stop(1, #603730));
-  background: -webkit-linear-gradient(top, #a47b74 0%, #825952 5%, #825952 95%, #603730 100%);
-  background: -moz-linear-gradient(top, #a47b74 0%, #825952 5%, #825952 95%, #603730 100%);
-  background: -o-linear-gradient(top, #a47b74 0%, #825952 5%, #825952 95%, #603730 100%);
-  background: -ms-linear-gradient(top, #a47b74 0%, #825952 5%, #825952 95%, #603730 100%);
-  background: linear-gradient(top, #a47b74 0%, #825952 5%, #825952 95%, #603730 100%);
-  -webkit-border-radius: 0.125em;
-  border-radius: 0.125em;
   text-align: center;
   text-decoration: none;
-  color: #a47b74;
-  text-shadow: 0 1px 0 #603730;
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.5);
-  box-shadow: 0 1px 1px rgba(0,0,0,0.5);
-  font-weight: bolder;
+  color: #eee;
+  text-shadow: 0 1px 1px #6c5d62;
 }
 #post {
   -webkit-box-sizing: border-box;
@@ -810,7 +826,7 @@ body:before {
   padding: 0;
   background-color: transparent;
   border: none;
-  color: #e3dfd6;
+  color: #95b342;
   text-shadow: 0 1px 2px rgba(0,0,0,0.75);
   width: 1em;
 }

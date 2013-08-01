@@ -24,5 +24,5 @@ app.get('/', function(req, res) {
 })
 
 app.listen(port, function() {
-  console.log('What up, world!? I be at: port ' + port + '... get at me!')
+  console.log('What up, world!? I be at port ' + port + '... get at me!')
 })

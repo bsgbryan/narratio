@@ -15,16 +15,31 @@ html(lang='en', ng-app="narratio")
   body(ng-controller="nReadCtrl")
     #post(ng-view)
     #aioim
-    a#create(href="#/create/post.html")
-      +
+    #actions
+      a#create(href="#/create/post.html")
+        &#59290;
+      a#edit-profile(href="#/profile.edit.html")
+        &#128100;
+    #login
+      a#facebook(href="#facebook", ng-click="loginVia('facebook')")
+        &#62222;
+      a#twitter(href="#twitter", ng-click="loginVia('twitter')")
+        &#62217;
+      a#github(href="#github", ng-click="loginVia('github')")
+        &#62208;
     nav#posts
       a(ng-repeat="post in posts", href="#/read/{{ $index }}.html", ng-click="assignPost($index)") {{ post.title.substring(2) }}
-    ul#share
-      a(href='/share-via/facebook') facebook
-      a(href='/share-via/twitter') twitter
-      a(href='/share-via/google+') google+
+    //- ul#share
+    //-   a(href='/share-via/facebook') facebook
+    //-   a(href='/share-via/twitter') twitter
+    //-   a(href='/share-via/google+') google+
 
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.js')
     script(src='https://cdn.firebase.com/v0/firebase.js')
+    script(src='https://cdn.firebase.com/v0/firebase-simple-login.js')
+    script(src='/zepto.min.js')
+    script(src='/jquery.cookie.js')
+    script(src='/angularFire.js')
+    script(src='/moment.min.js')
     script(src='/narratio.js')
     script(src='/logic.js')
