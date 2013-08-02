@@ -50,7 +50,28 @@ var url        = 'https://narratio.firebaseio.com',
       }
     })
 
-var nReadCtrl = function ($scope, angularFire) {
+var ReadCtrl = function ($scope, angularFire, $routeParams) {
+  angularFire(narrated, $scope, 'posts').
+    then(function () {
+      var pid  = $routeParams.post_id,
+          post = $scope.posts[pid]
+
+      $scope.title = marked(post.title)
+
+      var paras = [ ],
+          cont  = post.content
+
+      for (var c in cont)
+        if (cont.hasOwnProperty(c))
+          paras.push(marked(cont[c]))
+
+      $scope.paragraphs = paras
+
+      $scope.editable = post.author.context === author.context && post.author.id === author.id
+    })
+}
+
+var NarratioCtrl = function ($scope, angularFire) {
   angularFire(narrated, $scope, 'posts')
 
   $scope.assignPost = function (idx) {
@@ -100,7 +121,8 @@ angular.module('narratio.controllers', [ ]).
     })
   } ]).
 
-  controller(nReadCtrl, [ '$scope', 'angularFire' ])
+  controller(NarratioCtrl, [ '$scope', 'angularFire' ]).
+  controller(ReadCtrl, [ '$scope', 'angularFireColleciton', '$routeParams' ])
 
 angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
   config(['$routeProvider', function($router) {
@@ -110,6 +132,7 @@ angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
     })
 
     $router.when('/read/:post_id.html', { 
-      templateUrl: 'partials/read.html'
+      templateUrl: 'partials/read.html',
+      controller: 'ReadCtrl'
     })
   }])

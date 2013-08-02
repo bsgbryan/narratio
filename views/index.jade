@@ -12,7 +12,7 @@ html(lang='en', ng-app="narratio")
     // App stylesheet
     link(rel='stylesheet', href='#{ base }/bm.css')
 
-  body(ng-controller="nReadCtrl")
+  body(ng-controller="NarratioCtrl")
     #post(ng-view)
     #aioim
     #actions
@@ -21,11 +21,11 @@ html(lang='en', ng-app="narratio")
       a#edit-profile(href="#/profile.edit.html")
         &#128100;
     #login
-      a#facebook(href="#facebook", ng-click="loginVia('facebook')")
+      a#facebook(href="#facebook")
         &#62222;
-      a#twitter(href="#twitter", ng-click="loginVia('twitter')")
+      a#twitter(href="#twitter")
         &#62217;
-      a#github(href="#github", ng-click="loginVia('github')")
+      a#github(href="#github")
         &#62208;
     nav#posts
       a(ng-repeat="post in posts", href="#/read/{{ $index }}.html", ng-click="assignPost($index)") {{ post.title.substring(2) }}
