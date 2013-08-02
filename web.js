@@ -13,14 +13,7 @@ app.configure(function () {
 });
 
 app.get('/', function(req, res) {
-  var host = 'http://'
-  
-  if (req.headers.host.indexOf('localhost') === 0)
-    host += 'localhost:' + port
-  else
-    host = req.headers.host
-    
-  res.render('index', { layout: false, base: host })
+  res.render('index', { layout: false })
 })
 
 app.listen(port, function() {
