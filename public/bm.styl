@@ -138,6 +138,14 @@ body
 #actions
 #login
   display none
+  h3
+    color rgba(#47423b, .75)
+    margin .75em 0
+    font-size 100%
+    display inline-block
+    width 8em
+    text-align center
+    text-shadow 0 1px 0px rgba(#e3dfd6, .25)
 
 #create
   left .3em
@@ -145,6 +153,7 @@ body
   left 1.125em
 #create
 #edit-profile
+#edit-post
   font-family Entypo
 
 #login #facebook
@@ -156,6 +165,19 @@ body
 #login a
   font-family EntypoSocial
 
+#edit-post
+    font-size 300%
+    margin-left 1.55em
+    top -.45em
+    position relative
+
+#create
+#edit-profile
+  top .25em
+
+#login a
+  top .6em
+
 #create
 #edit-profile
 #login a
@@ -163,7 +185,6 @@ body
   line-height .55em
   display inline-block
   position fixed
-  top .25em
   text-align center
   text-decoration none
   color #eee
@@ -195,6 +216,16 @@ body
     z-index -1
     height 150%
     box-shadow inset 0 0 5px rgba(white, .25)
+  &:after
+    display block
+    content ' '
+    position fixed
+    top   0
+    left  8.3em
+    right 24.3em
+    height 100%
+    background linear-gradient(left, rgba(black, .45), transparent 8%, transparent 92%, rgba(black, .45))
+    z-index -1
   ul.supplemental
     position fixed
     top 0
@@ -219,16 +250,6 @@ body
         opacity .3
         &:hover
           opacity 1
-    &:after
-      display block
-      content ' '
-      position fixed
-      top   0
-      left  8em
-      right 24em
-      height 100%
-      background linear-gradient(left, rgba(black, .5), transparent 15%, transparent 85%, rgba(black, .5))
-      z-index -1
     &:before
       background linear-gradient(top, transparent 25%, rgba(black, .5))
       display block
@@ -273,7 +294,7 @@ body
 
 #posts
   position fixed
-  top 3.8em
+  top 5.25em
   left 0
   bottom 5.625em
   width 8em

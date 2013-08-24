@@ -97,7 +97,7 @@ angular.module('narratio.controllers', [ ]).
     $scope.templates = { 'paragraph': 'partials/paragraph.html' };
 
     $scope.appendNewParagraph = function () {
-      $('#post #new ng-include[src="templates.paragraph"]').after($('#post #new .content:first-child').clone().val(''))
+      $('#post #new .content:last-child').after($('#post #new .content:last-child').clone().val(''))
     }
 
     var promise = angularFire(narrated, $scope, 'posts')
