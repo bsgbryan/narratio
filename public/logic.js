@@ -71,43 +71,6 @@ function render(pid, scope) {
   }
 }
 
-var ReadCtrl = function ($scope, angularFire, $routeParams) {
-  contents.then(function () {
-    render($routeParams.post_id, $scope)
-  })
-  
-  $scope.$on('$routeChangeSuccess', function (next, current) {
-    render(current.params.post_id, $scope)
-  })
-}
-
-var EditCtrl = function ($scope, $location, angularFire, $routeParams) {
-  $scope.appendNewParagraph = function () {
-    var contents = $('#post #editor .content')
-
-    $(contents[contents.length - 1]).after($(contents[contents.length - 1]).clone().text(''))
-  }
-
-  $scope.update = function (pid) {
-    var title      = '# ' + $('#editor #title').val()
-    var paragraphs = [ ]
-
-    $('#post #editor .content').forEach(function (paragraph) {
-      paragraphs.push($(paragraph).val())
-    })
-
-    $scope.posts[pid] = { title: title, content: paragraphs, author: author }
-  }
-
-  $scope.$on('$routeChangeSuccess', function (next, current) {
-    var post = $scope.posts[current.params.post_id]
-
-    $scope.title   = post.title.substring(2)
-    $scope.content = post.content
-    $scope.post_id = $routeParams.post_id
-  })
-}
-
 var NarratioCtrl = function ($scope, angularFire) {
   contents = angularFire(narrated, $scope, 'posts')
 
@@ -146,11 +109,59 @@ var CreateCtrl = function ($scope, $location, angularFire) {
   }
 }
 
+var ReadCtrl = function ($scope, $routeParams) {
+  contents.then(function () {
+    render($routeParams.post_id, $scope)
+  })
+  
+  $scope.$on('$routeChangeSuccess', function (next, current) {
+    render(current.params.post_id, $scope)
+  })
+}
+
+var EditCtrl = function ($scope, $location, angularFire, $routeParams) {
+  $scope.appendNewParagraph = function () {
+    var contents = $('#post #editor .content')
+
+    $(contents[contents.length - 1]).after($(contents[contents.length - 1]).clone().text(''))
+  }
+
+  $scope.update = function (pid) {
+    var title      = '# ' + $('#editor #title').val()
+    var paragraphs = [ ]
+
+    $('#post #editor .content').forEach(function (paragraph) {
+      paragraphs.push($(paragraph).val())
+    })
+
+    $scope.posts[pid] = { title: title, content: paragraphs, author: author }
+  }
+
+  $scope.$on('$routeChangeSuccess', function (next, current) {
+    var post = $scope.posts[current.params.post_id]
+
+    $scope.title   = post.title.substring(2)
+    $scope.content = post.content
+    $scope.post_id = $routeParams.post_id
+  })
+}
+
+var DeleteCtrl = function ($scope, $location) {
+  $scope.remove = function (pid) {
+    $scope.posts.splice(pid, 1)
+  }
+
+  $scope.$on('$routeChangeSuccess', function (next, current) {
+    $scope.post_id = current.params.post_id
+  })
+}
+
 angular.module('narratio.controllers', [ ]).
   controller(NarratioCtrl, [ '$scope', 'angularFire' ]).
   controller(CreateCtrl,   [ '$scope', '$location', 'angularFire' ]).
   controller(EditCtrl,     [ '$scope', '$location', 'angularFire', '$routeParams' ]).
-  controller(ReadCtrl,     [ '$scope', 'angularFireColleciton', '$routeParams' ])
+  controller(ReadCtrl,     [ '$scope', '$routeParams' ]).
+  controller(DeleteCtrl,   [ '$scope', '$locationProvider' ])
 
 angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
   config(['$routeProvider', '$locationProvider', function($router, $location) {
@@ -167,6 +178,11 @@ angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
     $router.when('/edit/:post_id.html', { 
       templateUrl: '/partials/edit.html',
       controller: 'EditCtrl'
+    })
+
+    $router.when('/delete/:post_id.html', { 
+      templateUrl: '/partials/delete.html',
+      controller: 'DeleteCtrl'
     })
 
     $location.html5Mode(true)

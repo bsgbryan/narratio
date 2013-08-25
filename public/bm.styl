@@ -154,6 +154,8 @@ body
 #create
 #edit-profile
 #edit-post
+#delete-post
+#post .commands
   font-family Entypo
 
 #login #facebook
@@ -166,10 +168,19 @@ body
   font-family EntypoSocial
 
 #edit-post
-    font-size 300%
-    margin-left 1.55em
-    top -.45em
-    position relative
+#delete-post
+#delete .commands a
+#delete .commands input
+  font-size 300%
+  margin-left 0
+  display inline-block
+  height 1em
+  width 1em
+  display inline-block
+  text-align center
+  vertical-align top
+  line-height 1em
+  position relative
 
 #create
 #edit-profile
@@ -515,11 +526,13 @@ body
   img
     width 28.375em
 
-  p, ol, ul, textarea
+  p, ol, ul, textarea, .commands
     width 28.4em
-    font-family 'Esteban', serif
     margin-left  auto
     margin-right auto
+
+  p, ol, ul, textarea
+    font-family 'Esteban', serif
 
   ol, ul
     padding .5em 2.25em
@@ -555,6 +568,13 @@ body
       width 1em
       &[type=submit]
         margin-left 5.4em
+  .commands input
+    padding 0
+    background-color transparent
+    border none
+    color #eee
+    text-shadow 0 1px 2px rgba(black, .75)
+
 
   p, textarea
     padding .85em .75em .45em .75em

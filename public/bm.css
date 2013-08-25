@@ -323,7 +323,9 @@ body:before {
 }
 #create,
 #edit-profile,
-#edit-post {
+#edit-post,
+#delete-post,
+#post .commands {
   font-family: Entypo;
 }
 #login #facebook {
@@ -338,10 +340,19 @@ body:before {
 #login a {
   font-family: EntypoSocial;
 }
-#edit-post {
+#edit-post,
+#delete-post,
+#delete .commands a,
+#delete .commands input {
   font-size: 300%;
-  margin-left: 1.55em;
-  top: -0.45em;
+  margin-left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  line-height: 1em;
   position: relative;
 }
 #create,
@@ -808,11 +819,17 @@ body:before {
 #post p,
 #post ol,
 #post ul,
-#post textarea {
+#post textarea,
+#post .commands {
   width: 28.4em;
-  font-family: 'Esteban', serif;
   margin-left: auto;
   margin-right: auto;
+}
+#post p,
+#post ol,
+#post ul,
+#post textarea {
+  font-family: 'Esteban', serif;
 }
 #post ol,
 #post ul {
@@ -860,6 +877,13 @@ body:before {
 #post #new input[type=submit],
 #post #editor input[type=submit] {
   margin-left: 5.4em;
+}
+#post .commands input {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: #eee;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.75);
 }
 #post p,
 #post textarea {
