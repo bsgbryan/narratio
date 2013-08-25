@@ -20,6 +20,7 @@ var narrated = 'https://narratio.firebaseio.com/narrated'
 var url        = 'https://narratio.firebaseio.com',
     author     = { context: null, name: null }
     narratio   = new Firebase(url),
+    contents   = null,
     authinator = new FirebaseSimpleLogin(narratio, function(error, user) {
       if (error) {
         console.log(error);
@@ -71,19 +72,17 @@ function render(pid, scope) {
 }
 
 var ReadCtrl = function ($scope, angularFire, $routeParams) {
-  var aFire = angularFire(narrated, $scope, 'posts').
-    then(function () {
-      render($routeParams.post_id, $scope)
-    })
-
-    $scope.$on('$routeChangeSuccess', function (next, current) {
-      render(current.params.post_id, $scope)
-    })
+  contents.then(function () {
+    render($routeParams.post_id, $scope)
+  })
+  
+  $scope.$on('$routeChangeSuccess', function (next, current) {
+    render(current.params.post_id, $scope)
+  })
 }
 
 var EditCtrl = function ($scope, $location, angularFire, $routeParams) {
   $scope.appendNewParagraph = function () {
-    console.log('adding new paragraphs')
     var contents = $('#post #editor .content')
 
     $(contents[contents.length - 1]).after($(contents[contents.length - 1]).clone().text(''))
@@ -106,16 +105,13 @@ var EditCtrl = function ($scope, $location, angularFire, $routeParams) {
     $scope.title   = post.title.substring(2)
     $scope.content = post.content
     $scope.post_id = $routeParams.post_id
-
-    console.log(current)
   })
 }
 
 var NarratioCtrl = function ($scope, angularFire) {
-  angularFire(narrated, $scope, 'posts')
+  contents = angularFire(narrated, $scope, 'posts')
 
   $scope.assignPost = function (idx) {
-
     $scope.title = marked(this.post.title)
 
     var paras = [ ],
@@ -138,25 +134,16 @@ var CreateCtrl = function ($scope, $location, angularFire) {
     $('#post #new .content:last-child').after($('#post #new .content:last-child').clone().val(''))
   }
 
-  var promise = angularFire(narrated, $scope, 'posts')
+  $scope.publish = function () {
+    var title      = '# ' + $('#new #title').val()
+    var paragraphs = [ ]
 
-  if ($location.path() === '')
-    $location.path('/')
-  
-  $scope.location = $location
+    $('#new .content').forEach(function (paragraph) {
+      paragraphs.push($(paragraph).val())
+    })
 
-  promise.then(function () {
-    $scope.publish = function () {
-      var title      = '# ' + $('#new #title').val()
-      var paragraphs = [ ]
-
-      $('#new .content').forEach(function (paragraph) {
-        paragraphs.push($(paragraph).val())
-      })
-
-      $scope.posts.push({ title: title, content: paragraphs, author: author })
-    }
-  })
+    $scope.posts.push({ title: title, content: paragraphs, author: author })
+  }
 }
 
 angular.module('narratio.controllers', [ ]).
