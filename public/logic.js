@@ -64,6 +64,7 @@ function render(pid, scope) {
         paras.push(marked(cont[c]))
 
     scope.paragraphs = paras
+    scope.post_id = pid
 
     scope.editable = post.author.context === author.context && post.author.id === author.id
   }
@@ -78,6 +79,36 @@ var ReadCtrl = function ($scope, angularFire, $routeParams) {
     $scope.$on('$routeChangeSuccess', function (next, current) {
       render(current.params.post_id, $scope)
     })
+}
+
+var EditCtrl = function ($scope, $location, angularFire, $routeParams) {
+  $scope.appendNewParagraph = function () {
+    console.log('adding new paragraphs')
+    var contents = $('#post #editor .content')
+
+    $(contents[contents.length - 1]).after($(contents[contents.length - 1]).clone().text(''))
+  }
+
+  $scope.update = function (pid) {
+    var title      = '# ' + $('#editor #title').val()
+    var paragraphs = [ ]
+
+    $('#post #editor .content').forEach(function (paragraph) {
+      paragraphs.push($(paragraph).val())
+    })
+
+    $scope.posts[pid] = { title: title, content: paragraphs, author: author }
+  }
+
+  $scope.$on('$routeChangeSuccess', function (next, current) {
+    var post = $scope.posts[current.params.post_id]
+
+    $scope.title   = post.title.substring(2)
+    $scope.content = post.content
+    $scope.post_id = $routeParams.post_id
+
+    console.log(current)
+  })
 }
 
 var NarratioCtrl = function ($scope, angularFire) {
@@ -100,49 +131,55 @@ var NarratioCtrl = function ($scope, angularFire) {
   }
 }
 
-angular.module('narratio.controllers', [ ]).
+var CreateCtrl = function ($scope, $location, angularFire) {
+  $scope.templates = { 'paragraph': '/partials/paragraph.html' };
 
-  controller('nCreateCtrl', [ '$scope', '$location', 'angularFire', function ($scope, $location, angularFire) {
-    $scope.templates = { 'paragraph': '/partials/paragraph.html' };
+  $scope.appendNewParagraph = function () {
+    $('#post #new .content:last-child').after($('#post #new .content:last-child').clone().val(''))
+  }
 
-    $scope.appendNewParagraph = function () {
-      $('#post #new .content:last-child').after($('#post #new .content:last-child').clone().val(''))
+  var promise = angularFire(narrated, $scope, 'posts')
+
+  if ($location.path() === '')
+    $location.path('/')
+  
+  $scope.location = $location
+
+  promise.then(function () {
+    $scope.publish = function () {
+      var title      = '# ' + $('#new #title').val()
+      var paragraphs = [ ]
+
+      $('#new .content').forEach(function (paragraph) {
+        paragraphs.push($(paragraph).val())
+      })
+
+      $scope.posts.push({ title: title, content: paragraphs, author: author })
     }
+  })
+}
 
-    var promise = angularFire(narrated, $scope, 'posts')
-
-    if ($location.path() === '')
-      $location.path('/')
-    
-    $scope.location = $location
-
-    promise.then(function () {
-      $scope.publish = function () {
-        var title      = '# ' + $('#new #title').val()
-        var paragraphs = [ ]
-
-        $('#new .content').forEach(function (paragraph) {
-          paragraphs.push($(paragraph).val())
-        })
-
-        $scope.posts.push({ title: title, content: paragraphs, author: author })
-      }
-    })
-  } ]).
-
+angular.module('narratio.controllers', [ ]).
   controller(NarratioCtrl, [ '$scope', 'angularFire' ]).
-  controller(ReadCtrl, [ '$scope', 'angularFireColleciton', '$routeParams' ])
+  controller(CreateCtrl,   [ '$scope', '$location', 'angularFire' ]).
+  controller(EditCtrl,     [ '$scope', '$location', 'angularFire', '$routeParams' ]).
+  controller(ReadCtrl,     [ '$scope', 'angularFireColleciton', '$routeParams' ])
 
 angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
   config(['$routeProvider', '$locationProvider', function($router, $location) {
     $router.when('/create/post.html',   { 
       templateUrl: '/partials/create.html', 
-      controller: 'nCreateCtrl'
+      controller: 'CreateCtrl'
     })
 
     $router.when('/read/:post_id.html', { 
       templateUrl: '/partials/read.html',
       controller: 'ReadCtrl'
+    })
+
+    $router.when('/edit/:post_id.html', { 
+      templateUrl: '/partials/edit.html',
+      controller: 'EditCtrl'
     })
 
     $location.html5Mode(true)

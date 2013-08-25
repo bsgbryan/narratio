@@ -20,6 +20,14 @@ app.get('/read/:post', function (req, res) {
   res.render('index', { layout: false })
 })
 
+app.get('/edit/:post', function (req, res) {
+  res.render('index', { layout: false })
+})
+
+app.get('/create/:resource', function (req, res) {
+  res.render('index', { layout: false })
+})
+
 app.get('/read/partials/:action', function (req, res) {
   res.render('partials/:action', { layout: false })
 })

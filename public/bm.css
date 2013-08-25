@@ -828,11 +828,13 @@ body:before {
   padding-left: 1.95em;
   letter-spacing: 1px;
 }
-#post #new {
+#post #new,
+#post #editor {
   width: 30em;
   margin: 0 auto;
 }
-#post #new #title {
+#post #new #title,
+#post #editor #title {
   text-align: center;
   font-size: 450%;
   width: 6.5em;
@@ -840,10 +842,12 @@ body:before {
   margin: 0 auto;
   height: 100px;
 }
-#post #new .content {
+#post #new .content,
+#post #editor .content {
   margin-top: 1em;
 }
-#post #new input {
+#post #new input,
+#post #editor input {
   font-family: 'Entypo';
   font-size: 400%;
   padding: 0;
@@ -853,7 +857,8 @@ body:before {
   text-shadow: 0 1px 2px rgba(0,0,0,0.75);
   width: 1em;
 }
-#post #new input[type=submit] {
+#post #new input[type=submit],
+#post #editor input[type=submit] {
   margin-left: 5.4em;
 }
 #post p,
@@ -873,6 +878,8 @@ body:before {
   color: rgba(255,255,255,0.7);
   -webkit-border-radius: 2px;
   border-radius: 2px;
+  margin-bottom: 16px;
+  margin-top: 16px;
 }
 #post p:first-letter,
 #post textarea:first-letter {

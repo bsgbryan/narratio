@@ -2,4 +2,4 @@
   <div ng-bind-html-unsafe="title"></div>
   <div ng-repeat="p in paragraphs" ng-bind-html-unsafe="p"></div>
 </article>
-<a id="edit-post" ng-show="editable" href="#/edit.html">&#9998;</a>
+<a id="edit-post" ng-show="editable" href="/edit/{{ post_id }}.html">&#9998;</a>
