@@ -16,6 +16,18 @@ app.get('/', function(req, res) {
   res.render('index', { layout: false })
 })
 
+app.get('/read/:post', function (req, res) {
+  res.render('index', { layout: false })
+})
+
+app.get('/read/partials/:action', function (req, res) {
+  res.render('partials/:action', { layout: false })
+})
+
+// app.get('/:resource', function (req, res) {
+//   res.render('/:resource', { layout: false })
+// })
+
 app.listen(port, function() {
   console.log('What up, world!? I be at port ' + port + '... get at me!')
 })

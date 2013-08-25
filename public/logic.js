@@ -50,24 +50,33 @@ var url        = 'https://narratio.firebaseio.com',
       }
     })
 
+function render(pid, scope) {
+  if (typeof scope.posts !== 'undefined') {
+    var post = scope.posts[pid]
+
+    scope.title = marked(post.title)
+
+    var paras = [ ],
+        cont  = post.content
+
+    for (var c in cont)
+      if (cont.hasOwnProperty(c))
+        paras.push(marked(cont[c]))
+
+    scope.paragraphs = paras
+
+    scope.editable = post.author.context === author.context && post.author.id === author.id
+  }
+}
+
 var ReadCtrl = function ($scope, angularFire, $routeParams) {
-  angularFire(narrated, $scope, 'posts').
+  var aFire = angularFire(narrated, $scope, 'posts').
     then(function () {
-      var pid  = $routeParams.post_id,
-          post = $scope.posts[pid]
+      render($routeParams.post_id, $scope)
+    })
 
-      $scope.title = marked(post.title)
-
-      var paras = [ ],
-          cont  = post.content
-
-      for (var c in cont)
-        if (cont.hasOwnProperty(c))
-          paras.push(marked(cont[c]))
-
-      $scope.paragraphs = paras
-
-      $scope.editable = post.author.context === author.context && post.author.id === author.id
+    $scope.$on('$routeChangeSuccess', function (next, current) {
+      render(current.params.post_id, $scope)
     })
 }
 
@@ -94,7 +103,7 @@ var NarratioCtrl = function ($scope, angularFire) {
 angular.module('narratio.controllers', [ ]).
 
   controller('nCreateCtrl', [ '$scope', '$location', 'angularFire', function ($scope, $location, angularFire) {
-    $scope.templates = { 'paragraph': 'partials/paragraph.html' };
+    $scope.templates = { 'paragraph': '/partials/paragraph.html' };
 
     $scope.appendNewParagraph = function () {
       $('#post #new .content:last-child').after($('#post #new .content:last-child').clone().val(''))
@@ -125,14 +134,16 @@ angular.module('narratio.controllers', [ ]).
   controller(ReadCtrl, [ '$scope', 'angularFireColleciton', '$routeParams' ])
 
 angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
-  config(['$routeProvider', function($router) {
+  config(['$routeProvider', '$locationProvider', function($router, $location) {
     $router.when('/create/post.html',   { 
-      templateUrl: 'partials/create.html', 
+      templateUrl: '/partials/create.html', 
       controller: 'nCreateCtrl'
     })
 
     $router.when('/read/:post_id.html', { 
-      templateUrl: 'partials/read.html',
+      templateUrl: '/partials/read.html',
       controller: 'ReadCtrl'
     })
+
+    $location.html5Mode(true)
   }])

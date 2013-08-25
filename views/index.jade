@@ -29,7 +29,7 @@ html(lang='en', ng-app="narratio")
       a#github(href="#github")
         &#62208;
     nav#posts
-      a(ng-repeat="post in posts", href="#/read/{{ $index }}.html", ng-click="assignPost($index)") {{ post.title.substring(2) }}
+      a(ng-repeat="post in posts", href="/read/{{ $index }}.html", ng-click="assignPost($index)") {{ post.title.substring(2) }}
     //- ul#share
     //-   a(href='/share-via/facebook') facebook
     //-   a(href='/share-via/twitter') twitter
@@ -40,7 +40,7 @@ html(lang='en', ng-app="narratio")
     script(src='https://cdn.firebase.com/v0/firebase-simple-login.js')
     script(src='/zepto.min.js')
     script(src='/jquery.cookie.js')
-    script(src='/angularFire.js')
+    script(src='/angularfire.min.js')
     script(src='/moment.min.js')
     script(src='/narratio.js')
     script(src='/logic.js')
