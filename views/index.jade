@@ -9,6 +9,8 @@ html(lang='en', ng-app="narratio")
     link(rel="apple-touch-icon", href="public/images/apple-touch-icon.png")
     // Google web fonts
     link(href='http://fonts.googleapis.com/css?family=Esteban|Alegreya+SC:400,700|Special+Elite', rel='stylesheet')
+    link(rel='stylesheet', href='/html5boilerplate.css')
+    link(rel='stylesheet', href='/fontface.css')
     // App stylesheet
     link(rel='stylesheet', href='/bm.css')
 
@@ -29,11 +31,10 @@ html(lang='en', ng-app="narratio")
       a#github(href="#github")
         &#62208;
     nav#posts
-      a(ng-repeat="post in posts", href="/read/{{ $index }}.html", ng-click="assignPost($index)") {{ post.title.substring(2) }}
-    //- ul#share
-    //-   a(href='/share-via/facebook') facebook
-    //-   a(href='/share-via/twitter') twitter
-    //-   a(href='/share-via/google+') google+
+      a(ng-repeat="post in posts | orderBy:published:reverse", href="/read/{{ $index }}.html", ng-click="assignPost($index)") {{ post.title.substring(2) }}
+    #quote 
+      p The secret of life is that it has no purpose
+      p.source Bryan Maynard
 
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.js')
     script(src='https://cdn.firebase.com/v0/firebase.js')

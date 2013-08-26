@@ -105,7 +105,12 @@ var CreateCtrl = function ($scope, $location, angularFire) {
       paragraphs.push($(paragraph).val())
     })
 
-    $scope.posts.push({ title: title, content: paragraphs, author: author })
+    $scope.posts.push({ 
+      title: title, 
+      content: paragraphs, 
+      author: author, 
+      published: new Date().getTime() 
+    })
   }
 }
 
@@ -134,7 +139,13 @@ var EditCtrl = function ($scope, $location, angularFire, $routeParams) {
       paragraphs.push($(paragraph).val())
     })
 
-    $scope.posts[pid] = { title: title, content: paragraphs, author: author }
+    $scope.posts[pid] = { 
+      title: title, 
+      content: paragraphs, 
+      author: author, 
+      published: $scope.posts[pid].published, 
+      lastEdited: new Date().getTime()
+    }
   }
 
   $scope.$on('$routeChangeSuccess', function (next, current) {
