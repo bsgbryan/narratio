@@ -2,5 +2,14 @@
   <textarea id="title" placeholder="Example"></textarea>
   <ng-include src="templates.paragraph"></ng-include>
   <input type="button" value="&oplus;" ng-click="appendNewParagraph()">
+  <label for="publish-to-facebook">
+    <input type="checkbox" id="publish-to-facebook" name="publishTo[]" value="facebook">
+  </label>
+  <label for="publish-to-twitter">
+    <input type="checkbox" id="publish-to-twitter" name="publishTo[]" value="twitter">
+  </label>
+  <label for="publish-to-github">
+    <input type="checkbox" id="publish-to-github" name="publishTo[]" value="github">
+  </label>
   <input type="submit" value="&#59153;">
 </form>

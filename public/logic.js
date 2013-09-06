@@ -197,4 +197,33 @@ angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
     })
 
     $location.html5Mode(true)
-  }])
+  }]).
+  directive('setHeight', function () {
+    return function (scope, element, attrs) {
+      scope.$watch('p', function () {
+        var chars = this.last.split('').length
+
+        console.log(chars)
+
+        $(element[0]).css('height', ((chars / 40 + 1.2) * .95) + 'em')
+      })
+    }
+  })
+
+function setHeight(scope) {
+  var chars = $(scope).val().split('').length
+
+  console.log(scope)
+
+  $(scope).css('height', ((chars / 40 + 1.2) * .95) + 'em')
+}
+
+$(function () {
+  $('#post').on('change', '#editor .content', function () {
+    setHeight(this)
+  })
+
+  $('#post').on('keyup', '#new ng-include textarea', function () {
+    setHeight(this)
+  })
+})
