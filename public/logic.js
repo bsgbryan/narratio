@@ -101,7 +101,7 @@ var CreateCtrl = function ($scope, $location, angularFire) {
     var title      = '# ' + $('#new #title').val()
     var paragraphs = [ ]
 
-    $('#new .content').forEach(function (paragraph) {
+    $('#new .content').each(function (i, paragraph) {
       paragraphs.push($(paragraph).val())
     })
 
@@ -135,7 +135,7 @@ var EditCtrl = function ($scope, $location, angularFire, $routeParams) {
     var title      = '# ' + $('#editor #title').val()
     var paragraphs = [ ]
 
-    $('#post #editor .content').forEach(function (paragraph) {
+    $('#post #editor .content').each(function (i, paragraph) {
       paragraphs.push($(paragraph).val())
     })
 
