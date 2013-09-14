@@ -212,7 +212,7 @@ $(function () {
     setHeight(this)
   })
 
-  if (typeof $.cookie('session') === 'undefined') {
+  if (typeof $.cookie('token') === 'undefined') {
     $('#actions').hide()
     $('#login').show()
   } else {
@@ -223,8 +223,8 @@ $(function () {
   var token = $.urlParam('access_token')
 
   if (token !== null) {
-    console.log(auth_token)
-    $.cookie('token', auth_token)
+    console.log(token)
+    $.cookie('token', token)
   }
 
   $('#login a').on('click', function () {
@@ -235,6 +235,9 @@ $(function () {
       'redirect_uri=' + callback[mode] + '&' +
       'scope=email&' +
       'response_type=token'
+
+    if (typeof $.cookie('token') === 'string')
+      href += '&access_token=' + $.cookie('token')
 
     $(this).
       attr('href', href).
