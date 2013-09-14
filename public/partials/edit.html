@@ -1,4 +1,4 @@
-<form ng-submit="update(post_id)" id="editor" ng-controller="EditCtrl">
+<form ng-submit="update(post_id)" id="editor" ng-controller="Editor">
   <textarea id="title" ng-bind="title" placeholder="Example"></textarea>
   <textarea set-height ng-repeat="p in content" ng-bind="p" class="content" placeholder="content goes here"></textarea>
   <input type="button" value="&oplus;" ng-click="appendNewParagraph()">
