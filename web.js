@@ -36,6 +36,10 @@ app.get('/read/partials/:action', function (req, res) {
   res.render('partials/:action', { layout: false })
 })
 
+app.get('/manage/:resource', function (req, res) {
+  res.render('index', { layout: false })
+})
+
 // app.get('/:resource', function (req, res) {
 //   res.render('/:resource', { layout: false })
 // })
