@@ -20,36 +20,7 @@ var narrated = 'https://narratio.firebaseio.com/narrated'
 var url        = 'https://narratio.firebaseio.com',
     author     = { context: null, name: null }
     narratio   = new Firebase(url),
-    contents   = null,
-    authinator = new FirebaseSimpleLogin(narratio, function(error, user) {
-      if (error) {
-        console.log(error);
-      } else if (user) {
-        $('#actions').show()
-        $('#login').hide()
-        
-        author.context = user.provider
-        author.name    = user.displayName
-        author.id      = user.id
-      } else {
-        $('#actions').hide()
-        $('#login').show()
-
-        $('#login a').on('click', function () {
-          var method = $(this).attr('id'),
-              params = { rememberMe: true }
-
-          if (method === 'facebook')
-            params.scope = 'email'
-          if (method === 'github')
-            params.scope = 'user'
-
-          authinator.login(method, params)
-
-          return false
-        })
-      }
-    })
+    contents   = null
 
 function render(pid, scope) {
   if (typeof scope.posts !== 'undefined') {
@@ -100,15 +71,21 @@ var CreateCtrl = function ($scope, $location, angularFire) {
   $scope.publish = function () {
     var title      = '# ' + $('#new #title').val()
     var paragraphs = [ ]
+    var contexts   = [ ]
 
     $('#new .content').each(function (i, paragraph) {
       paragraphs.push($(paragraph).val())
     })
 
+    $('#new .contexts').each(function (i, context) {
+      contexts.push($(contxt).val())
+    })
+
     $scope.posts.push({ 
       title: title, 
       content: paragraphs, 
-      author: author, 
+      contexts: contexts,
+      author: $.cookie('author'), 
       published: new Date().getTime() 
     })
   }
@@ -213,9 +190,15 @@ angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
 function setHeight(scope) {
   var chars = $(scope).val().split('').length
 
-  console.log(scope)
+  $(scope).css('height', (Math.floor(chars / 40 + 1.2) * .95) + 'em')
+}
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+}
 
-  $(scope).css('height', ((chars / 40 + 1.2) * .95) + 'em')
+var callback = {
+  facebook : 'https%3A%2F%2Fapi.singly.com%2Fauth%2Ffacebook%2Fauth%2F7fbf36f4dfc8aae58d6748d9855b8b65',
+  twitter  : 'http%3A%2F%2Fnarratio.bsgbryan.com'
 }
 
 $(function () {
@@ -226,4 +209,34 @@ $(function () {
   $('#post').on('keyup', '#new ng-include textarea', function () {
     setHeight(this)
   })
+
+  if (typeof $.cookie('session') === 'undefined') {
+    $('#actions').hide()
+    $('#login').show()
+  } else {
+    $('#actions').show()
+    $('#login').hide()
+  }
+
+  var token = getURLParameter('auth_token')
+
+  if (token !== null) {
+    console.log(auth_token)
+    $.cookie('token', auth_token)
+  }
+
+  $('#login a').on('click', function () {
+    var mode = $(this).attr('class')
+    var href = 'https://api.singly.com/oauth/authenticate?' +
+      'client_id=7fbf36f4dfc8aae58d6748d9855b8b65&' +
+      'service=' + mode + '&' +
+      'redirect_uri=' + callback[mode] + '&' +
+      'scope=email&' +
+      'response_type=token'
+
+    $(this).
+      attr('href', href).
+      trigger('click')
+  })
+
 })

@@ -24,11 +24,11 @@ html(lang='en', ng-app="narratio")
         &#128100;
     #login
       h3 Sign in using
-      a#facebook(href="#facebook")
+      a.facebook(href="#facebook")
         &#62222;
-      a#twitter(href="#twitter")
+      a.twitter(href="#twitter")
         &#62217;
-      a#github(href="#github")
+      a.github(href="#github")
         &#62208;
     nav#posts
       a(ng-repeat="post in posts | orderBy:published:reverse", href="/read/{{ $index }}.html", ng-click="assignPost($index)") {{ post.title.substring(2) }}
