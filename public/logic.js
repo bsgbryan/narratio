@@ -42,7 +42,7 @@ function render(pid, scope) {
   }
 }
 
-var NarratioCtrl = function ($scope, angularFire) {
+var Narratio = function ($scope, angularFire) {
   contents = angularFire(narrated, $scope, 'posts')
 
   $scope.assignPost = function (idx) {
@@ -61,7 +61,7 @@ var NarratioCtrl = function ($scope, angularFire) {
   }
 }
 
-var CreateCtrl = function ($scope, $location, angularFire) {
+var Creator = function ($scope, $location, angularFire) {
   $scope.templates = { 'paragraph': '/partials/paragraph.html' };
 
   $scope.appendNewParagraph = function () {
@@ -91,7 +91,7 @@ var CreateCtrl = function ($scope, $location, angularFire) {
   }
 }
 
-var ReadCtrl = function ($scope, $routeParams) {
+var Reader = function ($scope, $routeParams) {
   contents.then(function () {
     render($routeParams.post_id, $scope)
   })
@@ -101,7 +101,7 @@ var ReadCtrl = function ($scope, $routeParams) {
   })
 }
 
-var EditCtrl = function ($scope, $location, angularFire, $routeParams) {
+var Editor = function ($scope, $location, angularFire, $routeParams) {
   $scope.appendNewParagraph = function () {
     var contents = $('#post #editor .content')
 
@@ -134,7 +134,7 @@ var EditCtrl = function ($scope, $location, angularFire, $routeParams) {
   })
 }
 
-var DeleteCtrl = function ($scope, $location) {
+var Deleter = function ($scope, $location) {
   $scope.remove = function (pid) {
     $scope.posts.splice(pid, 1)
   }
@@ -144,33 +144,52 @@ var DeleteCtrl = function ($scope, $location) {
   })
 }
 
+var Profiler = function ($scope, $location) {
+  var user = null;
+
+  $.getJSON('https://api.singly.com/profile?access_token=' + $.cookie('token'), function () {
+    console.log(arguments)
+  })
+
+  $scope.$on('$routeChangeSuccess', function (next, current) {
+    console.log('yo!')
+    // $scope.post_id = current.params.post_id
+  })
+}
+
 angular.module('narratio.controllers', [ ]).
-  controller(NarratioCtrl, [ '$scope', 'angularFire' ]).
-  controller(CreateCtrl,   [ '$scope', '$location', 'angularFire' ]).
-  controller(EditCtrl,     [ '$scope', '$location', 'angularFire', '$routeParams' ]).
-  controller(ReadCtrl,     [ '$scope', '$routeParams' ]).
-  controller(DeleteCtrl,   [ '$scope', '$locationProvider' ])
+  controller(Narratio, [ '$scope', 'angularFire' ]).
+  controller(Creator,  [ '$scope', '$location', 'angularFire' ]).
+  controller(Editor,   [ '$scope', '$location', 'angularFire', '$routeParams' ]).
+  controller(Reader,   [ '$scope', '$routeParams' ]).
+  controller(Deleter,  [ '$scope', '$locationProvider' ]).
+  controller(Profiler, [ '$scope', '$locationProvider' ])
 
 angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
   config(['$routeProvider', '$locationProvider', function($router, $location) {
     $router.when('/create/post.html',   { 
       templateUrl: '/partials/create.html', 
-      controller: 'CreateCtrl'
+      controller: 'Creator'
     })
 
     $router.when('/read/:post_id.html', { 
       templateUrl: '/partials/read.html',
-      controller: 'ReadCtrl'
+      controller: 'Reader'
     })
 
     $router.when('/edit/:post_id.html', { 
       templateUrl: '/partials/edit.html',
-      controller: 'EditCtrl'
+      controller: 'Editor'
     })
 
     $router.when('/delete/:post_id.html', { 
       templateUrl: '/partials/delete.html',
-      controller: 'DeleteCtrl'
+      controller: 'Deleter'
+    })
+
+    $router.when('/edit/profile.html', { 
+      templateUrl: '/partials/profile.html',
+      controller: 'Profiler'
     })
 
     $location.html5Mode(true)
