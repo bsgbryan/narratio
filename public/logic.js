@@ -187,7 +187,7 @@ angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
       controller: 'Deleter'
     })
 
-    $router.when('/edit/profile.html', { 
+    $router.when('/manage/profile.html', { 
       templateUrl: '/partials/profile.html',
       controller: 'Profiler'
     })
