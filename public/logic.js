@@ -192,8 +192,10 @@ function setHeight(scope) {
 
   $(scope).css('height', (Math.floor(chars / 40 + 1.2) * .95) + 'em')
 }
-function getURLParameter(name) {
-  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+
+$.urlParam = function(name){
+  var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+  return results[1] || null;
 }
 
 var callback = {
@@ -218,7 +220,7 @@ $(function () {
     $('#login').hide()
   }
 
-  var token = getURLParameter('access_token')
+  var token = $.urlParam('access_token')
 
   if (token !== null) {
     console.log(auth_token)
