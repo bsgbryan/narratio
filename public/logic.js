@@ -218,7 +218,7 @@ $(function () {
     $('#login').hide()
   }
 
-  var token = getURLParameter('auth_token')
+  var token = getURLParameter('access_token')
 
   if (token !== null) {
     console.log(auth_token)
