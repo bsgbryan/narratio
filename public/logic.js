@@ -214,7 +214,7 @@ function setHeight(scope) {
 
 $.urlParam = function(name){
   var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
-  return results[1] || null;
+  return results !== null ? results[1] : null;
 }
 
 var callback = {
