@@ -218,8 +218,8 @@ $.urlParam = function(name){
 }
 
 var callback = {
-  facebook : 'https%3A%2F%2Fapi.singly.com%2Fauth%2Ffacebook%2Fauth%2F7fbf36f4dfc8aae58d6748d9855b8b65',
-  twitter  : 'http%3A%2F%2Fnarratio.bsgbryan.com'
+  facebook : 'api.singly.com%2Fauth%2Ffacebook%2Fauth%2F7fbf36f4dfc8aae58d6748d9855b8b65',
+  twitter  : 'narratio.bsgbryan.com'
 }
 
 $(function () {
@@ -241,17 +241,15 @@ $(function () {
 
   var token = $.urlParam('access_token')
 
-  if (token !== null) {
-    console.log(token)
+  if (token !== null)
     $.cookie('token', token)
-  }
 
   $('#login a').on('click', function () {
     var mode = $(this).attr('class')
     var href = 'https://api.singly.com/oauth/authenticate?' +
       'client_id=7fbf36f4dfc8aae58d6748d9855b8b65&' +
       'service=' + mode + '&' +
-      'redirect_uri=' + callback[mode] + '&' +
+      'redirect_uri=https%3A%2F%2F' + callback[mode] + '&' +
       'scope=email&' +
       'response_type=token'
 
