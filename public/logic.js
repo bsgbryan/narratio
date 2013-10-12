@@ -144,17 +144,7 @@ var Deleter = function ($scope, $location) {
   })
 }
 
-var Profiler = function ($scope, $location) {
-  var user = null;
-
-  $.getJSON('https://api.singly.com/profile?access_token=' + $.cookie('token'), function () {
-    console.log(arguments)
-  })
-
-  $scope.$on('$routeChangeSuccess', function (next, current) {
-    console.log('yo!')
-    // $scope.post_id = current.params.post_id
-  })
+var Profiler = function ($scope) {
 }
 
 angular.module('narratio.controllers', [ ]).
@@ -163,7 +153,7 @@ angular.module('narratio.controllers', [ ]).
   controller(Editor,   [ '$scope', '$location', 'angularFire', '$routeParams' ]).
   controller(Reader,   [ '$scope', '$routeParams' ]).
   controller(Deleter,  [ '$scope', '$locationProvider' ]).
-  controller(Profiler, [ '$scope', '$locationProvider' ])
+  controller(Profiler, [ '$scope' ])
 
 angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
   config(['$routeProvider', '$locationProvider', function($router, $location) {
@@ -199,9 +189,18 @@ angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
       scope.$watch('p', function () {
         var chars = this.last.split('').length
 
-        console.log(chars)
-
         $(element[0]).css('height', ((chars / 40 + 1.2) * .95) + 'em')
+      })
+    }
+  }).
+  directive('populateSyncedServiceInfo', function() {
+    return function (scope, element, attrs) {
+      element.ready(function () {
+        $.getJSON('https://api.singly.com/profile?access_token=' + $.cookie('token'), function (response) {
+          for (var service in response.services) {
+            $('#synced .service.' + service + ' .avatar').attr('src', response.services[service].thumbnail_url)
+          }
+        })
       })
     }
   })

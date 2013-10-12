@@ -744,24 +744,37 @@ body:before {
 #post ol {
   list-style-type: lower-roman;
 }
-#services {
+#synced {
   list-style: none;
 }
-#services li {
+#synced li {
   display: inline-block;
-  width: 30%;
-  margin: 1%;
-  background-color: rgba(255,255,255,0.25);
-  border-top: 1px solid rgba(255,255,255,0.25);
-  border-bottom: 1px solid rgba(0,0,0,0.5);
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+  margin: 3.25% 6.5%;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
   height: 5em;
+  width: 5em;
 }
-#services li .icon {
+#synced li .avatar {
+  width: 100%;
+  height: 100%;
+}
+#synced li .icon {
   font-size: 400%;
   font-family: EntypoSocial;
   line-height: 0.5em;
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  margin-top: -0.5em;
+  margin-left: 1em;
+  font-family: EntypoSocial;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.75);
+  vertical-align: middle;
+}
+#synced li .icon.facebook {
+  content: 'U+F30E';
 }
 @media screen and (max-width: 640px) {
   #post {
