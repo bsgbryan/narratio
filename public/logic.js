@@ -266,4 +266,21 @@ $(function () {
       trigger('click')
   })
 
+  $('#post').on('click', '#synced .service .icon', function () {
+    var mode = $(this).attr('data-service')
+    var href = 'https://api.singly.com/oauth/authenticate?' +
+      'client_id=7fbf36f4dfc8aae58d6748d9855b8b65&' +
+      'service=' + mode + '&' +
+      'redirect_uri=https%3A%2F%2F' + callback[mode] + '&' +
+      'scope=email&' +
+      'response_type=token'
+
+    if (typeof $.cookie('token') === 'string')
+      href += '&access_token=' + $.cookie('token')
+
+    $(this).
+      attr('href', href).
+      trigger('click')
+  })
+
 })
