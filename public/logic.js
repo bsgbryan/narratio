@@ -144,7 +144,17 @@ var Deleter = function ($scope, $location) {
   })
 }
 
+function loadSyncedProfileInfo() {
+  $.getJSON('https://api.singly.com/profile?access_token=' + $.cookie('token'), function (response) {
+    for (var service in response.services)
+      $('#synced .service.' + service + ' .avatar').attr('src', response.services[service].thumbnail_url)
+  })
+}
+
 var Profiler = function ($scope) {
+  $scope.$on('$routeChangeSuccess', function (next, current) {
+    loadSyncedProfileInfo()
+  })
 }
 
 angular.module('narratio.controllers', [ ]).
@@ -196,11 +206,7 @@ angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
   directive('populateSyncedServiceInfo', function() {
     return function (scope, element, attrs) {
       element.ready(function () {
-        $.getJSON('https://api.singly.com/profile?access_token=' + $.cookie('token'), function (response) {
-          for (var service in response.services) {
-            $('#synced .service.' + service + ' .avatar').attr('src', response.services[service].thumbnail_url)
-          }
-        })
+        loadSyncedProfileInfo()
       })
     }
   })
