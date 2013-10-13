@@ -69,13 +69,17 @@ body:before {
   text-shadow: 0 1px 0 rgba(255,255,255,0.1);
 }
 #create {
-  left: 0.3em;
+  left: 0.1em;
 }
 #edit-profile {
-  left: 1.125em;
+  left: 1.3em;
+}
+#home {
+  left: 0.7em;
 }
 #create,
 #edit-profile,
+#home,
 #edit-post,
 #delete-post,
 #post .commands {
@@ -109,14 +113,16 @@ body:before {
   position: relative;
 }
 #create,
-#edit-profile {
-  top: 0.25em;
+#edit-profile,
+#home {
+  top: 0.6em;
 }
 #login a {
   top: 0.6em;
 }
 #create,
 #edit-profile,
+#home,
 #login a {
   font-size: 400%;
   line-height: 0.55em;
