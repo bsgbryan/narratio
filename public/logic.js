@@ -255,6 +255,10 @@ $(function () {
     setHeight(this)
   })
 
+  $('#post').on('click', '#contexts label', function () {
+    $(this).toggleClass('selected')
+  })
+
   if (typeof $.cookie('token') === 'undefined') {
     $('#actions').hide()
     $('#login').show()

@@ -1,7 +1,7 @@
-<form ng-submit="publish()" id="new" ng-controller="Creator" populate-context-options>
+<form ng-submit="publish()" id="new" ng-controller="Creator">
   <textarea id="title" placeholder="Example"></textarea>
   <ng-include src="templates.paragraph"></ng-include>
   <input type="button" value="&oplus;" ng-click="appendNewParagraph()">
-  <div id="contexts"></div>
+  <div id="contexts" populate-context-options></div>
   <input type="submit" value="&#59153;">
 </form>
