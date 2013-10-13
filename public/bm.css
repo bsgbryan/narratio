@@ -627,10 +627,6 @@ body:before {
   text-shadow: 0 1px 2px rgba(0,0,0,0.75);
   width: 1em;
 }
-#post #new input[type=submit],
-#post #editor input[type=submit] {
-  margin-left: 5.4em;
-}
 #post .commands input {
   padding: 0;
   background-color: transparent;
@@ -773,8 +769,26 @@ body:before {
   text-shadow: 0 1px 2px rgba(0,0,0,0.75);
   vertical-align: middle;
 }
-#synced li .icon.facebook {
-  content: 'U+F30E';
+#contexts {
+  display: inline-block;
+  width: 21.125em;
+  top: 0;
+}
+#contexts label {
+  font-family: EntypoSocial;
+  font-size: 400%;
+  width: 1em;
+  display: inline-block;
+  height: 1em;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 1em;
+  margin-top: -0.375em;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 1px 2px #000;
+}
+#contexts input[type="checkbox"] {
+  display: none;
 }
 @media screen and (max-width: 640px) {
   #post {

@@ -157,6 +157,12 @@ var Profiler = function ($scope) {
   })
 }
 
+var contexts = {
+  facebook: '&#62222;',
+  twitter: '&#62217;',
+  github: '&#62208;'
+}
+
 angular.module('narratio.controllers', [ ]).
   controller(Narratio, [ '$scope', 'angularFire' ]).
   controller(Creator,  [ '$scope', '$location', 'angularFire' ]).
@@ -207,6 +213,19 @@ angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
     return function (scope, element, attrs) {
       element.ready(function () {
         loadSyncedProfileInfo()
+      })
+    }
+  }).
+  directive('populateContextOptions', function () {
+    return function (scope, element, attrs) {
+      element.ready(function () {
+        $.getJSON('https://api.singly.com/profile?access_token=' + $.cookie('token'), function (response) {
+          for (var service in response.services)
+            $('#contexts').append('<label for="' + service + '-context">' +
+              contexts[service] +
+              '<input type="checkbox" value="' + service + '">' +
+            '</label>')
+        })
       })
     }
   })
