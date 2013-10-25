@@ -782,15 +782,18 @@ body:before {
 }
 #contexts label {
   font-family: EntypoSocial;
+  display: none;
   font-size: 400%;
   width: 1em;
-  display: inline-block;
   height: 1em;
   vertical-align: middle;
   text-align: center;
   line-height: 1em;
   margin-top: -0.375em;
   color: rgba(255,255,255,0.4);
+}
+#contexts label.attached {
+  display: inline-block;
 }
 #contexts label.selected {
   color: rgba(255,255,255,0.9);

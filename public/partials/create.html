@@ -1,7 +1,17 @@
-<form ng-submit="publish()" id="new" ng-controller="Creator">
+<form ng-submit="publish()" id="new">
   <textarea id="title" placeholder="Example"></textarea>
   <ng-include src="templates.paragraph"></ng-include>
   <input type="button" value="&oplus;" ng-click="appendNewParagraph()">
-  <div id="contexts" populate-context-options></div>
+  <div id="contexts">
+    <label for="facebook-context" class="facebook">&#62222;
+      <input type="checkbox" id="facebook-context" value="facebook">
+    </label>
+    <label for="twitter-context" class="twitter">&#62217;
+      <input type="checkbox" id="twitter-context" value="twitter">
+    </label>
+    <label for="github-context" class="gituhb">&#62208;
+      <input type="checkbox" id="github-context" value="github">
+    </label>
+  </div>
   <input type="submit" value="&#59153;">
 </form>

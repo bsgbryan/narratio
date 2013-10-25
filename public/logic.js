@@ -15,12 +15,13 @@ marked.setOptions({
   }
 })
 
-var narrated = 'https://narratio.firebaseio.com/narrated'
+// $.cookie.json = true
 
-var url        = 'https://narratio.firebaseio.com',
-    author     = { context: null, name: null }
-    narratio   = new Firebase(url),
-    contents   = null
+var url      = 'https://narratio.firebaseio.com',
+    narrated = url + '/narrated',
+    author   = { contexts: null, id: $.cookie('user_id') },
+    services = [ ],
+    authenticator = $.Deferred()
 
 function render(pid, scope) {
   if (typeof scope.posts !== 'undefined') {
@@ -38,12 +39,37 @@ function render(pid, scope) {
     scope.paragraphs = paras
     scope.post_id = pid
 
-    scope.editable = post.author.context === author.context && post.author.id === author.id
+    scope.editable = post.author === author.id
   }
 }
 
 var Narratio = function ($scope, angularFire) {
   contents = angularFire(narrated, $scope, 'posts')
+
+  $.getJSON('https://api.singly.com/profile?access_token=' + $.cookie('token'), function (response) {
+    var svcs = [ ]
+
+    for (var s in response.services)
+      svcs.push(s)
+
+    $.post('/author', { id: response.id, contexts: svcs }).
+      done(function (token) {
+        new Firebase(url).auth(token, function (err) {
+          if (err)
+            console.log('error', err)
+          else {
+            author.contexts = svcs
+            author.id = response.id
+            services = response.services
+
+            $.cookie('user_id', response.id)
+            services = response.services
+
+            authenticator.resolve()
+          }
+        })
+    })
+  })
 
   $scope.assignPost = function (idx) {
     $scope.title = marked(this.post.title)
@@ -57,12 +83,15 @@ var Narratio = function ($scope, angularFire) {
 
     $scope.paragraphs = paras
 
-    $scope.editable = this.post.author.context === author.context && this.post.author.id === author.id
+    $scope.editable = this.post.author === author.id
   }
 }
 
-var Creator = function ($scope, $location, angularFire) {
-  $scope.templates = { 'paragraph': '/partials/paragraph.html' };
+var Creator = function ($scope, $location, angularFire, svcs) {
+  for (var s in svcs)
+    $('#contexts .' + svcs[s]).addClass('attached')
+
+  $scope.templates = { 'paragraph': '/partials/paragraph.html' }
 
   $scope.appendNewParagraph = function () {
     $('#post #new .content:last-child').after($('#post #new .content:last-child').clone().val(''))
@@ -145,16 +174,15 @@ var Deleter = function ($scope, $location) {
 }
 
 function loadSyncedProfileInfo() {
-  $.getJSON('https://api.singly.com/profile?access_token=' + $.cookie('token'), function (response) {
-    for (var service in response.services)
-      $('#synced .service.' + service + ' .avatar').attr('src', response.services[service].thumbnail_url)
+  authenticator.promise().done(function () {
+    console.log('boo')
+    for (var service in services)
+      $('#synced .service.' + service + ' .avatar').attr('src', services[service].thumbnail_url)
   })
 }
 
 var Profiler = function ($scope) {
-  $scope.$on('$routeChangeSuccess', function (next, current) {
-    loadSyncedProfileInfo()
-  })
+  loadSyncedProfileInfo()
 }
 
 var contexts = {
@@ -175,7 +203,18 @@ angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
   config(['$routeProvider', '$locationProvider', function($router, $location) {
     $router.when('/create/post.html',   { 
       templateUrl: '/partials/create.html', 
-      controller: 'Creator'
+      controller: 'Creator',
+      resolve: {
+        svcs: function ($q) {
+          var out = $q.defer()
+          authenticator.promise().done(function () {
+            var keys = Object.keys(services)
+
+            out.resolve(keys)
+          });
+          return out.promise;
+        }
+      }
     })
 
     $router.when('/read/:post_id.html', { 
@@ -208,26 +247,6 @@ angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
         $(element[0]).css('height', ((chars / 40 + 1.2) * .95) + 'em')
       })
     }
-  }).
-  directive('populateSyncedServiceInfo', function() {
-    return function (scope, element, attrs) {
-      element.ready(function () {
-        loadSyncedProfileInfo()
-      })
-    }
-  }).
-  directive('populateContextOptions', function () {
-    return function (scope, element, attrs) {
-      element.ready(function () {
-        $.getJSON('https://api.singly.com/profile?access_token=' + $.cookie('token'), function (response) {
-          for (var service in response.services)
-            $('#contexts').append('<label for="' + service + '-context">' +
-              contexts[service] +
-              '<input type="checkbox" value="' + service + '">' +
-            '</label>')
-        })
-      })
-    }
   })
 
 function setHeight(scope) {
@@ -256,7 +275,9 @@ $(function () {
   })
 
   $('#post').on('click', '#contexts label', function () {
+    console.log('clikcing')
     $(this).toggleClass('selected')
+    return false
   })
 
   if (typeof $.cookie('token') === 'undefined') {
