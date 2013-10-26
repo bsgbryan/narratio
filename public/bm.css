@@ -130,8 +130,14 @@ body:before {
   position: fixed;
   text-align: center;
   text-decoration: none;
-  color: #eee;
+  color: #e3dfd6;
   text-shadow: 0 1px 1px #6c5d62;
+}
+#create:hover,
+#edit-profile:hover,
+#home:hover,
+#login a:hover {
+  color: #f4efe7;
 }
 #post {
   -webkit-box-sizing: border-box;
@@ -276,32 +282,35 @@ body:before {
   font-weight: bold;
   text-decoration: none;
 }
-#posts {
+#services {
   position: fixed;
-  top: 5.25em;
+  top: 1.375em;
   left: 0;
   bottom: 5.625em;
-  width: 8em;
-  background-color: rgba(0,0,0,0.25);
+  width: 2em;
+  font-size: 400%;
 }
-#posts a {
+#services a {
+  font-family: EntypoSocial;
   display: block;
   margin: 0;
-  padding: 0.25em 5%;
+  padding: 0 5%;
   width: 90%;
+  line-height: 0.75em;
   color: #e3dfd6;
-  background-color: #47423b;
+  background-color: rgba(232,209,193,0.25);
   border-top: 1px solid rgba(255,255,255,0.125);
   border-bottom: 1px solid rgba(0,0,0,0.125);
-  font-family: 'Special Elite', sans-serif;
   text-decoration: none;
+  text-shadow: 0 1px 2px #666;
 }
-#posts a:hover {
+#services a:hover {
   cursor: pointer;
+  color: #f4efe7;
 }
-#posts a:last-child {
-  -webkit-box-shadow: 0 1px 3px #000;
-  box-shadow: 0 1px 3px #000;
+#services a:last-child {
+  -webkit-box-shadow: 0 1px 2px #666;
+  box-shadow: 0 1px 2px #666;
 }
 #aioim {
   background-color: #47423b;
@@ -629,15 +638,19 @@ body:before {
   padding: 0;
   background-color: transparent;
   border: none;
-  color: #eee;
+  color: #e3dfd6;
   text-shadow: 0 1px 2px rgba(0,0,0,0.75);
   width: 1em;
+}
+#post #new input:hover,
+#post #editor input:hover {
+  color: #f4efe7;
 }
 #post .commands input {
   padding: 0;
   background-color: transparent;
   border: none;
-  color: #eee;
+  color: #e3dfd6;
   text-shadow: 0 1px 2px rgba(0,0,0,0.75);
 }
 #post p,
@@ -771,7 +784,7 @@ body:before {
   margin-top: -0.5em;
   margin-left: 1em;
   font-family: EntypoSocial;
-  color: rgba(255,255,255,0.9);
+  color: #e3dfd6;
   text-shadow: 0 1px 2px rgba(0,0,0,0.75);
   vertical-align: middle;
 }
@@ -790,13 +803,13 @@ body:before {
   text-align: center;
   line-height: 1em;
   margin-top: -0.375em;
-  color: rgba(255,255,255,0.4);
+  color: rgba(227,223,214,0.5);
 }
 #contexts label.attached {
   display: inline-block;
 }
 #contexts label.selected {
-  color: rgba(255,255,255,0.9);
+  color: #e3dfd6;
   text-shadow: 0 1px 2px #000;
 }
 #contexts input[type="checkbox"] {

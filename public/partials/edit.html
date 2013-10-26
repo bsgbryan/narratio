@@ -2,5 +2,16 @@
   <textarea id="title" ng-bind="title" placeholder="Example"></textarea>
   <textarea set-height ng-repeat="p in content" ng-bind="p" class="content" placeholder="content goes here"></textarea>
   <input type="button" value="&oplus;" ng-click="appendNewParagraph()">
+   <div id="contexts">
+    <label for="facebook-context" class="facebook">&#62222;
+      <input type="checkbox" id="facebook-context" value="facebook">
+    </label>
+    <label for="twitter-context" class="twitter">&#62217;
+      <input type="checkbox" id="twitter-context" value="twitter">
+    </label>
+    <label for="github-context" class="gituhb">&#62208;
+      <input type="checkbox" id="github-context" value="github">
+    </label>
+  </div>
   <input type="submit" value="&#59153;">
 </form>

@@ -106,8 +106,8 @@ var Creator = function ($scope, $location, angularFire, svcs) {
       paragraphs.push($(paragraph).val())
     })
 
-    $('#new .contexts').each(function (i, context) {
-      contexts.push($(contxt).val())
+    $('#new #contexts .selected input').each(function (i, context) {
+      contexts.push($(context).val())
     })
 
     $scope.posts.push({ 
@@ -154,12 +154,31 @@ var Editor = function ($scope, $location, angularFire, $routeParams) {
     }
   }
 
+  // This should happen in a resolve: handler
   $scope.$on('$routeChangeSuccess', function (next, current) {
     var post = $scope.posts[current.params.post_id]
 
     $scope.title   = post.title.substring(2)
     $scope.content = post.content
     $scope.post_id = $routeParams.post_id
+  })
+}
+
+var Peruser = function ($scope, $routeParams) {
+  contents.then(function () {
+    var peruse = [ ]
+
+    for (var p in $scope.posts) {
+      if (!$scope.posts[p].contexts)
+        $scope.posts[p].contexts = [ ]
+
+      if ($scope.posts[p].contexts.indexOf($routeParams.context) > -1) {
+        $scope.posts[p].idx = p
+        peruse.push($scope.posts[p])
+      }
+    }
+
+    $scope.peruse = peruse
   })
 }
 
@@ -185,16 +204,11 @@ var Profiler = function ($scope) {
   loadSyncedProfileInfo()
 }
 
-var contexts = {
-  facebook: '&#62222;',
-  twitter: '&#62217;',
-  github: '&#62208;'
-}
-
 angular.module('narratio.controllers', [ ]).
   controller(Narratio, [ '$scope', 'angularFire' ]).
   controller(Creator,  [ '$scope', '$location', 'angularFire' ]).
   controller(Editor,   [ '$scope', '$location', 'angularFire', '$routeParams' ]).
+  controller(Peruser,  [ '$scope', '$routeParams' ]).
   controller(Reader,   [ '$scope', '$routeParams' ]).
   controller(Deleter,  [ '$scope', '$locationProvider' ]).
   controller(Profiler, [ '$scope' ])
@@ -207,12 +221,14 @@ angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
       resolve: {
         svcs: function ($q) {
           var out = $q.defer()
+
           authenticator.promise().done(function () {
             var keys = Object.keys(services)
 
             out.resolve(keys)
-          });
-          return out.promise;
+          })
+          
+          return out.promise
         }
       }
     })
@@ -220,6 +236,11 @@ angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
     $router.when('/read/:post_id.html', { 
       templateUrl: '/partials/read.html',
       controller: 'Reader'
+    })
+
+    $router.when('/peruse/:context.html', { 
+      templateUrl: '/partials/peruse.html',
+      controller: 'Peruser'
     })
 
     $router.when('/edit/:post_id.html', { 
@@ -275,9 +296,12 @@ $(function () {
   })
 
   $('#post').on('click', '#contexts label', function () {
-    console.log('clikcing')
     $(this).toggleClass('selected')
     return false
+  })
+
+  $('#contexts').on('click', 'a', function () {
+
   })
 
   if (typeof $.cookie('token') === 'undefined') {

@@ -43,6 +43,10 @@ app.get('/manage/:resource', function (req, res) {
   res.redirect('/')
 })
 
+app.get('/peruse/:context', function (req, res) {
+  res.redirect('/')
+})
+
 app.post('/author', function (req, res) {
   res.send(tokenGenerator.createToken({ id: req.param('id'), contexts: req.param('contexts') }))
 })

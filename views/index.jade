@@ -33,8 +33,10 @@ html(lang='en', ng-app="narratio")
         &#62217;
       a.github(href="#github")
         &#62208;
-    nav#posts
-      a(ng-repeat="post in posts | orderBy:published:reverse", href="/read/{{ $index }}.html", ng-click="assignPost($index)") {{ post.title.substring(2) }}
+    nav#services
+      a(href="/peruse/facebook.html") &#62222;
+      a(href="/peruse/twitter.html") &#62217;
+      a(href="/peruse/github.html") &#62208;
     #quote 
       p The secret of life is that it has no purpose
       p.source Bryan Maynard

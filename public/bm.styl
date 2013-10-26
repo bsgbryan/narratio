@@ -109,8 +109,10 @@ body
   position fixed
   text-align center
   text-decoration none
-  color #eee
+  color #e3dfd6
   text-shadow 0 1px 1px #6c5d62
+  &:hover
+    color #f4efe7
 
 #post
   box-sizing border-box
@@ -214,29 +216,31 @@ body
     font-weight bold
     text-decoration none
 
-#posts
+#services
   position fixed
-  top 5.25em
+  top 1.375em
   left 0
   bottom 5.625em
-  width 8em
-  background-color rgba(black, .25)
+  width 2em
+  font-size 400%
   a
+    font-family EntypoSocial
     display block
     margin 0
-    padding .25em 5%
+    padding 0 5%
     width 90%
-    // text-shadow 0 1px 0 rgba(white, .25)
+    line-height .75em
     color #e3dfd6
-    background-color #47423b
+    background-color rgba(#e8d1c1, .25)
     border-top    1px solid rgba(white, .125)
     border-bottom 1px solid rgba(black, .125)
-    font-family 'Special Elite', sans-serif
     text-decoration none
+    text-shadow 0 1px 2px #666
     &:hover
       cursor pointer
+      color #f4efe7
     &:last-child
-      box-shadow 0 1px 3px black
+      box-shadow 0 1px 2px #666
 
 #aioim
   background-color #47423B
@@ -474,14 +478,16 @@ body
       padding 0
       background-color transparent
       border none
-      color #eee
+      color #e3dfd6
       text-shadow 0 1px 2px rgba(black, .75)
       width 1em
+      &:hover
+        color #f4efe7
   .commands input
     padding 0
     background-color transparent
     border none
-    color #eee
+    color #e3dfd6
     text-shadow 0 1px 2px rgba(black, .75)
 
 
@@ -577,7 +583,7 @@ body
       margin-top -.5em
       margin-left 1em
       font-family EntypoSocial
-      color rgba(white, .9)
+      color #e3dfd6
       text-shadow 0 1px 2px rgba(black, .75)
       vertical-align middle
 
@@ -595,11 +601,11 @@ body
     text-align center
     line-height 1em
     margin-top -.375em
-    color rgba(white, .4)
+    color rgba(#e3dfd6, .5)
     &.attached
       display inline-block
     &.selected
-      color rgba(white, .9)
+      color #e3dfd6
       text-shadow 0 1px 2px black
   input[type="checkbox"]
     display none

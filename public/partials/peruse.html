@@ -1,0 +1,3 @@
+<nav id="posts">
+  <a ng-repeat="post in peruse | orderBy:published:reverse" href="/read/{{ post.idx }}.html", ng-click="assignPost(post.idx)">{{ post.title.substring(2) }}</a>
+</nav>
