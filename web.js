@@ -47,6 +47,10 @@ app.get('/peruse/:context', function (req, res) {
   res.redirect('/')
 })
 
+app.get('/partials/:partial', function (req, res) {
+  res.render('partials/' + req.params.partial)
+})
+
 app.post('/author', function (req, res) {
   res.send(tokenGenerator.createToken({ id: req.param('id'), contexts: req.param('contexts') }))
 })
