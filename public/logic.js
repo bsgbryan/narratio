@@ -15,8 +15,6 @@ marked.setOptions({
   }
 })
 
-// $.cookie.json = true
-
 var url      = 'https://narratio.firebaseio.com',
     narrated = url + '/narrated',
     author   = { contexts: null, id: $.cookie('user_id') },
@@ -168,11 +166,16 @@ var Peruser = function ($scope, $routeParams) {
   contents.then(function () {
     var peruse = [ ]
 
+    $scope.context = $routeParams.context
+
     for (var p in $scope.posts) {
       if (!$scope.posts[p].contexts)
         $scope.posts[p].contexts = [ ]
 
-      if ($scope.posts[p].contexts.indexOf($routeParams.context) > -1) {
+      if ($routeParams.context === 'private' && $scope.posts[p].contexts.length === 0) {
+        $scope.posts[p].idx = p
+        peruse.push($scope.posts[p])
+      } else if ($scope.posts[p].contexts.indexOf($routeParams.context) > -1) {
         $scope.posts[p].idx = p
         peruse.push($scope.posts[p])
       }
@@ -215,8 +218,8 @@ angular.module('narratio.controllers', [ ]).
 
 angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
   config(['$routeProvider', '$locationProvider', function($router, $location) {
-    $router.when('/create/post.html',   { 
-      templateUrl: '/partials/create.html', 
+    $router.when('/create/post',   { 
+      templateUrl: '/partials/create', 
       controller: 'Creator',
       resolve: {
         svcs: function ($q) {
@@ -233,28 +236,28 @@ angular.module('narratio', [ 'firebase', 'narratio.controllers' ]).
       }
     })
 
-    $router.when('/read/:post_id.html', { 
-      templateUrl: '/partials/read.html',
+    $router.when('/read/:post_id', { 
+      templateUrl: '/partials/read',
       controller: 'Reader'
     })
 
-    $router.when('/peruse/:context.html', { 
-      templateUrl: '/partials/peruse.html',
+    $router.when('/peruse/:context', { 
+      templateUrl: '/partials/peruse',
       controller: 'Peruser'
     })
 
-    $router.when('/edit/:post_id.html', { 
-      templateUrl: '/partials/edit.html',
+    $router.when('/edit/:post_id', { 
+      templateUrl: '/partials/edit',
       controller: 'Editor'
     })
 
-    $router.when('/delete/:post_id.html', { 
-      templateUrl: '/partials/delete.html',
+    $router.when('/delete/:post_id', { 
+      templateUrl: '/partials/delete',
       controller: 'Deleter'
     })
 
-    $router.when('/manage/profile.html', { 
-      templateUrl: '/partials/profile.html',
+    $router.when('/manage/profile', { 
+      templateUrl: '/partials/profile',
       controller: 'Profiler'
     })
 
@@ -300,8 +303,12 @@ $(function () {
     return false
   })
 
-  $('#contexts').on('click', 'a', function () {
+  $('#post').on('click', '#posts:not(.private) a', function () {
+    var context = $(this).parents('#posts').attr('class')
 
+    $('#services .' + context + ' .last-read').
+      text($(this).text()).
+      attr('href', $(this).attr('href'))
   })
 
   if (typeof $.cookie('token') === 'undefined') {

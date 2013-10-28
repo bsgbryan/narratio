@@ -31,6 +31,9 @@ body:before {
 #content {
   display: none;
 }
+#post article h1 {
+  text-shadow: 0 1px 0 rgba(238,238,238,0.5), 0 2px 0 rgba(233,233,233,0.4), 0 3px 0 rgba(221,221,221,0.3), 0 4px 0 rgba(217,217,217,0.2), 0 5px 0 rgba(204,204,204,0.1), 0 6px 1px rgba(0,0,0,0.2), 0 0 5px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.4), 0 3px 5px rgba(0,0,0,0.3), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.3), 0 20px 20px rgba(0,0,0,0.25);
+}
 #actions,
 #login {
   display: none;
@@ -51,7 +54,6 @@ body:before {
   left: 0;
   width: 8em;
   height: 5.625em;
-  background-color: rgba(0,0,0,0.25);
 }
 #quote p {
   margin: 0.5em;
@@ -290,27 +292,42 @@ body:before {
   width: 2em;
   font-size: 400%;
 }
-#services a {
-  font-family: EntypoSocial;
-  display: block;
+#services div {
   margin: 0;
   padding: 0 5%;
   width: 90%;
   line-height: 0.75em;
-  color: #e3dfd6;
   background-color: rgba(232,209,193,0.25);
   border-top: 1px solid rgba(255,255,255,0.125);
   border-bottom: 1px solid rgba(0,0,0,0.125);
-  text-decoration: none;
-  text-shadow: 0 1px 2px #666;
 }
-#services a:hover {
+#services div:hover a {
   cursor: pointer;
   color: #f4efe7;
 }
-#services a:last-child {
+#services div:last-child {
   -webkit-box-shadow: 0 1px 2px #666;
   box-shadow: 0 1px 2px #666;
+}
+#services div a {
+  text-decoration: none;
+  text-shadow: 0 1px 2px #666;
+  color: #e3dfd6;
+}
+#services div .icon {
+  font-family: EntypoSocial, Entypo;
+  display: inline-block;
+  width: 25%;
+  margin: 0 8% 0 0;
+  vertical-align: top;
+}
+#services div .last-read {
+  font-size: 20%;
+  display: inline-block;
+  line-height: 1em;
+  vertical-align: middle;
+  width: 67%;
+  margin-top: 0.6em;
 }
 #aioim {
   background-color: #47423b;
@@ -425,7 +442,7 @@ body:before {
   font-size: 80%;
   width: 22.25em;
   line-height: 100%;
-  font-family: 'Special Elite';
+  font-family: 'IM ell English SC';
   letter-spacing: 1px;
   vertical-align: bottom;
   margin-bottom: 0.5em;
@@ -520,8 +537,8 @@ body:before {
 #post h1,
 #post h2,
 #post h3 {
-  font-family: 'Special Elite', sans-serif;
-  color: rgba(255,255,255,0.7);
+  font-family: 'Averia Gruesa Libre', sans-serif;
+  color: rgba(255,255,255,0.9);
 }
 #post h2,
 #post h3 {
@@ -652,6 +669,17 @@ body:before {
   border: none;
   color: #e3dfd6;
   text-shadow: 0 1px 2px rgba(0,0,0,0.75);
+}
+#post .commands #delete-post,
+#post .commands #edit-post {
+  text-decoration: none;
+  text-shadow: 0 1px 2px #666;
+  color: #e3dfd6;
+}
+#post .commands #delete-post:hover,
+#post .commands #edit-post:hover {
+  cursor: pointer;
+  color: #f4efe7;
 }
 #post p,
 #post textarea {

@@ -21,6 +21,10 @@ body
 #content
   display none
 
+#post article h1
+  text-shadow 0 1px 0 rgba(#eee, .5), 0 2px 0 rgba(#e9e9e9, .4), 0 3px 0 rgba(#ddd, .3), 0 4px 0 rgba(#d9d9d9, .2), 0 5px 0 rgba(#ccc, .1), 0 6px 1px rgba(black,.2), 0 0 5px rgba(black,.2), 0 1px 3px rgba(black,.4), 0 3px 5px rgba(black,.3), 0 5px 10px rgba(black,.35), 0 10px 10px rgba(black,.3), 0 20px 20px rgba(black,.25)
+  // text-shadow 0 1px 0 rgba(#ccc, .4), 0 2px 0 rgba(#c9c9c9, .3), 0 3px 0 rgba(#b9b9b9, .2), 0 4px 1px rgba(black, .1), 0 4px 3px rgba(black, .1), 0 5px 3px rgba(black, .2), 0 10px 10px rgba(black, .35)
+
 #actions
 #login
   display none
@@ -39,7 +43,6 @@ body
   left 0
   width 8em
   height 5.625em
-  background-color rgba(black, .25)
   p
     margin .5em
     font-size 80%
@@ -223,25 +226,38 @@ body
   bottom 5.625em
   width 2em
   font-size 400%
-  a
-    font-family EntypoSocial
-    display block
+  div
     margin 0
     padding 0 5%
     width 90%
     line-height .75em
-    color #e3dfd6
     background-color rgba(#e8d1c1, .25)
     border-top    1px solid rgba(white, .125)
     border-bottom 1px solid rgba(black, .125)
-    text-decoration none
-    text-shadow 0 1px 2px #666
     &:hover
-      cursor pointer
-      color #f4efe7
+      a
+        cursor pointer
+        color #f4efe7
     &:last-child
       box-shadow 0 1px 2px #666
-
+    a
+      text-decoration none
+      text-shadow 0 1px 2px #666
+      color #e3dfd6
+    .icon
+      font-family EntypoSocial, Entypo
+      display inline-block
+      width 25%
+      margin 0 8% 0 0
+      vertical-align top
+    .last-read
+      font-size 20%
+      display inline-block
+      line-height 1em
+      vertical-align middle
+      width 67%
+      margin-top .6em
+    
 #aioim
   background-color #47423B
   box-shadow inset 1px 1px 2px rgba(black, .5), 1px 1px 1px rgba(white, .25), -1px -1px 2px rgba(black, .45)
@@ -319,7 +335,7 @@ body
         font-size 80%
         width 22.25em
         line-height 100%
-        font-family 'Special Elite'
+        font-family 'IM ell English SC'
         letter-spacing 1px
         vertical-align bottom
         margin-bottom .5em
@@ -386,8 +402,8 @@ body
       cursor default
 
   h1, h2, h3
-    font-family 'Special Elite', sans-serif
-    color rgba(white, .7)
+    font-family 'Averia Gruesa Libre', sans-serif
+    color rgba(white, .9)
 
   h2, h3
     text-shadow 0 1px 0 rgba(black, .5)
@@ -483,13 +499,21 @@ body
       width 1em
       &:hover
         color #f4efe7
-  .commands input
-    padding 0
-    background-color transparent
-    border none
-    color #e3dfd6
-    text-shadow 0 1px 2px rgba(black, .75)
-
+  .commands
+    input
+      padding 0
+      background-color transparent
+      border none
+      color #e3dfd6
+      text-shadow 0 1px 2px rgba(black, .75)
+    #delete-post
+    #edit-post
+      text-decoration none
+      text-shadow 0 1px 2px #666
+      color #e3dfd6
+      &:hover
+        cursor pointer
+        color #f4efe7
 
   p, textarea
     padding .85em .75em .45em .75em
