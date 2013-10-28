@@ -1,0 +1,5 @@
+form#delete(ng-submit="remove(post_id)", ng-controller="Deleter")
+  p Are you sure?
+  .commands
+    a#cancel-delete(href="/read/{{ post_id }}.html") &#10060;
+    input(type="submit", name="delete", value="&#10003;")

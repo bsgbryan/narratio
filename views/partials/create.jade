@@ -1,0 +1,12 @@
+form#new(ng-submit="publish()")
+  textarea#title(placeholder="Example")
+  ng-include(src="templates.paragraph")
+  input(type="button", value="&oplus;", ng-click="appendNewParagraph()")
+  #contexts
+    label.facebook(for="facebook-context") &#62222;
+      input#facebook-context(type="checkbox", value="facebook")
+    label.twitter(for="twitter-context") &#62217;
+      input#twitter-context(type="checkbox", value="twitter")
+    label.github(for="github-context") &#62208;
+      input#github-context(type="checkbox", value="github")
+  input(type="submit", value="&#59153;")
