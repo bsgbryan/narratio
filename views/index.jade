@@ -8,7 +8,7 @@ html(lang='en', ng-app="narratio")
     meta(name='apple-mobile-web-app-status-bar-style', content='black')
     link(rel="apple-touch-icon", href="public/images/apple-touch-icon.png")
     // Google web fonts
-    link(href='//fonts.googleapis.com/css?family=Esteban|Alegreya+SC:400,700|Special+Elite', rel='stylesheet')
+    link(href='//fonts.googleapis.com/css?family=Esteban|Alegreya+SC:400,700|Averia+Gruesa+Libre', rel='stylesheet')
     link(rel='stylesheet', href='/html5boilerplate.css')
     link(rel='stylesheet', href='/fontface.css')
     // App stylesheet
@@ -19,11 +19,11 @@ html(lang='en', ng-app="narratio")
     #aioim
     #actions
       h3 Διήγησις
-      a#create(href="/create/post.html")
+      a#create(href="/create/post")
         &#59290;
-      a#home(href="/home.html")
+      a#home(href="/home")
         &#8962;
-      a#edit-profile(href="/manage/profile.html")
+      a#edit-profile(href="/manage/profile")
         &#128100;
     #login
       h3 Sign in using
@@ -34,9 +34,18 @@ html(lang='en', ng-app="narratio")
       a.github(href="#github")
         &#62208;
     nav#services
-      a(href="/peruse/facebook.html") &#62222;
-      a(href="/peruse/twitter.html") &#62217;
-      a(href="/peruse/github.html") &#62208;
+      .private
+        a.icon(href="/peruse/private") &#59146;
+        a.last-read
+      .facebook
+        a.icon(href="/peruse/facebook") &#62222;
+        a.last-read
+      .twitter
+        a.icon(href="/peruse/twitter") &#62217;
+        a.last-read
+      .github
+        a.icon(href="/peruse/github") &#62208;
+        a.last-read
     #quote 
       p The secret of life is that it has no purpose
       p.source Bryan Maynard
