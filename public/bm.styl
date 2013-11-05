@@ -22,6 +22,7 @@ vertical-icons()
   margin-top -.05em
   text-decoration none
   &.selected
+    text-shadow 0 1px 0 black
     color #e3dfd6
 
 html, body
@@ -309,12 +310,15 @@ body
     textarea
       position absolute
       bottom 0
-      left 15%
+      left 10%
+      height 4.15em
       border none
-      width 70%
+      width 80%
       box-sizing border-box
-      padding .1em .5em
+      padding .2em .5em
       paragraph()
+      margin-bottom 10px
+      font-size 80%
       &::-webkit-input-placeholder
         color rgba(white, .25)
         text-shadow 0 -1px 0 rgba(black, .25)
@@ -323,20 +327,22 @@ body
         text-shadow 0 -1px 0 rgba(black, .25)
     .commands
       absolute bottom, right
-      width 15%
+      width 10%
       a
         vertical-icons()
-        padding-left 22%
+        padding-left 12%
         &.cancel
           margin-left 4%
-          margin-bottom .2em
+          margin-bottom .25em
+          margin-top -.1em
         &:hover
           color #e3dfd6
     .services
       list-style none
-      padding-left .75em
+      padding-left 1.5%
       .icon
         vertical-icons()
+        margin-bottom .237em
       input
         display none
   .messages
