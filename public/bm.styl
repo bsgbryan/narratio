@@ -1,5 +1,29 @@
 @import 'nib'
 
+paragraph()
+  text-shadow 0 1px 0   rgba(black, .25)
+  box-shadow  0 -1px 1px rgba(black, .3), 0 1px 1px rgba(white, .25)
+  border none
+  letter-spacing 1px
+  background linear-gradient(top, #4F6E96, #3e5d85)
+  color #f1f1f7
+  border-radius 2px
+  margin-bottom 16px
+  margin-top 16px
+
+vertical-icons()
+  font-size 300%
+  line-height .4em
+  vertical-align top
+  color rgba(#e3dfd6, .5)
+  font-family EntypoSocial, Entypo
+  display block
+  margin-bottom .3em
+  margin-top -.05em
+  text-decoration none
+  &.selected
+    color #e3dfd6
+
 html, body
   width  100%
   height 100%
@@ -275,44 +299,46 @@ body
     a
       color white
       text-decoration none
-  & > .new.message
+  #new-message
     absolute bottom, right
     width 100%
-    height 2.85em
-    background-color #3D4C5A
+    height 4.5em
+    background-color rgba(black, .1)
     border-bottom-left-radius  4px
     border-bottom-right-radius 4px
     textarea
-      absolute bottom, left
+      position absolute
+      bottom 0
+      left 15%
       border none
-      width 85%
+      width 70%
       box-sizing border-box
       padding .1em .5em
-      background linear-gradient(top, #5D7067, #4C6056)
-      border-top 1px solid #5f6e7c
-      text-shadow 0 1px 0 rgba(black, .25)
-      color rgba(white, .6)
-      font-family 'Esteban'
-      letter-spacing 1px
-      border-bottom-left-radius  4px
+      paragraph()
       &::-webkit-input-placeholder
         color rgba(white, .25)
         text-shadow 0 -1px 0 rgba(black, .25)
       &:-moz-placeholder
         color rgba(white, .25)
         text-shadow 0 -1px 0 rgba(black, .25)
-    button
+    .commands
       absolute bottom, right
-      border none
       width 15%
-      box-sizing border-box
-      height 2.85em
-      background linear-gradient(top, #749AA1, #638990)
-      border-top 1px solid #85ABB2
-      color black
-      text-shadow 0 1px 0 rgba(white, .125)
-      font-family 'Alegreya SC'
-      border-bottom-right-radius 4px
+      a
+        vertical-icons()
+        padding-left 22%
+        &.cancel
+          margin-left 4%
+          margin-bottom .2em
+        &:hover
+          color #e3dfd6
+    .services
+      list-style none
+      padding-left .75em
+      .icon
+        vertical-icons()
+      input
+        display none
   .messages
     margin-left  1em
     margin-right 1em
@@ -517,15 +543,7 @@ body
 
   p, textarea
     padding .85em .75em .45em .75em
-    text-shadow 0 1px 0   rgba(black, .25)
-    box-shadow  0 -1px 1px rgba(black, .3), 0 1px 1px rgba(white, .25)
-    border none
-    letter-spacing 1px
-    background linear-gradient(top, #4F6E96, #3e5d85)
-    color rgba(white, .7)
-    border-radius 2px
-    margin-bottom 16px
-    margin-top 16px
+    paragraph()
     &:first-letter
       font-size 2em
       letter-spacing 1px

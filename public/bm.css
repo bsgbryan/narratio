@@ -351,68 +351,99 @@ body:before {
   color: #fff;
   text-decoration: none;
 }
-#aioim > .new.message {
+#aioim #new-message {
   position: absolute;
   bottom: 0;
   right: 0;
   width: 100%;
-  height: 2.85em;
-  background-color: #3d4c5a;
+  height: 4.5em;
+  background-color: rgba(0,0,0,0.1);
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-#aioim > .new.message textarea {
+#aioim #new-message textarea {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 15%;
   border: none;
-  width: 85%;
+  width: 70%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0.1em 0.5em;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #5d7067), color-stop(1, #4c6056));
-  background: -webkit-linear-gradient(top, #5d7067 0%, #4c6056 100%);
-  background: -moz-linear-gradient(top, #5d7067 0%, #4c6056 100%);
-  background: -o-linear-gradient(top, #5d7067 0%, #4c6056 100%);
-  background: -ms-linear-gradient(top, #5d7067 0%, #4c6056 100%);
-  background: linear-gradient(top, #5d7067 0%, #4c6056 100%);
-  border-top: 1px solid #5f6e7c;
   text-shadow: 0 1px 0 rgba(0,0,0,0.25);
-  color: rgba(255,255,255,0.6);
-  font-family: 'Esteban';
+  -webkit-box-shadow: 0 -1px 1px rgba(0,0,0,0.3), 0 1px 1px rgba(255,255,255,0.25);
+  box-shadow: 0 -1px 1px rgba(0,0,0,0.3), 0 1px 1px rgba(255,255,255,0.25);
+  border: none;
   letter-spacing: 1px;
-  border-bottom-left-radius: 4px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #4f6e96), color-stop(1, #3e5d85));
+  background: -webkit-linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
+  background: -moz-linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
+  background: -o-linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
+  background: -ms-linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
+  background: linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
+  color: #f1f1f7;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  margin-bottom: 16px;
+  margin-top: 16px;
 }
-#aioim > .new.message textarea::-webkit-input-placeholder {
+#aioim #new-message textarea::-webkit-input-placeholder {
   color: rgba(255,255,255,0.25);
   text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
 }
-#aioim > .new.message textarea:-moz-placeholder {
+#aioim #new-message textarea:-moz-placeholder {
   color: rgba(255,255,255,0.25);
   text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
 }
-#aioim > .new.message button {
+#aioim #new-message .commands {
   position: absolute;
   bottom: 0;
   right: 0;
-  border: none;
   width: 15%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  height: 2.85em;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #749aa1), color-stop(1, #638990));
-  background: -webkit-linear-gradient(top, #749aa1 0%, #638990 100%);
-  background: -moz-linear-gradient(top, #749aa1 0%, #638990 100%);
-  background: -o-linear-gradient(top, #749aa1 0%, #638990 100%);
-  background: -ms-linear-gradient(top, #749aa1 0%, #638990 100%);
-  background: linear-gradient(top, #749aa1 0%, #638990 100%);
-  border-top: 1px solid #85abb2;
-  color: #000;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.125);
-  font-family: 'Alegreya SC';
-  border-bottom-right-radius: 4px;
+}
+#aioim #new-message .commands a {
+  font-size: 300%;
+  line-height: 0.4em;
+  vertical-align: top;
+  color: rgba(227,223,214,0.5);
+  font-family: EntypoSocial, Entypo;
+  display: block;
+  margin-bottom: 0.3em;
+  margin-top: -0.05em;
+  text-decoration: none;
+  padding-left: 22%;
+}
+#aioim #new-message .commands a.selected {
+  color: #e3dfd6;
+}
+#aioim #new-message .commands a.cancel {
+  margin-left: 4%;
+  margin-bottom: 0.2em;
+}
+#aioim #new-message .commands a:hover {
+  color: #e3dfd6;
+}
+#aioim #new-message .services {
+  list-style: none;
+  padding-left: 0.75em;
+}
+#aioim #new-message .services .icon {
+  font-size: 300%;
+  line-height: 0.4em;
+  vertical-align: top;
+  color: rgba(227,223,214,0.5);
+  font-family: EntypoSocial, Entypo;
+  display: block;
+  margin-bottom: 0.3em;
+  margin-top: -0.05em;
+  text-decoration: none;
+}
+#aioim #new-message .services .icon.selected {
+  color: #e3dfd6;
+}
+#aioim #new-message .services input {
+  display: none;
 }
 #aioim .messages {
   margin-left: 1em;
@@ -695,7 +726,7 @@ body:before {
   background: -o-linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
   background: -ms-linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
   background: linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
-  color: rgba(255,255,255,0.7);
+  color: #f1f1f7;
   -webkit-border-radius: 2px;
   border-radius: 2px;
   margin-bottom: 16px;

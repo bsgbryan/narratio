@@ -17,6 +17,19 @@ html(lang='en', ng-app="narratio")
   body(ng-controller="Narratio")
     #post(ng-view)
     #aioim
+      form#new-message
+        ul.services
+          li
+            label.facebook.icon &#62222;
+              input(type="checkbox", value="facebook")
+          li
+            label.twitter.icon &#62217;
+              input(type="checkbox", value="twitter")
+        textarea
+        .commands
+          a.publish(href="#") &#59153;
+          a.cancel(href="#") &#10062;
+
     #actions
       h3 Διήγησις
       a#create(href="/create/post")

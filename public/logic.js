@@ -303,6 +303,11 @@ $(function () {
     return false
   })
 
+  $('#aioim').on('click', '#new-message .services .icon', function () {
+    $(this).toggleClass('selected')
+    return false
+  })
+
   $('#post').on('click', '#posts:not(.private) a', function () {
     var context = $(this).parents('#posts').attr('class')
 
