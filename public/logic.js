@@ -303,6 +303,11 @@ $(function () {
     return false
   })
 
+  $('#post').on('click', '.editor .update', function () {
+    $(this).parent().trigger('submit')
+    return false
+  })
+
   $('#aioim').on('click', '#new-message .services .icon', function () {
     $(this).toggleClass('selected')
     return false

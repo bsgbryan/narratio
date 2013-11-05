@@ -31,7 +31,8 @@ body:before {
 #content {
   display: none;
 }
-#post article h1 {
+#post article h1,
+#post .editor #title {
   text-shadow: 0 1px 0 rgba(238,238,238,0.5), 0 2px 0 rgba(233,233,233,0.4), 0 3px 0 rgba(221,221,221,0.3), 0 4px 0 rgba(217,217,217,0.2), 0 5px 0 rgba(204,204,204,0.1), 0 6px 1px rgba(0,0,0,0.2), 0 0 5px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.4), 0 3px 5px rgba(0,0,0,0.3), 0 5px 10px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.3), 0 20px 20px rgba(0,0,0,0.25);
 }
 #actions,
@@ -187,12 +188,6 @@ body:before {
   left: 8.3em;
   right: 24.3em;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(0,0,0,0.45)), color-stop(0.08, transparent), color-stop(0.92, transparent), color-stop(1, rgba(0,0,0,0.45)));
-  background: -webkit-linear-gradient(left, rgba(0,0,0,0.45) 0%, transparent 8%, transparent 92%, rgba(0,0,0,0.45) 100%);
-  background: -moz-linear-gradient(left, rgba(0,0,0,0.45) 0%, transparent 8%, transparent 92%, rgba(0,0,0,0.45) 100%);
-  background: -o-linear-gradient(left, rgba(0,0,0,0.45) 0%, transparent 8%, transparent 92%, rgba(0,0,0,0.45) 100%);
-  background: -ms-linear-gradient(left, rgba(0,0,0,0.45) 0%, transparent 8%, transparent 92%, rgba(0,0,0,0.45) 100%);
-  background: linear-gradient(left, rgba(0,0,0,0.45) 0%, transparent 8%, transparent 92%, rgba(0,0,0,0.45) 100%);
   z-index: -1;
 }
 #post ul.supplemental {
@@ -669,25 +664,29 @@ body:before {
   letter-spacing: 1px;
 }
 #post #new,
-#post #editor {
+#post .editor {
   width: 30em;
   margin: 0 auto;
 }
 #post #new #title,
-#post #editor #title {
+#post .editor #title {
+  font-family: 'Averia Gruesa Libre', sans-serif;
   text-align: center;
   font-size: 450%;
   width: 6.5em;
   padding: 0;
   margin: 0 auto;
   height: 100px;
+  background: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 #post #new .content,
-#post #editor .content {
+#post .editor .content {
   margin-top: 1em;
 }
-#post #new input,
-#post #editor input {
+#post #new a,
+#post .editor a {
   font-family: 'Entypo';
   font-size: 400%;
   padding: 0;
@@ -696,12 +695,17 @@ body:before {
   color: #e3dfd6;
   text-shadow: 0 1px 2px rgba(0,0,0,0.75);
   width: 1em;
+  display: inline-block;
+  line-height: 0.5em;
+  text-align: center;
+  vertical-align: middle;
 }
-#post #new input:hover,
-#post #editor input:hover {
+#post #new a:hover,
+#post .editor a:hover {
   color: #f4efe7;
+  cursor: pointer;
 }
-#post .commands input {
+#post .commands a {
   padding: 0;
   background-color: transparent;
   border: none;
@@ -904,9 +908,17 @@ body:before {
     line-height: 1.4;
   }
 }
-@media screen and (min-width: 1029px) {
+@media screen and (min-width: 1280px) {
   #post:before {
-    -webkit-box-shadow: inset 0 0 5px rgba(255,255,255,0.25), 0 0 5px #000;
-    box-shadow: inset 0 0 5px rgba(255,255,255,0.25), 0 0 5px #000;
+    -webkit-box-shadow: inset 0 0 5px rgba(255,255,255,0.25), 0 0 10px #000;
+    box-shadow: inset 0 0 5px rgba(255,255,255,0.25), 0 0 10px #000;
+  }
+  #post:after {
+    background: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(0,0,0,0.5)), color-stop(0.15, transparent), color-stop(0.85, transparent), color-stop(1, rgba(0,0,0,0.5)));
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0.5) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.5) 100%);
+    background: -moz-linear-gradient(left, rgba(0,0,0,0.5) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.5) 100%);
+    background: -o-linear-gradient(left, rgba(0,0,0,0.5) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.5) 100%);
+    background: -ms-linear-gradient(left, rgba(0,0,0,0.5) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.5) 100%);
+    background: linear-gradient(left, rgba(0,0,0,0.5) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.5) 100%);
   }
 }

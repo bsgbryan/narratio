@@ -1,12 +1,12 @@
 form.editor(ng-submit="update(post_id)", ng-controller="Editor")
   textarea#title(ng-bind="title", placeholder="Example")
   textarea.content(set-height, ng-repeat="p in content", ng-bind="p", placeholder="content goes here")
-  input(type="button", value="&oplus;", ng-click="appendNewParagraph()")
-   #contexts
+  a.add.paragraph(ng-click="appendNewParagraph()") &oplus;
+  #contexts
     label.facebook(for="facebook-context") &#62222;
       input#facebook-context(type="checkbox", value="facebook")
     label.twitter(for="twitter-context") &#62217;
       input#twitter-context(type="checkbox", value="twitter")
     label.github(for="github-context") &#62208;
       input#github-context(type="checkbox", value="github")
-  input(type="submit", value="&#59153;")
+  a.update &#59153;

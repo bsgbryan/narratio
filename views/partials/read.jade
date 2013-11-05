@@ -2,5 +2,5 @@ article
   div(ng-bind-html-unsafe="title")
   div(ng-repeat="p in paragraphs", ng-bind-html-unsafe="p")
 .commands
-  a#edit-post(ng-show="editable", href="/edit/{{ post_id }}.html") &#9998;
-  a#delete-post(ng-show="editable", href="/delete/{{ post_id }}.html") &#8863;
+  a#edit-post(ng-show="editable", href="/edit/{{ post_id }}") &#9998;
+  a#delete-post(ng-show="editable", href="/delete/{{ post_id }}") &#8863;
