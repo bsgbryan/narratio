@@ -37,7 +37,7 @@ function render(pid, scope) {
     scope.paragraphs = paras
     scope.post_id = pid
 
-    scope.editable = post.author === author.id
+    scope.editable = post.author.id === author.id
   }
 }
 
@@ -136,11 +136,16 @@ var Editor = function ($scope, $location, angularFire, $routeParams) {
   }
 
   $scope.update = function (pid) {
-    var title      = '# ' + $('#editor #title').val()
+    var title      = '# ' + $('.editor #title').val()
     var paragraphs = [ ]
+    var contexts   = [ ]
 
-    $('#post #editor .content').each(function (i, paragraph) {
+    $('#post .editor .content').each(function (i, paragraph) {
       paragraphs.push($(paragraph).val())
+    })
+
+    $('#post .editor #contexts .selected input').each(function (i, context) {
+      contexts.push($(context).val())
     })
 
     $scope.posts[pid] = { 
@@ -148,7 +153,8 @@ var Editor = function ($scope, $location, angularFire, $routeParams) {
       content: paragraphs, 
       author: author, 
       published: $scope.posts[pid].published, 
-      lastEdited: new Date().getTime()
+      lastEdited: new Date().getTime(),
+      contexts: contexts
     }
   }
 
@@ -159,6 +165,9 @@ var Editor = function ($scope, $location, angularFire, $routeParams) {
     $scope.title   = post.title.substring(2)
     $scope.content = post.content
     $scope.post_id = $routeParams.post_id
+
+    for (var c in post.contexts)
+      $('#post .editor #contexts .' + post.contexts[c]).addClass('selected')
   })
 }
 
@@ -290,7 +299,7 @@ var callback = {
 }
 
 $(function () {
-  $('#post').on('change', '#editor .content', function () {
+  $('#post').on('change', '.editor .content', function () {
     setHeight(this)
   })
 
@@ -304,6 +313,7 @@ $(function () {
   })
 
   $('#post').on('click', '.editor .update', function () {
+    console.log('clicked update', $(this).parent())
     $(this).parent().trigger('submit')
     return false
   })

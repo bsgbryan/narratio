@@ -1,4 +1,4 @@
-form.editor(ng-submit="update(post_id)", ng-controller="Editor")
+form.editor(ng-controller="Editor")
   textarea#title(ng-bind="title", placeholder="Example")
   textarea.content(set-height, ng-repeat="p in content", ng-bind="p", placeholder="content goes here")
   a.add.paragraph(ng-click="appendNewParagraph()") &oplus;
@@ -9,4 +9,4 @@ form.editor(ng-submit="update(post_id)", ng-controller="Editor")
       input#twitter-context(type="checkbox", value="twitter")
     label.github(for="github-context") &#62208;
       input#github-context(type="checkbox", value="github")
-  a.update &#59153;
+  a.update(ng-click="update(post_id)") &#59153;
