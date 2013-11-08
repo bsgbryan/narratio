@@ -378,7 +378,7 @@ body:before {
   background: -o-linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
   background: -ms-linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
   background: linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
-  color: #f1f1f7;
+  color: #eee;
   -webkit-border-radius: 2px;
   border-radius: 2px;
   margin-bottom: 16px;
@@ -448,111 +448,15 @@ body:before {
   display: none;
 }
 #aioim .messages {
-  margin-left: 1em;
-  margin-right: 1em;
+  list-style: none;
+  padding-left: 0;
 }
-#aioim .messages dt {
-  background-color: #5d7067;
-  display: inline-block;
-  width: 100%;
-  -webkit-box-shadow: 0 -1px 1px rgba(0,0,0,0.3);
-  box-shadow: 0 -1px 1px rgba(0,0,0,0.3);
-  padding: 0 0.5em;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border-bottom: 1px solid rgba(0,0,0,0.125);
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+#aioim .messages li {
+  padding-left: 1em;
 }
-#aioim .messages dt a {
-  display: inline-block;
-}
-#aioim .messages dt .user {
-  color: #222;
-  text-decoration: none;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.125);
-  font-size: 80%;
-  width: 22.25em;
-  line-height: 100%;
-  font-family: 'IM ell English SC';
-  letter-spacing: 1px;
-  vertical-align: bottom;
-  margin-bottom: 0.5em;
-}
-#aioim .messages dt:hover .favorite,
-#aioim .messages dt:hover .retweet {
-  visibility: visible;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.1);
-}
-#aioim .messages dt .favorite,
-#aioim .messages dt .retweet {
-  visibility: hidden;
-  color: rgba(0,0,0,0.25);
-  width: 0.5em;
-  text-decoration: none;
-  background-position-y: -1px;
-  font-family: 'EntypoRegular';
-  font-size: 1.75em;
-  line-height: 1em;
-  vertical-align: top;
-}
-#aioim .messages dt .favorite:hover,
-#aioim .messages dt .retweet:hover {
-  color: #000;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.25);
-}
-#aioim .messages dt .favorited,
-#aioim .messages dt .retweeted {
-  visibility: visible;
-}
-#aioim .messages dt .favorite {
-  background-position-x: 95px;
-}
-#aioim .messages dt .favorite:hover {
-  background-position-x: 79px;
-}
-#aioim .messages dt .retweet {
-  background-position-x: 48px;
-  margin-right: 0.25em;
-}
-#aioim .messages dt .retweet:hover {
-  background-position-x: 32px;
-}
-#aioim .messages dt .favorited {
-  background-position-x: 63px;
-}
-#aioim .messages dt .retweeted {
-  background-position-x: 16px;
-}
-#aioim .messages .message {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #5d7067), color-stop(1, #4c6056));
-  background: -webkit-linear-gradient(top, #5d7067 0%, #4c6056 100%);
-  background: -moz-linear-gradient(top, #5d7067 0%, #4c6056 100%);
-  background: -o-linear-gradient(top, #5d7067 0%, #4c6056 100%);
-  background: -ms-linear-gradient(top, #5d7067 0%, #4c6056 100%);
-  background: linear-gradient(top, #5d7067 0%, #4c6056 100%);
-  margin: 0;
-  display: inline-block;
-  width: 100%;
-  -webkit-box-shadow: 0 1px 1px rgba(255,255,255,0.25);
-  box-shadow: 0 1px 1px rgba(255,255,255,0.25);
-  margin-bottom: 1em;
-  padding: 0.25em 0.5em;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(255,255,255,0.15);
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-}
-#aioim .messages .message .content {
-  margin: 0;
-  color: rgba(255,255,255,0.6);
-  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
-  font-size: 75%;
-  letter-spacing: 1px;
-  font-family: 'Esteban';
+#aioim .messages li p {
+  color: #c1bdb4;
+  text-shadow: 0 1px 0 #000;
 }
 #post {
   -webkit-box-shadow: 0 0 5px #000;
@@ -571,7 +475,7 @@ body:before {
 #post h2,
 #post h3 {
   font-family: 'Averia Gruesa Libre', sans-serif;
-  color: rgba(255,255,255,0.9);
+  color: #eee;
 }
 #post h2,
 #post h3 {
@@ -737,7 +641,7 @@ body:before {
   background: -o-linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
   background: -ms-linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
   background: linear-gradient(top, #4f6e96 0%, #3e5d85 100%);
-  color: #f1f1f7;
+  color: #eee;
   -webkit-border-radius: 2px;
   border-radius: 2px;
   margin-bottom: 16px;

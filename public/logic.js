@@ -19,7 +19,8 @@ var url      = 'https://narratio.firebaseio.com',
     narrated = url + '/narrated',
     author   = { contexts: null, id: $.cookie('user_id') },
     services = [ ],
-    authenticator = $.Deferred()
+    authenticator = $.Deferred(),
+    aioim
 
 function render(pid, scope) {
   if (typeof scope.posts !== 'undefined') {
@@ -38,6 +39,8 @@ function render(pid, scope) {
     scope.post_id = pid
 
     scope.editable = post.author.id === author.id
+
+    $('#post').attr('data-story', pid)
   }
 }
 
@@ -125,6 +128,7 @@ var Reader = function ($scope, $routeParams) {
   
   $scope.$on('$routeChangeSuccess', function (next, current) {
     render(current.params.post_id, $scope)
+    aioim = new AiOIM(current.params.post_id, '#aioim .messages')
   })
 }
 
@@ -320,6 +324,12 @@ $(function () {
 
   $('#aioim').on('click', '#new-message .services .icon', function () {
     $(this).toggleClass('selected')
+    return false
+  })
+
+  $('#aioim').on('click', '#new-message .publish', function () {
+    aioim.new_message($('#new-message textarea').val(), $.cookie('user_id'))
+
     return false
   })
 

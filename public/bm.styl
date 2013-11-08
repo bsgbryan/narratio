@@ -6,7 +6,7 @@ paragraph()
   border none
   letter-spacing 1px
   background linear-gradient(top, #4F6E96, #3e5d85)
-  color #f1f1f7
+  color #eee
   border-radius 2px
   margin-bottom 16px
   margin-top 16px
@@ -347,85 +347,13 @@ body
       input
         display none
   .messages
-    margin-left  1em
-    margin-right 1em
-    dt 
-      background-color #5D7067
-      display inline-block
-      width 100%
-      box-shadow 0 -1px 1px rgba(black, .3)
-      padding 0 .5em
-      box-sizing border-box
-      border-bottom 1px solid rgba(black, .125)
-      border-top-left-radius  2px
-      border-top-right-radius 2px
-      a
-        display inline-block
-      .user
-        color #222
-        text-decoration none
-        text-shadow 0 1px 0 rgba(white, .125)
-        font-size 80%
-        width 22.25em
-        line-height 100%
-        font-family 'IM ell English SC'
-        letter-spacing 1px
-        vertical-align bottom
-        margin-bottom .5em
-      &:hover
-        .favorite
-        .retweet
-          visibility visible
-          text-shadow 0 1px 0 rgba(white, .1)
-      .favorite
-      .retweet
-        &:hover
-          color black
-          text-shadow 0 1px 0 rgba(white, .25)
-        visibility hidden
-        color rgba(black, .25)
-        width .5em
-        text-decoration none
-        background-position-y -1px
-        font-family 'EntypoRegular'
-        font-size 1.75em
-        line-height 1em
-        vertical-align top
-      .favorited
-      .retweeted
-        visibility visible
-      .favorite
-        background-position-x 95px
-        &:hover
-          background-position-x 79px
-      .retweet
-        background-position-x 48px
-        margin-right .25em
-        &:hover
-          background-position-x 32px
-      .favorited
-        background-position-x 63px
-      .retweeted
-        background-position-x 16px
-    .message
-      background linear-gradient(top, #5D7067, #4C6056)
-      margin 0
-      display inline-block
-      width 100%
-      box-shadow 0 1px 1px rgba(white, .25)
-      margin-bottom 1em
-      padding .25em .5em
-      box-sizing border-box
-      border-top 1px solid rgba(white, .15)
-      border-bottom-left-radius  2px
-      border-bottom-right-radius 2px
-      .content
-        margin 0
-        color rgba(white, .6)
-        text-shadow 0 1px 0 rgba(black, .25)
-        font-size 75%
-        letter-spacing 1px
-        font-family 'Esteban'
+    list-style none
+    padding-left 0
+    li
+      padding-left 1em
+      p
+        color #c1bdb4
+        text-shadow 0 1px 0 black
 
 #post
   box-shadow 0 0 5px black
@@ -436,7 +364,7 @@ body
 
   h1, h2, h3
     font-family 'Averia Gruesa Libre', sans-serif
-    color rgba(white, .9)
+    color #eee
 
   h2, h3
     text-shadow 0 1px 0 rgba(black, .5)
